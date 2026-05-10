@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsoye2yyku5pv"]
+
+[ext_resource type="Script" uid="uid://ce7nwccdvxrp3" path="res://Scenes/Blunderbuss/blunderbuss.gd" id="1_1n76p"]
+
+[node name="Blunderbuss" type="Node2D" unique_id=1936563938]
+script = ExtResource("1_1n76p")
