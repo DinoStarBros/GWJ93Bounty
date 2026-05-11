@@ -16,6 +16,8 @@ func _ready() -> void:
 	sprite.texture = item_resource.texture
 	%SuckDetectArea.area_entered.connect(_suck_area_entered)
 	%SuckDetectArea.area_exited.connect(_suck_area_exited)
+	sprite.self_modulate = item_resource.color
+	scale = item_resource.item_scale
 
 func _suck_area_entered(area:Area2D) -> void:
 	is_go_to_suck = true

@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(-2, -2),
 "update": 0,
-"values": [Vector2(0, 2), Vector2(0, -2)]
+"values": [Vector2(0, 5), Vector2(0, -5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0kfd0"]
@@ -58,7 +58,7 @@ texture = ExtResource("2_m0txf")
 [node name="ShadowCircle" type="Sprite2D" parent="." unique_id=1402708646]
 self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 0.36862746)
 z_index = -1
-position = Vector2(0, 7)
+position = Vector2(0, 10)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_cklhd")
 
