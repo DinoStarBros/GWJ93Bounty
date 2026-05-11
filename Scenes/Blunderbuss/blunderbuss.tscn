@@ -3,6 +3,45 @@
 [ext_resource type="Script" uid="uid://ce7nwccdvxrp3" path="res://Scenes/Blunderbuss/blunderbuss.gd" id="1_1n76p"]
 [ext_resource type="Texture2D" uid="uid://dpjad0so3ay4a" path="res://Art/Placeholder/PeaGun.png" id="2_ue752"]
 [ext_resource type="PackedScene" uid="uid://cj86w7obfjjrm" path="res://Scenes/SuckEffect/suck_effect.tscn" id="3_iba4p"]
+[ext_resource type="AudioStream" uid="uid://cdee4eqki2ygj" path="res://Audio/BussSFX/vacStart.wav" id="4_rc6mt"]
+[ext_resource type="AudioStream" uid="uid://cjl6lj7qlftpv" path="res://Audio/BussSFX/vacLoop.wav" id="5_l0cpo"]
+
+[sub_resource type="Animation" id="Animation_l0cpo"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_rc6mt"]
+resource_name = "a"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SFX/vacStart:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFX/vacLoop:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0cpo"]
+_data = {
+&"RESET": SubResource("Animation_l0cpo"),
+&"a": SubResource("Animation_rc6mt")
+}
 
 [node name="Blunderbuss" type="Node2D" unique_id=1936563938]
 script = ExtResource("1_1n76p")
@@ -17,3 +56,24 @@ texture = ExtResource("2_ue752")
 position = Vector2(66, -4)
 
 [node name="SuckEffect" parent="GunTip" unique_id=52156417 instance=ExtResource("3_iba4p")]
+unique_name_in_owner = true
+
+[node name="SFX" type="Node" parent="." unique_id=1552657236]
+
+[node name="vacStart" type="AudioStreamPlayer" parent="SFX" unique_id=82255640]
+unique_name_in_owner = true
+stream = ExtResource("4_rc6mt")
+volume_db = -5.0
+pitch_scale = 2.0
+bus = &"SFX"
+
+[node name="vacLoop" type="AudioStreamPlayer" parent="SFX" unique_id=1065321671]
+unique_name_in_owner = true
+stream = ExtResource("5_l0cpo")
+volume_db = -15.0
+pitch_scale = 0.01
+autoplay = true
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=386155903]
+libraries/ = SubResource("AnimationLibrary_l0cpo")

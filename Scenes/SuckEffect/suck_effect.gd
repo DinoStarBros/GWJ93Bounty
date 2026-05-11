@@ -3,27 +3,29 @@ class_name SuckEffect
 
 @onready var suck_particle_start_x: Marker2D = %SuckParticleStartX
 
-var rot : float
-var suck_speed : float = 1500
+var suck_speed : float = 750
+var particle_amnt : int = 2
+var enable: bool = false
 
-const suck_range : float = 175
-const suck_circ : float = PI/6 ## suck_circumference
+const suck_range : float = 250
+const suck_spread : float = 200
+
+func _ready() -> void:
+	pass
 
 func _process(delta: float) -> void:
-	for n in 2:
-		_spawn_suck_particle()
-	rot = owner.get_parent().rotation
+	if enable:
+		for n in particle_amnt:
+			_spawn_suck_particle()
 
 func _spawn_suck_particle() -> void:
 	var suck_particle : SuckParticle = References.juices["suck_particle"].instantiate()
-	var randrot : float = rot + randf_range(-suck_circ, suck_circ)
 	
 	suck_particle.suck_speed = suck_speed
-	suck_particle.dir.x = -cos(randrot)
-	suck_particle.dir.y = -sin(randrot)
+	suck_particle.destination = global_position
+	suck_particle.destination_node = self
 	
-	Global.projectiles_parent.add_child(suck_particle)
+	add_child(suck_particle)
 	
-	suck_particle.global_position = Vector2(
-		cos(randrot), sin(randrot)
-	) * suck_range + global_position
+	suck_particle.position.x = suck_range
+	suck_particle.position.y = randf_range(-suck_spread, suck_spread)
