@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce7nwccdvxrp3" path="res://Scenes/Blunderbuss/blunderbuss.gd" id="1_1n76p"]
 [ext_resource type="Texture2D" uid="uid://dpjad0so3ay4a" path="res://Art/Placeholder/PeaGun.png" id="2_ue752"]
+[ext_resource type="PackedScene" uid="uid://cj86w7obfjjrm" path="res://Scenes/SuckEffect/suck_effect.tscn" id="3_iba4p"]
 
 [node name="Blunderbuss" type="Node2D" unique_id=1936563938]
 script = ExtResource("1_1n76p")
@@ -11,3 +12,8 @@ unique_name_in_owner = true
 position = Vector2(50, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ue752")
+
+[node name="GunTip" type="Marker2D" parent="." unique_id=1469827339]
+position = Vector2(66, -4)
+
+[node name="SuckEffect" parent="GunTip" unique_id=52156417 instance=ExtResource("3_iba4p")]

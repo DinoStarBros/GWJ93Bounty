@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cj86w7obfjjrm"]
+
+[ext_resource type="Script" uid="uid://bfr7twb5om7ms" path="res://Scenes/SuckEffect/suck_effect.gd" id="1_78pe2"]
+
+[node name="SuckEffect" type="Node2D" unique_id=52156417]
+script = ExtResource("1_78pe2")
+
+[node name="SuckParticleStartX" type="Marker2D" parent="." unique_id=1372842430]
+unique_name_in_owner = true
+position = Vector2(500, 0)

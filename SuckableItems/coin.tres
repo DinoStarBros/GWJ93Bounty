@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SuckableItemResource" format=3 uid="uid://dmfu0bo3i1rif"]
+
+[ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="1_3ilfj"]
+[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_03h8d"]
+
+[resource]
+script = ExtResource("1_3ilfj")
+texture = ExtResource("2_03h8d")
+metadata/_custom_type_script = "uid://d0c24a4ceihuw"

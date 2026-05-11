@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c22chod3dysi7"]
+
+[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="1_03jpe"]
+[ext_resource type="Script" uid="uid://v6fo1aiksp0y" path="res://Juices/SuckParticle/suck_particle.gd" id="2_irqcy"]
+
+[node name="SuckParticle" type="Sprite2D" unique_id=1540774440]
+texture = ExtResource("1_03jpe")
+script = ExtResource("2_irqcy")
