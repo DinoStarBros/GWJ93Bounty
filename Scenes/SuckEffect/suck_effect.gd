@@ -4,9 +4,8 @@ class_name SuckEffect
 var suck_speed : float = 750
 var particle_amnt : int = 2
 var enable: bool = false
-
-const suck_range : float = 400
-const suck_spread : float = 200
+var suck_range : float = 400
+var suck_spread : float = 200
 
 func _ready() -> void:
 	pass

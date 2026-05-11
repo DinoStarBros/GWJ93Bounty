@@ -52,7 +52,7 @@ collision_mask = 16
 
 [node name="suckCollision" type="CollisionPolygon2D" parent="GunTip/SuckArea" unique_id=1331607991]
 unique_name_in_owner = true
-polygon = PackedVector2Array(-61.3, 0, 410, -200, 410, 200)
+polygon = PackedVector2Array(-60, 0, 410, -200, 410, 200)
 
 [node name="SFX" type="Node" parent="." unique_id=1552657236]
 
