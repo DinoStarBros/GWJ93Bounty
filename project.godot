@@ -15,6 +15,10 @@ run/main_scene="uid://bi0mlwb3q4rs8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://do256ifylt14t"
+
 [autoload]
 
 SceneManager="*uid://j20v4cg7v8m1"
@@ -81,6 +85,7 @@ Suck={
 2d_physics/layer_1="Environment"
 2d_physics/layer_2="Player Hitbox - Enemy Hurtbox"
 2d_physics/layer_3="Enemy Hitbox - Player Hurtbox"
+2d_physics/layer_5="SuckArea"
 
 [physics]
 

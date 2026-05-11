@@ -1,13 +1,11 @@
 extends Node2D
 class_name SuckEffect
 
-@onready var suck_particle_start_x: Marker2D = %SuckParticleStartX
-
 var suck_speed : float = 750
 var particle_amnt : int = 2
 var enable: bool = false
 
-const suck_range : float = 250
+const suck_range : float = 400
 const suck_spread : float = 200
 
 func _ready() -> void:
