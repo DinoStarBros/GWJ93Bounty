@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://c1que8cmoq0i2" path="res://Entities/Player/player.gd" id="1_mv1ah"]
 [ext_resource type="Texture2D" uid="uid://d1yx87uivcgwh" path="res://icon.svg" id="2_3uyv8"]
 [ext_resource type="PackedScene" uid="uid://bsoye2yyku5pv" path="res://Scenes/Blunderbuss/blunderbuss.tscn" id="2_7a1se"]
+[ext_resource type="Script" uid="uid://b230bd85ma31m" path="res://Entities/Player/blunderbuss_pivot.gd" id="2_lub02"]
 [ext_resource type="Script" uid="uid://ckie5yb7vinvr" path="res://Entities/Player/pause.gd" id="3_lu8i8"]
 [ext_resource type="PackedScene" uid="uid://bqrd0srtdaksn" path="res://SettingsMenu/settings_menu.tscn" id="4_tekja"]
 [ext_resource type="Script" uid="uid://bmw1g77w8quh3" path="res://Entities/Player/gui.gd" id="5_01a4e"]
 [ext_resource type="Script" uid="uid://cq31qgpvffhy8" path="res://StateMachineStuff/state_machine.gd" id="5_5c2io"]
 [ext_resource type="Script" uid="uid://d314fuml6xowm" path="res://Entities/Player/PlrStates/walk.gd" id="6_4wf4l"]
+[ext_resource type="PackedScene" uid="uid://c6a7j2y4xhkik" path="res://Scenes/Barrel/barrel.tscn" id="8_x1y6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uyv8"]
 size = Vector2(40, 40)
@@ -15,7 +17,11 @@ size = Vector2(40, 40)
 [node name="Player" type="CharacterBody2D" unique_id=950942093]
 script = ExtResource("1_mv1ah")
 
-[node name="Blunderbuss" parent="." unique_id=1936563938 instance=ExtResource("2_7a1se")]
+[node name="BlunderbussPivot" type="Node2D" parent="." unique_id=58030563]
+script = ExtResource("2_lub02")
+
+[node name="Blunderbuss" parent="BlunderbussPivot" unique_id=1936563938 instance=ExtResource("2_7a1se")]
+unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=518362314]
 
@@ -34,6 +40,9 @@ script = ExtResource("3_lu8i8")
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=191320254]
 script = ExtResource("5_01a4e")
+
+[node name="Barrel" parent="GUI" unique_id=536368689 instance=ExtResource("8_x1y6q")]
+position = Vector2(1199, 563)
 
 [node name="Label" type="Label" parent="." unique_id=902025439]
 offset_left = -21.0

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c6a7j2y4xhkik"]
+
+[ext_resource type="Texture2D" uid="uid://ycsdb3tkt56p" path="res://Art/Buss/barellproto.png" id="1_hpg1d"]
+[ext_resource type="Script" uid="uid://cupann24jybyr" path="res://Scenes/Barrel/barrel.gd" id="1_opngn"]
+
+[node name="Barrel" type="Node2D" unique_id=536368689]
+script = ExtResource("1_opngn")
+
+[node name="Barellproto" type="Sprite2D" parent="." unique_id=837294187]
+scale = Vector2(2, 2)
+texture = ExtResource("1_hpg1d")
