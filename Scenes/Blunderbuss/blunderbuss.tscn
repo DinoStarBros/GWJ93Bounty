@@ -40,6 +40,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ue752")
 
 [node name="GunTip" type="Marker2D" parent="." unique_id=1469827339]
+unique_name_in_owner = true
 position = Vector2(65, 0)
 
 [node name="SuckEffect" parent="GunTip" unique_id=52156417 instance=ExtResource("3_iba4p")]
@@ -49,7 +50,8 @@ unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 16
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GunTip/SuckArea" unique_id=1331607991]
+[node name="suckCollision" type="CollisionPolygon2D" parent="GunTip/SuckArea" unique_id=1331607991]
+unique_name_in_owner = true
 polygon = PackedVector2Array(-61.3, 0, 410, -200, 410, 200)
 
 [node name="SFX" type="Node" parent="." unique_id=1552657236]

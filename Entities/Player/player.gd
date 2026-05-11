@@ -1,6 +1,8 @@
 extends Entity
 class_name Player
 
+func _ready() -> void:
+	Global.player = self
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()

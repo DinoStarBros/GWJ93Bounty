@@ -42,6 +42,9 @@ _data = {
 &"spriteLoop": SubResource("Animation_m0txf")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0txf"]
+radius = 13.0
+
 [node name="SuckableItem" type="Node2D" unique_id=1053779839]
 z_index = 1
 script = ExtResource("1_ayb7p")
@@ -62,3 +65,11 @@ texture = ExtResource("2_cklhd")
 [node name="loop" type="AnimationPlayer" parent="." unique_id=877943266]
 libraries/ = SubResource("AnimationLibrary_0kfd0")
 autoplay = &"spriteLoop"
+
+[node name="SuckDetectArea" type="Area2D" parent="." unique_id=383714104]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuckDetectArea" unique_id=2128603050]
+shape = SubResource("CircleShape2D_m0txf")
