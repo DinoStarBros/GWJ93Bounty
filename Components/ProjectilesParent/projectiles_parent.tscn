@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://5lwpl4poglip"]
+
+[ext_resource type="Script" uid="uid://bindsnkcfxeer" path="res://Components/ProjectilesParent/projectiles_parent.gd" id="1_nyysh"]
+
+[node name="ProjectilesParent" type="Node2D" unique_id=564160944]
+script = ExtResource("1_nyysh")

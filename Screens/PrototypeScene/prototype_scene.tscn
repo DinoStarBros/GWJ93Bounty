@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://hh56oj5oxojy" path="res://topdown_tiles.tres" id="3_mcb6p"]
 [ext_resource type="PackedScene" uid="uid://bv8bo56pdk3uc" path="res://SuckableItems/SuckableItem/suckable_item.tscn" id="4_ad07v"]
 [ext_resource type="Resource" uid="uid://dmfu0bo3i1rif" path="res://SuckableItems/coin.tres" id="5_hfigh"]
+[ext_resource type="PackedScene" uid="uid://5lwpl4poglip" path="res://Components/ProjectilesParent/projectiles_parent.tscn" id="6_hfigh"]
 
 [node name="PrototypeScene" type="Node2D" unique_id=1085877338]
 script = ExtResource("1_r410d")
@@ -23,3 +24,5 @@ tile_set = ExtResource("3_mcb6p")
 [node name="SuckableItem" parent="SuckableItems" unique_id=1053779839 instance=ExtResource("4_ad07v")]
 position = Vector2(444, -117)
 item_resource = ExtResource("5_hfigh")
+
+[node name="ProjectilesParent" parent="." unique_id=564160944 instance=ExtResource("6_hfigh")]

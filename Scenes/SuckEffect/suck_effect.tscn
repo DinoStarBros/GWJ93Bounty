@@ -7,4 +7,4 @@ script = ExtResource("1_78pe2")
 
 [node name="SuckParticleStartX" type="Marker2D" parent="." unique_id=1372842430]
 unique_name_in_owner = true
-position = Vector2(500, 0)
+position = Vector2(250, 0)
