@@ -4,46 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="2_cklhd"]
 [ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_m0txf"]
 
-[sub_resource type="Animation" id="Animation_0kfd0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 2)]
-}
-
-[sub_resource type="Animation" id="Animation_m0txf"]
-resource_name = "spriteLoop"
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector2(0, 5), Vector2(0, -5)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0kfd0"]
-_data = {
-&"RESET": SubResource("Animation_0kfd0"),
-&"spriteLoop": SubResource("Animation_m0txf")
-}
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0txf"]
 radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0kfd0"]
+radius = 5.0
 
 [node name="SuckableItem" type="Node2D" unique_id=1053779839]
 z_index = 1
@@ -52,7 +17,7 @@ script = ExtResource("1_ayb7p")
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1138692371]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(0, 2)
+position = Vector2(0, 5)
 texture = ExtResource("2_m0txf")
 
 [node name="ShadowCircle" type="Sprite2D" parent="." unique_id=1402708646]
@@ -62,14 +27,19 @@ position = Vector2(0, 10)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_cklhd")
 
-[node name="loop" type="AnimationPlayer" parent="." unique_id=877943266]
-libraries/ = SubResource("AnimationLibrary_0kfd0")
-autoplay = &"spriteLoop"
-
 [node name="SuckDetectArea" type="Area2D" parent="." unique_id=383714104]
 unique_name_in_owner = true
-collision_layer = 16
+collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SuckDetectArea" unique_id=2128603050]
 shape = SubResource("CircleShape2D_m0txf")
+debug_color = Color(0.96862745, 0.1764706, 0, 0)
+
+[node name="SuckPickupArea" type="Area2D" parent="." unique_id=901846183]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuckPickupArea" unique_id=72287564]
+shape = SubResource("CircleShape2D_0kfd0")

@@ -21,8 +21,9 @@ script = ExtResource("1_mv1ah")
 [node name="BlunderbussPivot" type="Node2D" parent="." unique_id=58030563]
 script = ExtResource("2_lub02")
 
-[node name="Blunderbuss" parent="BlunderbussPivot" unique_id=1936563938 instance=ExtResource("2_7a1se")]
+[node name="Blunderbuss" parent="BlunderbussPivot" unique_id=1936563938 node_paths=PackedStringArray("barrel") instance=ExtResource("2_7a1se")]
 unique_name_in_owner = true
+barrel = NodePath("../../GUI/Barrel")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=518362314]
 
@@ -43,7 +44,7 @@ script = ExtResource("3_lu8i8")
 script = ExtResource("5_01a4e")
 
 [node name="Barrel" parent="GUI" unique_id=536368689 instance=ExtResource("8_x1y6q")]
-position = Vector2(1199, 563)
+position = Vector2(1199, 471)
 
 [node name="Label" type="Label" parent="." unique_id=902025439]
 offset_left = -21.0

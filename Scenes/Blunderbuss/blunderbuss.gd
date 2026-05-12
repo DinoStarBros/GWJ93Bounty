@@ -3,12 +3,14 @@ class_name Blunderbuss
 
 @export var suck_range : float = 400.0
 @export var suck_spread : float = 200.0
+@export var barrel : Barrel
 
 @onready var sprite: Sprite2D = %PeaGun
 @onready var suck_effect: SuckEffect = %SuckEffect
 @onready var vac_loop: AudioStreamPlayer = %vacLoop
 @onready var suck_collision: CollisionPolygon2D = %suckCollision
 @onready var gun_tip: Marker2D = %GunTip
+@onready var suck_pickup_collision: CollisionShape2D = %suckPickupCollision
 
 var vacloop_desire_pitch : float = 0.01
 var sucking : bool = false:
@@ -41,3 +43,4 @@ func _physics_process(delta: float) -> void:
 	
 	vac_loop.pitch_scale = lerp(vac_loop.pitch_scale, vacloop_desire_pitch, 6.0 * delta)
 	suck_collision.disabled = !sucking
+	suck_pickup_collision.disabled = !sucking

@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cj86w7obfjjrm" path="res://Scenes/SuckEffect/suck_effect.tscn" id="3_iba4p"]
 [ext_resource type="AudioStream" uid="uid://cjl6lj7qlftpv" path="res://Audio/BussSFX/vacLoop.wav" id="5_l0cpo"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ceqtj"]
+radius = 2.0
+
 [sub_resource type="Animation" id="Animation_l0cpo"]
 length = 0.001
 
@@ -32,6 +35,8 @@ _data = {
 
 [node name="Blunderbuss" type="Node2D" unique_id=1936563938]
 script = ExtResource("1_1n76p")
+suck_range = 250.0
+suck_spread = 120.0
 
 [node name="PeaGun" type="Sprite2D" parent="." unique_id=670557191]
 unique_name_in_owner = true
@@ -53,13 +58,23 @@ collision_mask = 16
 [node name="suckCollision" type="CollisionPolygon2D" parent="GunTip/SuckArea" unique_id=1331607991]
 unique_name_in_owner = true
 polygon = PackedVector2Array(-60, 0, 410, -200, 410, 200)
+disabled = true
+
+[node name="SuckPickup" type="Area2D" parent="GunTip" unique_id=2033270384]
+collision_layer = 32
+collision_mask = 32
+
+[node name="suckPickupCollision" type="CollisionShape2D" parent="GunTip/SuckPickup" unique_id=972186561]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_ceqtj")
+disabled = true
 
 [node name="SFX" type="Node" parent="." unique_id=1552657236]
 
 [node name="vacLoop" type="AudioStreamPlayer" parent="SFX" unique_id=1065321671]
 unique_name_in_owner = true
 stream = ExtResource("5_l0cpo")
-volume_db = -15.0
+volume_db = -20.0
 pitch_scale = 0.01
 autoplay = true
 bus = &"SFX"

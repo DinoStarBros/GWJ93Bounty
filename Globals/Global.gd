@@ -4,3 +4,4 @@ var projectiles_parent : ProjectilesParent
 var player : Player
 var blunderbuss : Blunderbuss
 var blunderbuss_gun_tip : Marker2D
+var barrel : Barrel

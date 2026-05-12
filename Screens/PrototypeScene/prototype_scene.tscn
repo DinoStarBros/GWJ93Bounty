@@ -22,7 +22,67 @@ tile_set = ExtResource("3_mcb6p")
 [node name="SuckableItems" type="Node2D" parent="." unique_id=1596024934]
 
 [node name="SuckableItem" parent="SuckableItems" unique_id=1053779839 instance=ExtResource("4_ad07v")]
-position = Vector2(444, -117)
+position = Vector2(571, -130)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem2" parent="SuckableItems" unique_id=1848726239 instance=ExtResource("4_ad07v")]
+position = Vector2(601, -74)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem3" parent="SuckableItems" unique_id=612418218 instance=ExtResource("4_ad07v")]
+position = Vector2(672, -125)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem4" parent="SuckableItems" unique_id=71587999 instance=ExtResource("4_ad07v")]
+position = Vector2(608, -164)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem5" parent="SuckableItems" unique_id=1121873308 instance=ExtResource("4_ad07v")]
+position = Vector2(579, -205)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem6" parent="SuckableItems" unique_id=338873670 instance=ExtResource("4_ad07v")]
+position = Vector2(527, -167)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem7" parent="SuckableItems" unique_id=463147358 instance=ExtResource("4_ad07v")]
+position = Vector2(563, -109)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem8" parent="SuckableItems" unique_id=1332694244 instance=ExtResource("4_ad07v")]
+position = Vector2(563, -109)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem9" parent="SuckableItems" unique_id=275810390 instance=ExtResource("4_ad07v")]
+position = Vector2(790, -167)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem10" parent="SuckableItems" unique_id=1565506708 instance=ExtResource("4_ad07v")]
+position = Vector2(790, -167)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem11" parent="SuckableItems" unique_id=1222287655 instance=ExtResource("4_ad07v")]
+position = Vector2(790, -167)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem12" parent="SuckableItems" unique_id=536056811 instance=ExtResource("4_ad07v")]
+position = Vector2(790, -167)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem13" parent="SuckableItems" unique_id=82480791 instance=ExtResource("4_ad07v")]
+position = Vector2(739, -194)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem14" parent="SuckableItems" unique_id=732209299 instance=ExtResource("4_ad07v")]
+position = Vector2(640, -189)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem15" parent="SuckableItems" unique_id=500868897 instance=ExtResource("4_ad07v")]
+position = Vector2(672, -232)
+item_resource = ExtResource("5_hfigh")
+
+[node name="SuckableItem16" parent="SuckableItems" unique_id=1634158781 instance=ExtResource("4_ad07v")]
+position = Vector2(608, -115)
 item_resource = ExtResource("5_hfigh")
 
 [node name="ProjectilesParent" parent="." unique_id=564160944 instance=ExtResource("6_hfigh")]
