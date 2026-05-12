@@ -34,7 +34,8 @@ func _input(event: InputEvent) -> void:
 	sucking = Input.is_action_pressed("Suck")
 
 func barrel_shoot(item: SuckableItemResource) -> void:
-	_spawn_projectile_item(item)
+	for projectile in item.projectile_amnt:
+		_spawn_projectile_item(item)
 	other_stuff_handler.play_shoot_sfx()
 	Global.camera.screen_shake(5, 0.1)
 
@@ -43,6 +44,7 @@ func barrel_eject(item: SuckableItemResource) -> void:
 
 func _spawn_projectile_item(item: SuckableItemResource) -> void:
 	var projectile_item : ProjectileItem = projectile_item_scn.instantiate()
+	var spread : float = item.spread / 10
 	
 	projectile_item.item_resource = item
 	projectile_item.velocity = (
@@ -52,3 +54,6 @@ func _spawn_projectile_item(item: SuckableItemResource) -> void:
 	Global.projectiles_parent.add_child(projectile_item)
 	
 	projectile_item.global_position = gun_tip.global_position
+	
+	projectile_item.velocity.x += randf_range(-spread,spread) * item.speed
+	projectile_item.velocity.y += randf_range(-spread,spread) * item.speed
