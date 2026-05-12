@@ -6,6 +6,7 @@
 [node name="BarrelItem" type="Node2D" unique_id=1113018208]
 script = ExtResource("1_8t6mf")
 
-[node name="LuhCircle" type="Sprite2D" parent="." unique_id=1007154143]
+[node name="sprite" type="Sprite2D" parent="." unique_id=1007154143]
+unique_name_in_owner = true
 scale = Vector2(3.9, 3.9)
 texture = ExtResource("2_yp17o")

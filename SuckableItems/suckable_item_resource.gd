@@ -12,3 +12,5 @@ class_name SuckableItemResource
 @export var knockback : float = 500
 @export var pierce : int = 1
 @export var stun_duration : float = 0.3
+@export var spread : float = 0.0
+@export var projectile_amnt : int = 1
