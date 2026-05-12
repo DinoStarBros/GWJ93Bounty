@@ -35,3 +35,6 @@ func suck_effect_and_colliders_handle() -> void:
 func play_shoot_sfx() -> void:
 	%shoot.pitch_scale = 1 + randf_range(-.1,.1)
 	%shoot.play(0.08)
+	
+	%shoot2.pitch_scale = 1 + randf_range(-.1,.1)
+	%shoot2.play()

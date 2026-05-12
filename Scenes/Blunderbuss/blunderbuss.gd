@@ -36,9 +36,10 @@ func _input(event: InputEvent) -> void:
 func barrel_shoot(item: SuckableItemResource) -> void:
 	_spawn_projectile_item(item)
 	other_stuff_handler.play_shoot_sfx()
+	Global.camera.screen_shake(5, 0.1)
 
 func barrel_eject(item: SuckableItemResource) -> void:
-	pass
+	Global.camera.screen_shake(2, 0.1)
 
 func _spawn_projectile_item(item: SuckableItemResource) -> void:
 	var projectile_item : ProjectileItem = projectile_item_scn.instantiate()
