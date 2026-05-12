@@ -1,0 +1,2 @@
+extends EntityStatsResource
+class_name PlayerStatsResource
