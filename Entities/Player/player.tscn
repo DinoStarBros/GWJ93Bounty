@@ -17,12 +17,14 @@ size = Vector2(40, 40)
 [node name="Player" type="CharacterBody2D" unique_id=950942093]
 motion_mode = 1
 script = ExtResource("1_mv1ah")
+move_speed = 400.0
 
 [node name="BlunderbussPivot" type="Node2D" parent="." unique_id=58030563]
 script = ExtResource("2_lub02")
 
 [node name="Blunderbuss" parent="BlunderbussPivot" unique_id=1936563938 node_paths=PackedStringArray("barrel") instance=ExtResource("2_7a1se")]
 unique_name_in_owner = true
+position = Vector2(20, 0)
 barrel = NodePath("../../GUI/Barrel")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=518362314]

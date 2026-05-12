@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dpjad0so3ay4a" path="res://Art/Placeholder/PeaGun.png" id="2_ue752"]
 [ext_resource type="PackedScene" uid="uid://cj86w7obfjjrm" path="res://Scenes/SuckEffect/suck_effect.tscn" id="3_iba4p"]
 [ext_resource type="AudioStream" uid="uid://cjl6lj7qlftpv" path="res://Audio/BussSFX/vacLoop.wav" id="5_l0cpo"]
+[ext_resource type="AudioStream" uid="uid://cjrha4kbrqcpl" path="res://Audio/planesfx/gunshot-352466.mp3" id="5_rc6mt"]
+[ext_resource type="Script" uid="uid://yjt6pds7lav5" path="res://Scenes/Blunderbuss/otherstuff_handler.gd" id="6_l0cpo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ceqtj"]
 radius = 2.0
@@ -35,8 +37,6 @@ _data = {
 
 [node name="Blunderbuss" type="Node2D" unique_id=1936563938]
 script = ExtResource("1_1n76p")
-suck_range = 250.0
-suck_spread = 120.0
 
 [node name="PeaGun" type="Sprite2D" parent="." unique_id=670557191]
 unique_name_in_owner = true
@@ -76,8 +76,18 @@ unique_name_in_owner = true
 stream = ExtResource("5_l0cpo")
 volume_db = -20.0
 pitch_scale = 0.01
-autoplay = true
+bus = &"SFX"
+
+[node name="shoot" type="AudioStreamPlayer" parent="SFX" unique_id=1866818360]
+unique_name_in_owner = true
+stream = ExtResource("5_rc6mt")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=386155903]
 libraries/ = SubResource("AnimationLibrary_l0cpo")
+
+[node name="OtherStuffHandler" type="Node" parent="." unique_id=1217987144 node_paths=PackedStringArray("blunderbuss")]
+unique_name_in_owner = true
+script = ExtResource("6_l0cpo")
+blunderbuss = NodePath("..")

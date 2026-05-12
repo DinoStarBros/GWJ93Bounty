@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b2nifampjo2wn"]
+
+[ext_resource type="Script" uid="uid://dcf3tdj2ibkn3" path="res://SuckableItems/ProjectileItem/projectile_item.gd" id="1_71xem"]
+
+[node name="ProjectileItem" type="Node2D" unique_id=1577787778]
+script = ExtResource("1_71xem")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1827822540]
+unique_name_in_owner = true
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=190657295]
+unique_name_in_owner = true
+wait_time = 3.0
+one_shot = true
+autostart = true

@@ -49,7 +49,7 @@ shape = SubResource("RectangleShape2D_n48dc")
 
 [node name="BarItemSpawn" type="Node2D" parent="Barellproto/walls/topWall" unique_id=896857522]
 unique_name_in_owner = true
-position = Vector2(0, 32)
+position = Vector2(0, 64)
 scale = Vector2(2, 0.61835754)
 
 [node name="SFX" type="Node" parent="." unique_id=2053164541]
