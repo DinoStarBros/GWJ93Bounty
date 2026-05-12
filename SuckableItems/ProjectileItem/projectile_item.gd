@@ -5,6 +5,7 @@ class_name ProjectileItem
 @onready var hitbox_component: HitboxComponent = %HitboxComponent
 
 var item_resource : SuckableItemResource
+var knockback : float = 400
 var damage : float = 10
 
 func _ready() -> void:
@@ -16,6 +17,7 @@ func _ready() -> void:
 	)
 	
 	hitbox_component.attack.attack_damage = damage
+	hitbox_component.attack.knockback = knockback
 
 func _physics_process(delta: float) -> void:
 	_move(delta)
