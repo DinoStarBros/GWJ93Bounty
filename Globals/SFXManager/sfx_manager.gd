@@ -43,5 +43,5 @@ func play_2d_sfx(sound: sfx_types, pos: Vector2) -> void:
 	sfx2d.start_point = sfx_res.start_point
 	
 	sfx2d.global_position = pos
-
+	
 	Global.projectiles_parent.add_child(sfx2d)

@@ -10,4 +10,4 @@ class_name SFXResource
 
 @export var start_point : float
 
-@export var limit : int = 1
+@export var limit : int = 5

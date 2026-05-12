@@ -12,6 +12,7 @@ script = ExtResource("1_71xem")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1827822540]
 unique_name_in_owner = true
 z_index = 1
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_uqlii")
 
 [node name="LifeTimer" type="Timer" parent="." unique_id=190657295]
