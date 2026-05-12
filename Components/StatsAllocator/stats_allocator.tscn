@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://h4fwnmas120w"]
+
+[ext_resource type="Script" uid="uid://d3qoike055i08" path="res://Components/StatsAllocator/stats_allocator.gd" id="1_rq1ug"]
+
+[node name="StatsAllocator" type="Node2D" unique_id=1466877605]
+script = ExtResource("1_rq1ug")
