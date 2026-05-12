@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dbcb4oiuu5rbc" path="res://Entities/Player/player.tscn" id="2_ch4ly"]
 [ext_resource type="TileSet" uid="uid://hh56oj5oxojy" path="res://topdown_tiles.tres" id="3_mcb6p"]
 [ext_resource type="PackedScene" uid="uid://bv8bo56pdk3uc" path="res://SuckableItems/SuckableItem/suckable_item.tscn" id="4_ad07v"]
-[ext_resource type="Resource" uid="uid://dmfu0bo3i1rif" path="res://SuckableItems/coin.tres" id="5_hfigh"]
+[ext_resource type="Resource" uid="uid://dmfu0bo3i1rif" path="res://SuckableItems/SuckableItemResources/coin.tres" id="5_hfigh"]
 [ext_resource type="PackedScene" uid="uid://5lwpl4poglip" path="res://Components/ProjectilesParent/projectiles_parent.tscn" id="6_hfigh"]
 [ext_resource type="PackedScene" uid="uid://b2e6kor6gembg" path="res://Components/EntitiesParent/entities_parent.tscn" id="6_oo3t5"]
 [ext_resource type="PackedScene" uid="uid://bgdkros4vb8bd" path="res://Entities/Dummy/dummy.tscn" id="8_42n3h"]

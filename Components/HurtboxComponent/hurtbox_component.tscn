@@ -1,26 +1,11 @@
 [gd_scene format=3 uid="uid://dxhp1awwxrui5"]
 
 [ext_resource type="Script" uid="uid://c7havc78v55q8" path="res://Components/HurtboxComponent/hurtbox_component.gd" id="1_hdafx"]
-[ext_resource type="AudioStream" uid="uid://crwvnwtgketcd" path="res://Audio/cardtowersfx/enemy_hit.wav" id="2_psa5j"]
-[ext_resource type="AudioStream" uid="uid://btoc7gcwarymr" path="res://Audio/amalgun/shoot.wav" id="3_0dlu2"]
 [ext_resource type="Script" uid="uid://raegw33mwrlm" path="res://Components/HurtboxComponent/sfx_players.gd" id="3_7smty"]
 
 [node name="HurtboxComponent" type="Area2D" unique_id=1051487275]
 script = ExtResource("1_hdafx")
 
-[node name="EnemyHurtSFX" type="AudioStreamPlayer2D" parent="." unique_id=920224635]
-unique_name_in_owner = true
-stream = ExtResource("2_psa5j")
-volume_db = 5.0
-bus = &"SFX"
-
-[node name="EnemyHurtSFX2" type="AudioStreamPlayer2D" parent="." unique_id=893835473]
-unique_name_in_owner = true
-stream = ExtResource("3_0dlu2")
-volume_db = 5.0
-pitch_scale = 0.6
-bus = &"SFX"
-
-[node name="SFXPlayers" type="Node" parent="." unique_id=332326999]
+[node name="SFXPlayers" type="Node2D" parent="." unique_id=1539134570]
 unique_name_in_owner = true
 script = ExtResource("3_7smty")

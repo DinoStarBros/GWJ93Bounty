@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SFXResource" format=3 uid="uid://v2a666o8rauu"]
+
+[ext_resource type="AudioStream" uid="uid://btoc7gcwarymr" path="res://Audio/amalgun/shoot.wav" id="1_tejtw"]
+[ext_resource type="Script" uid="uid://c7djayq8a2f2o" path="res://Globals/SFXManager/SFXRes.gd" id="2_0weil"]
+
+[resource]
+script = ExtResource("2_0weil")
+audio_stream = ExtResource("1_tejtw")
+volume = 5.0
+pitch = 0.6
+random_pitch_range = 0.2
+metadata/_custom_type_script = "uid://c7djayq8a2f2o"
