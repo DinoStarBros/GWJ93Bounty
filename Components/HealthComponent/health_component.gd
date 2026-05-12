@@ -12,3 +12,6 @@ func hurt(attack:Attack) -> void:
 	if get_parent() is Enemy:
 		if hp <= 0:
 			get_parent().queue_free()
+	elif get_parent() is Player:
+		if hp <= 0:
+			pass
