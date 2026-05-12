@@ -3,25 +3,9 @@
 [ext_resource type="Script" uid="uid://c8yi268oou8bh" path="res://SuckableItems/BarrelItem/barrel_item.gd" id="1_8t6mf"]
 [ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_yp17o"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hw5ur"]
-radius = 28.0
-
-[node name="BarrelItem" type="CharacterBody2D" unique_id=531765385]
-collision_layer = 64
-collision_mask = 64
-motion_mode = 1
+[node name="BarrelItem" type="Node2D" unique_id=1113018208]
 script = ExtResource("1_8t6mf")
 
 [node name="LuhCircle" type="Sprite2D" parent="." unique_id=1007154143]
-scale = Vector2(3.5, 3.5)
+scale = Vector2(3.9, 3.9)
 texture = ExtResource("2_yp17o")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=244443191]
-shape = SubResource("CircleShape2D_hw5ur")
-
-[node name="Timer" type="Timer" parent="." unique_id=470386943]
-wait_time = 0.5
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

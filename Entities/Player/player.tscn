@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://cq31qgpvffhy8" path="res://StateMachineStuff/state_machine.gd" id="5_5c2io"]
 [ext_resource type="Script" uid="uid://d314fuml6xowm" path="res://Entities/Player/PlrStates/walk.gd" id="6_4wf4l"]
 [ext_resource type="PackedScene" uid="uid://c6a7j2y4xhkik" path="res://Scenes/Barrel/barrel.tscn" id="8_x1y6q"]
+[ext_resource type="Script" uid="uid://bgy23cx50o0vj" path="res://Entities/Player/PlrStates/dash.gd" id="11_ap3xn"]
+[ext_resource type="AudioStream" uid="uid://nj64nd85rtql" path="res://Audio/splashtownSFX/Airdash.wav" id="12_iplt1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uyv8"]
 size = Vector2(40, 40)
@@ -62,3 +64,13 @@ debug = NodePath("../Label")
 
 [node name="Walk" type="Node" parent="StateMachine" unique_id=1869786260]
 script = ExtResource("6_4wf4l")
+
+[node name="Dash" type="Node" parent="StateMachine" unique_id=1263188579]
+script = ExtResource("11_ap3xn")
+
+[node name="SFX" type="Node" parent="." unique_id=1409408636]
+
+[node name="dashSfx" type="AudioStreamPlayer" parent="SFX" unique_id=754412162]
+unique_name_in_owner = true
+stream = ExtResource("12_iplt1")
+bus = &"SFX"

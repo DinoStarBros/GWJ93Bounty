@@ -81,7 +81,6 @@ bus = &"SFX"
 [node name="shoot" type="AudioStreamPlayer" parent="SFX" unique_id=1866818360]
 unique_name_in_owner = true
 stream = ExtResource("5_rc6mt")
-volume_db = -5.0
 bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=386155903]
