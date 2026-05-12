@@ -5,8 +5,6 @@ class_name ProjectileItem
 @onready var hitbox_component: HitboxComponent = %HitboxComponent
 
 var item_resource : SuckableItemResource
-var knockback : float = 400
-var damage : float = 10
 
 func _ready() -> void:
 	sprite.texture = item_resource.texture
@@ -16,8 +14,10 @@ func _ready() -> void:
 			queue_free()
 	)
 	
-	hitbox_component.attack.attack_damage = damage
-	hitbox_component.attack.knockback = knockback
+	hitbox_component.attack.attack_damage = item_resource.damage
+	hitbox_component.attack.knockback = item_resource.knockback
+	hitbox_component.pierce_amount = item_resource.pierce
+	hitbox_component.attack.stun_duration = item_resource.stun_duration
 
 func _physics_process(delta: float) -> void:
 	_move(delta)

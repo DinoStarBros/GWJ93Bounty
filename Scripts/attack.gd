@@ -4,3 +4,4 @@ class_name Attack
 var attack_damage : float
 var attack_pos : Vector2
 var knockback : float
+var stun_duration : float

@@ -13,6 +13,10 @@ func hurt(attack : Attack) -> void:
 	
 	if allow_stun:
 		state_machine.change_state("Hurt")
+		state_machine.find_child("Hurt").state_duration = attack.stun_duration
+		# EXCUSE ME BUT WHY THE FUCK IS THIS CODE HERE
+		# YOU FUCKING DUMBASS
+		# Says the singular programmer on this project
 	
 	if allow_knockback:
 		var dir_to_atk : Vector2 = global_position.direction_to(Global.player.global_position)

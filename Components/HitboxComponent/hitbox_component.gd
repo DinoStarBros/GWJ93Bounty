@@ -3,7 +3,7 @@ class_name HitboxComponent
 
 ## If the parent is a projectile
 ## How many times it can pierce before queue_freeing the projectile
-@export var pierce_amount : int = 1
+var pierce_amount : int = 1
 
 var attack : Attack = Attack.new()
 

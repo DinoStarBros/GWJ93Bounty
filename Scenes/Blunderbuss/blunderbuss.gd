@@ -47,7 +47,7 @@ func _spawn_projectile_item(item: SuckableItemResource) -> void:
 	projectile_item.item_resource = item
 	projectile_item.velocity = (
 		global_position.direction_to(get_global_mouse_position()) *
-		projectile_speed
+		item.speed
 	)
 	Global.projectiles_parent.add_child(projectile_item)
 	
