@@ -1,15 +1,27 @@
 [gd_scene format=3 uid="uid://b2nifampjo2wn"]
 
 [ext_resource type="Script" uid="uid://dcf3tdj2ibkn3" path="res://SuckableItems/ProjectileItem/projectile_item.gd" id="1_71xem"]
+[ext_resource type="PackedScene" uid="uid://rqxyqn8cdxay" path="res://Components/HitboxComponent/hitbox_component.tscn" id="2_o5hxy"]
+[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_uqlii"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uqlii"]
 
 [node name="ProjectileItem" type="Node2D" unique_id=1577787778]
 script = ExtResource("1_71xem")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1827822540]
 unique_name_in_owner = true
+texture = ExtResource("2_uqlii")
 
 [node name="LifeTimer" type="Timer" parent="." unique_id=190657295]
 unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="HitboxComponent" parent="." unique_id=2110612510 instance=ExtResource("2_o5hxy")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=2082587456]
+shape = SubResource("CircleShape2D_uqlii")

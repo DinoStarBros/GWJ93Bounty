@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c6a7j2y4xhkik" path="res://Scenes/Barrel/barrel.tscn" id="8_x1y6q"]
 [ext_resource type="Script" uid="uid://bgy23cx50o0vj" path="res://Entities/Player/PlrStates/dash.gd" id="11_ap3xn"]
 [ext_resource type="AudioStream" uid="uid://nj64nd85rtql" path="res://Audio/splashtownSFX/Airdash.wav" id="12_iplt1"]
+[ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="13_owvpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uyv8"]
 size = Vector2(40, 40)
@@ -20,8 +21,10 @@ size = Vector2(40, 40)
 motion_mode = 1
 script = ExtResource("1_mv1ah")
 move_speed = 400.0
+dash_speed = 1000.0
 
 [node name="BlunderbussPivot" type="Node2D" parent="." unique_id=58030563]
+position = Vector2(0, -26)
 script = ExtResource("2_lub02")
 
 [node name="Blunderbuss" parent="BlunderbussPivot" unique_id=1936563938 node_paths=PackedStringArray("barrel") instance=ExtResource("2_7a1se")]
@@ -30,13 +33,24 @@ position = Vector2(20, 0)
 barrel = NodePath("../../GUI/Barrel")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=518362314]
+position = Vector2(0, -26)
+
+[node name="envCol" type="CollisionShape2D" parent="." unique_id=587853246]
+position = Vector2(0, -26)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_3uyv8")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=839244909]
+position = Vector2(0, -26)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_3uyv8")
 
-[node name="envCol" type="CollisionShape2D" parent="." unique_id=587853246]
-shape = SubResource("RectangleShape2D_3uyv8")
+[node name="ShadowCircle" type="Sprite2D" parent="Icon" unique_id=1004351322]
+self_modulate = Color(1, 1, 1, 0.39215687)
+show_behind_parent = true
+position = Vector2(0, 64.99999)
+scale = Vector2(1.8874998, 1.8874998)
+texture = ExtResource("13_owvpp")
 
 [node name="Pause" type="CanvasLayer" parent="." unique_id=830675524]
 visible = false
@@ -52,9 +66,9 @@ position = Vector2(1199, 471)
 
 [node name="Label" type="Label" parent="." unique_id=902025439]
 offset_left = -21.0
-offset_top = -61.0
+offset_top = -78.0
 offset_right = 19.0
-offset_bottom = -38.0
+offset_bottom = -55.0
 text = "walk"
 
 [node name="StateMachine" type="Node" parent="." unique_id=728127998 node_paths=PackedStringArray("initial_state", "debug")]

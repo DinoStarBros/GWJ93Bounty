@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bgdkros4vb8bd"]
+
+[ext_resource type="Script" uid="uid://cxwj7cvqux3g2" path="res://Entities/Dummy/dummy.gd" id="1_eyjbo"]
+[ext_resource type="Texture2D" uid="uid://b4qycvmecdv0m" path="res://Art/planestuff/Dumby Plane1.png" id="2_jbpj8"]
+[ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="3_d80lx"]
+[ext_resource type="PackedScene" uid="uid://dxhp1awwxrui5" path="res://Components/HurtboxComponent/hurtbox_component.tscn" id="4_0rwem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d80lx"]
+size = Vector2(12, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwem"]
+size = Vector2(24, 33)
+
+[node name="Dummy" type="CharacterBody2D" unique_id=868512995]
+collision_layer = 0
+script = ExtResource("1_eyjbo")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=117739472]
+position = Vector2(0, -16)
+texture = ExtResource("2_jbpj8")
+
+[node name="ShadowCircle" type="Sprite2D" parent="sprite" unique_id=2040123192]
+self_modulate = Color(1, 1, 1, 0.62352943)
+show_behind_parent = true
+position = Vector2(0, 16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_d80lx")
+
+[node name="environmentCollision" type="CollisionShape2D" parent="." unique_id=339944064]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_d80lx")
+
+[node name="HurtboxComponent" parent="." unique_id=1051487275 instance=ExtResource("4_0rwem")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=11335508]
+position = Vector2(0, -16.5)
+shape = SubResource("RectangleShape2D_0rwem")
+debug_color = Color(1, 0.6, 0.69803923, 0.41960785)

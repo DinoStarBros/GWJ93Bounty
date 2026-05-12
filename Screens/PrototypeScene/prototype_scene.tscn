@@ -6,12 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bv8bo56pdk3uc" path="res://SuckableItems/SuckableItem/suckable_item.tscn" id="4_ad07v"]
 [ext_resource type="Resource" uid="uid://dmfu0bo3i1rif" path="res://SuckableItems/coin.tres" id="5_hfigh"]
 [ext_resource type="PackedScene" uid="uid://5lwpl4poglip" path="res://Components/ProjectilesParent/projectiles_parent.tscn" id="6_hfigh"]
+[ext_resource type="PackedScene" uid="uid://b2e6kor6gembg" path="res://Components/EntitiesParent/entities_parent.tscn" id="6_oo3t5"]
+[ext_resource type="PackedScene" uid="uid://bgdkros4vb8bd" path="res://Entities/Dummy/dummy.tscn" id="8_42n3h"]
 
 [node name="PrototypeScene" type="Node2D" unique_id=1085877338]
 script = ExtResource("1_r410d")
-
-[node name="Player" parent="." unique_id=950942093 instance=ExtResource("2_ch4ly")]
-z_index = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1439675461]
 z_index = -1
@@ -86,3 +85,17 @@ position = Vector2(608, -115)
 item_resource = ExtResource("5_hfigh")
 
 [node name="ProjectilesParent" parent="." unique_id=564160944 instance=ExtResource("6_hfigh")]
+
+[node name="EntitiesParent" parent="." unique_id=1540111594 instance=ExtResource("6_oo3t5")]
+
+[node name="Player" parent="EntitiesParent" unique_id=950942093 instance=ExtResource("2_ch4ly")]
+z_index = 1
+
+[node name="Dummy" parent="EntitiesParent" unique_id=868512995 instance=ExtResource("8_42n3h")]
+position = Vector2(182, -205)
+
+[node name="Dummy2" parent="EntitiesParent" unique_id=125191084 instance=ExtResource("8_42n3h")]
+position = Vector2(297, -219)
+
+[node name="Dummy3" parent="EntitiesParent" unique_id=1642857835 instance=ExtResource("8_42n3h")]
+position = Vector2(219, -250)

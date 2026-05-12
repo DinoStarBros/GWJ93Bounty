@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b2e6kor6gembg"]
+
+[ext_resource type="Script" uid="uid://q5pqjes6ya83" path="res://Components/EntitiesParent/entities_parent.gd" id="1_esgns"]
+
+[node name="EntitiesParent" type="Node2D" unique_id=1540111594]
+y_sort_enabled = true
+script = ExtResource("1_esgns")
