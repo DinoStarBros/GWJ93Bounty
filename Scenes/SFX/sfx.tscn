@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://pr0ervxmvahp"]
+
+[ext_resource type="Script" uid="uid://sosihjnahb5n" path="res://Scenes/SFX/sfx.gd" id="1_nesla"]
+
+[node name="SFX" type="AudioStreamPlayer" unique_id=616872265]
+script = ExtResource("1_nesla")
