@@ -47,11 +47,6 @@ shape = SubResource("RectangleShape2D_x01vu")
 position = Vector2(0, -157.50769)
 shape = SubResource("RectangleShape2D_n48dc")
 
-[node name="BarItemSpawn" type="Node2D" parent="Barellproto/walls/topWall" unique_id=896857522]
-unique_name_in_owner = true
-position = Vector2(0, 64)
-scale = Vector2(2, 0.61835754)
-
 [node name="SFX" type="Node" parent="." unique_id=2053164541]
 
 [node name="Pop" type="AudioStreamPlayer" parent="SFX" unique_id=826446725]
@@ -77,3 +72,6 @@ offset_left = -672.0
 offset_top = -318.0
 offset_right = -632.0
 offset_bottom = -295.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=554154698]
+position = Vector2(0, 104)
