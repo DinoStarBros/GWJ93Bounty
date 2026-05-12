@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func _area_entered(area: Area2D) -> void:
 	if area is HurtboxComponent:
+		attack.attack_pos = global_position
 		area.hurt(attack)
 		
 		if get_parent() is Projectile:

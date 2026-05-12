@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 			_spawn_suck_particle()
 
 func _spawn_suck_particle() -> void:
-	var suck_particle : SuckParticle = References.juices["suck_particle"].instantiate()
+	var suck_particle : SuckParticle = References.suck_particle_scn.instantiate()
 	
 	suck_particle.suck_speed = suck_speed
 	suck_particle.destination = global_position
