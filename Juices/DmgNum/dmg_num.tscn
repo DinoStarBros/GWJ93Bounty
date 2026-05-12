@@ -77,8 +77,8 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_34won"]
-font_size = 70
-outline_size = 15
+font_size = 30
+outline_size = 12
 outline_color = Color(0, 0, 0, 1)
 
 [node name="DmgNum" type="Node2D" unique_id=238088613]

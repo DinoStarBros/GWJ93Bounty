@@ -8,3 +8,5 @@ func _ready() -> void:
 
 func hurt(attack : Attack) -> void:
 	health_component.hurt(attack)
+	
+	Global.spawn_txt(roundi(attack.attack_damage), global_position)

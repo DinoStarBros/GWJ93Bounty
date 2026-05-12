@@ -33,8 +33,8 @@ func volume_handle() -> void:
 		linear_to_db(SaveLoad.settings.sfx_volume)
 	)
 
-func spawn_txt(text: String, global_pos: Vector2)->void: ## Spawns a splash text effect, can be used for damage numbers, or score
+func spawn_txt(text: Variant, global_pos: Vector2)->void: ## Spawns a splash text effect, can be used for damage numbers, or score
 	var txt : DmgNum = txt_scn.instantiate()
-	txt.text = text
+	txt.text = str(text)
 	txt.global_position = global_pos
 	projectiles_parent.add_child(txt)

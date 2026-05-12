@@ -2,8 +2,10 @@ extends Projectile
 class_name ProjectileItem
 
 @onready var sprite: Sprite2D = %Sprite2D
+@onready var hitbox_component: HitboxComponent = %HitboxComponent
 
 var item_resource : SuckableItemResource
+var damage : float = 10
 
 func _ready() -> void:
 	sprite.texture = item_resource.texture
@@ -12,6 +14,8 @@ func _ready() -> void:
 		func():
 			queue_free()
 	)
+	
+	hitbox_component.attack.attack_damage = damage
 
 func _physics_process(delta: float) -> void:
 	_move(delta)
