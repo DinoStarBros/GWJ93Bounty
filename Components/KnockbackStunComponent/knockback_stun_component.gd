@@ -15,5 +15,5 @@ func hurt(attack : Attack) -> void:
 		state_machine.change_state("Hurt")
 	
 	if allow_knockback:
-		var dir_to_atk : Vector2 = global_position.direction_to(attack.attack_pos)
-		parent.velocity = dir_to_atk * attack.knockback
+		var dir_to_atk : Vector2 = global_position.direction_to(Global.player.global_position)
+		parent.velocity = -dir_to_atk * attack.knockback

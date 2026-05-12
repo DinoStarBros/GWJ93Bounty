@@ -26,6 +26,6 @@ func hurt(attack : Attack) -> void:
 func _spawn_hitspark(attack: Attack) -> void:
 	var hitspark : Hitspark = References.hitspark_scn.instantiate()
 	hitspark.global_position = global_position
-	hitspark.look_at(attack.attack_pos)
+	hitspark.look_at(Global.player.global_position)
 	hitspark.rotation += PI
 	Global.projectiles_parent.add_child(hitspark)
