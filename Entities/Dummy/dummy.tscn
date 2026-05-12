@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://b4qycvmecdv0m" path="res://Art/planestuff/Dumby Plane1.png" id="2_jbpj8"]
 [ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="3_d80lx"]
 [ext_resource type="PackedScene" uid="uid://dxhp1awwxrui5" path="res://Components/HurtboxComponent/hurtbox_component.tscn" id="4_0rwem"]
+[ext_resource type="PackedScene" uid="uid://dt6w5v2fariq0" path="res://Components/HealthComponent/health_component.tscn" id="5_q1shn"]
+[ext_resource type="Script" uid="uid://cq31qgpvffhy8" path="res://StateMachineStuff/state_machine.gd" id="6_kruyw"]
+[ext_resource type="Script" uid="uid://uep5t5nll5u0" path="res://Entities/Dummy/idle.gd" id="7_kdv6e"]
+[ext_resource type="Script" uid="uid://tniawjy2npxl" path="res://Entities/Dummy/hurt.gd" id="8_wiym8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d80lx"]
 size = Vector2(12, 20)
@@ -13,6 +17,7 @@ size = Vector2(24, 33)
 
 [node name="Dummy" type="CharacterBody2D" unique_id=868512995]
 collision_layer = 0
+motion_mode = 1
 script = ExtResource("1_eyjbo")
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=117739472]
@@ -30,11 +35,32 @@ texture = ExtResource("3_d80lx")
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_d80lx")
 
-[node name="HurtboxComponent" parent="." unique_id=1051487275 instance=ExtResource("4_0rwem")]
+[node name="HurtboxComponent" parent="." unique_id=1051487275 node_paths=PackedStringArray("health_component") instance=ExtResource("4_0rwem")]
 collision_layer = 2
 collision_mask = 2
+health_component = NodePath("../HealthComponent")
 
 [node name="hurtbox" type="CollisionShape2D" parent="HurtboxComponent" unique_id=11335508]
 position = Vector2(0, -16.5)
 shape = SubResource("RectangleShape2D_0rwem")
 debug_color = Color(0.972549, 0, 0, 0.41960785)
+
+[node name="HealthComponent" parent="." unique_id=508275931 instance=ExtResource("5_q1shn")]
+
+[node name="Label" type="Label" parent="." unique_id=1564672984]
+offset_left = 9.0
+offset_top = -51.0
+offset_right = 74.0
+offset_bottom = -28.0
+text = "wadawd"
+
+[node name="StateMachine" type="Node" parent="." unique_id=1314690944 node_paths=PackedStringArray("initial_state", "debug")]
+script = ExtResource("6_kruyw")
+initial_state = NodePath("Idle")
+debug = NodePath("../Label")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=937833657]
+script = ExtResource("7_kdv6e")
+
+[node name="Hurt" type="Node" parent="StateMachine" unique_id=1268299996]
+script = ExtResource("8_wiym8")

@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bf8lij6bj0gpg" path="res://Entities/Chaser/chase.gd" id="4_wb51q"]
 
 [node name="Chaser" type="CharacterBody2D" unique_id=1570016088]
+motion_mode = 1
 script = ExtResource("1_3plm2")
 
 [node name="Enemies" type="Sprite2D" parent="." unique_id=1330226294]

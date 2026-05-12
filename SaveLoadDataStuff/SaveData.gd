@@ -7,3 +7,4 @@ class_name SaveDataResource
 @export var sfx_volume : float = 0.75
 
 @export var screen_shake : bool = true
+@export var frame_freeze : bool = true

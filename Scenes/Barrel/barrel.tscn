@@ -19,7 +19,7 @@ texture = ExtResource("1_hpg1d")
 [node name="Pop" type="AudioStreamPlayer" parent="SFX" unique_id=826446725]
 unique_name_in_owner = true
 stream = ExtResource("3_n48dc")
-volume_db = -5.0
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="Eject" type="AudioStreamPlayer" parent="SFX" unique_id=1740025567]
@@ -35,6 +35,7 @@ bus = &"SFX"
 
 [node name="debug" type="Label" parent="." unique_id=1094498501]
 unique_name_in_owner = true
+visible = false
 offset_left = -672.0
 offset_top = -318.0
 offset_right = -632.0

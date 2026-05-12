@@ -25,7 +25,7 @@ func save_settings_stuff() -> void: ## Saves only the data used in the settings 
 	SaveFileData.sfx_volume = settings.sfx_volume
 	
 	SaveFileData.screen_shake = settings.screen_shake_value
-
+	SaveFileData.frame_freeze = settings.frame_freeze_value
 	
 	_save()
 
@@ -37,7 +37,7 @@ func load_settings_stuff() -> void: ## Loads settings variables and data
 	settings.sfx_volume = SaveFileData.sfx_volume
 	
 	settings.screen_shake_value = SaveFileData.screen_shake
-
+	settings.frame_freeze_value = SaveFileData.frame_freeze
 
 func save_everything() -> void: ## Saves all the SaveFileData according to their current values in the game
 	save_settings_stuff()
