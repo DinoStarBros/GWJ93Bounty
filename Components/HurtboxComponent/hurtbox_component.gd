@@ -2,7 +2,8 @@ extends Area2D
 class_name HurtboxComponent
 
 @export var health_component : HealthComponent
-@onready var enemy_hurt_sfx: AudioStreamPlayer2D = %EnemyHurtSFX
+
+@onready var sfx_players: SFXPlayers = %SFXPlayers
 
 func _ready() -> void:
 	pass
@@ -14,7 +15,7 @@ func hurt(attack : Attack) -> void:
 	_spawn_hitspark(attack)
 	
 	if get_parent() is Enemy:
-		enemy_hurt_sfx.play()
+		sfx_players.play_enemy_hurt_sfx()
 	elif get_parent() is Player:
 		pass
 
