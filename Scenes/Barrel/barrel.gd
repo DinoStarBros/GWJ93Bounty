@@ -9,7 +9,7 @@ signal Eject(item: SuckableItemResource)
 var items : Array[SuckableItemResource]
 var barrel_items : Array[BarrelItem]
 var barrel_item_names : Array
-var max_item_amount : int = 7
+var max_item_amount : int = 8
 var barrel_items_amount : int:
 	set(value):
 		if barrel_items_amount == value: return
@@ -53,12 +53,13 @@ func update_barrel_items_positions() -> void:
 		ndex += 1
 		var mindex : int = min(ndex, max_item_amount-1)
 		var pos_y : float = 104 - (64 * mindex)
-		tween_vec2(
-			barrel_items[mindex],
-			"position",
-			Vector2(0, pos_y),
-			0.25
-			)
+		barrel_items[mindex].position.y = pos_y
+		#tween_vec2(
+			#barrel_items[mindex],
+			#"position",
+			#Vector2(0, pos_y),
+			#0.25
+			#)
 
 ## This function ejects the bottom most item of the barrel,
 ## shooting it backwards

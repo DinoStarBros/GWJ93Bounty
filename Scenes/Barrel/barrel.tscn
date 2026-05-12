@@ -6,46 +6,13 @@
 [ext_resource type="AudioStream" uid="uid://kwc1yjoylvhx" path="res://Audio/planesfx/realistic-shotgun-cocking-sound-38640.mp3" id="4_0h3mx"]
 [ext_resource type="AudioStream" uid="uid://bhpeunpkd55xc" path="res://Audio/planesfx/empty-gun-shot-6209.mp3" id="5_x01vu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h3mx"]
-size = Vector2(122, 257)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_opngn"]
-size = Vector2(150, 257)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x01vu"]
-size = Vector2(296, 30.694504)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n48dc"]
-size = Vector2(348, 67.015396)
-
 [node name="Barrel" type="Node2D" unique_id=536368689]
 script = ExtResource("1_opngn")
 
 [node name="Barellproto" type="Sprite2D" parent="." unique_id=837294187]
-position = Vector2(0, -90.5)
-scale = Vector2(1, 3.5546875)
+position = Vector2(0, -125.5)
+scale = Vector2(1, 4.101563)
 texture = ExtResource("1_hpg1d")
-
-[node name="walls" type="StaticBody2D" parent="Barellproto" unique_id=788860158]
-scale = Vector2(0.5, 0.5)
-collision_layer = 64
-collision_mask = 64
-
-[node name="leftWall" type="CollisionShape2D" parent="Barellproto/walls" unique_id=1201163870]
-position = Vector2(-123, 0.5)
-shape = SubResource("RectangleShape2D_0h3mx")
-
-[node name="rightWall" type="CollisionShape2D" parent="Barellproto/walls" unique_id=1531622847]
-position = Vector2(137, 0.5)
-shape = SubResource("RectangleShape2D_opngn")
-
-[node name="bottomWall" type="CollisionShape2D" parent="Barellproto/walls" unique_id=484921689]
-position = Vector2(0, 141.34726)
-shape = SubResource("RectangleShape2D_x01vu")
-
-[node name="topWall" type="CollisionShape2D" parent="Barellproto/walls" unique_id=1920283808]
-position = Vector2(0, -157.50769)
-shape = SubResource("RectangleShape2D_n48dc")
 
 [node name="SFX" type="Node" parent="." unique_id=2053164541]
 
