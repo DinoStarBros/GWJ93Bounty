@@ -26,3 +26,5 @@ func spawn_nail(pos: Vector2) -> void:
 	spawn_item(preload("res://SuckableItems/SuckableItemResources/nail.tres"), pos)
 func spawn_buckshot(pos: Vector2) -> void:
 	spawn_item(preload("res://SuckableItems/SuckableItemResources/buckshot.tres"), pos)
+func spawn_rubberball(pos: Vector2) -> void:
+	spawn_item(preload("res://SuckableItems/SuckableItemResources/rubberBall.tres"), pos)

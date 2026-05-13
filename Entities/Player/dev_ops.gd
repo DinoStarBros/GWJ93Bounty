@@ -40,4 +40,7 @@ func _process(delta: float) -> void:
 	6:[%sBuckshot,
 		func(): ip.spawn_buckshot(p.global_position)
 	],
+	7:[%sRubberBall,
+		func(): ip.spawn_rubberball(p.global_position)
+	],
 }

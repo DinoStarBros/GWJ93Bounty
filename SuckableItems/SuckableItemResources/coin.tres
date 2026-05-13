@@ -13,6 +13,7 @@ item_size = 0.9
 damage = 20.0
 speed = 1000.0
 pierce = 2
+hits = 2
 sfx = ExtResource("2_whuch")
 sfx_volume = -5.0
 sfx_start = 0.04

@@ -14,6 +14,7 @@ speed = 1000.0
 knockback = 200.0
 pierce = 7
 stun_duration = 0.2
+hits = 5
 sfx = ExtResource("2_too58")
 sfx_volume = 5.0
 sfx_pitch = 1.5
