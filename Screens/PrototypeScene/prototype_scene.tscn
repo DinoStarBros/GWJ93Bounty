@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dbcb4oiuu5rbc" path="res://Entities/Player/player.tscn" id="2_ch4ly"]
 [ext_resource type="PackedScene" uid="uid://c3b7jy130b6q6" path="res://Components/ItemsParent/items_parent.tscn" id="3_51ib3"]
 [ext_resource type="TileSet" uid="uid://hh56oj5oxojy" path="res://topdown_tiles.tres" id="3_mcb6p"]
-[ext_resource type="PackedScene" uid="uid://bv8bo56pdk3uc" path="res://SuckableItems/SuckableItem/suckable_item.tscn" id="4_ad07v"]
-[ext_resource type="Resource" uid="uid://dmfu0bo3i1rif" path="res://SuckableItems/SuckableItemResources/coin.tres" id="5_hfigh"]
 [ext_resource type="PackedScene" uid="uid://5lwpl4poglip" path="res://Components/ProjectilesParent/projectiles_parent.tscn" id="6_hfigh"]
 [ext_resource type="PackedScene" uid="uid://b2e6kor6gembg" path="res://Components/EntitiesParent/entities_parent.tscn" id="6_oo3t5"]
 [ext_resource type="PackedScene" uid="uid://bgdkros4vb8bd" path="res://Entities/Dummy/dummy.tscn" id="8_42n3h"]
@@ -20,70 +18,6 @@ tile_map_data = PackedByteArray("AADM/+P/AAABAAMAAADM/+T/AAABAAMAAADM/+X/AAABAAI
 tile_set = ExtResource("3_mcb6p")
 
 [node name="ItemsParent" parent="." unique_id=2025158366 instance=ExtResource("3_51ib3")]
-
-[node name="SuckableItem" parent="ItemsParent" unique_id=1053779839 instance=ExtResource("4_ad07v")]
-position = Vector2(571, -130)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem2" parent="ItemsParent" unique_id=1848726239 instance=ExtResource("4_ad07v")]
-position = Vector2(601, -74)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem3" parent="ItemsParent" unique_id=612418218 instance=ExtResource("4_ad07v")]
-position = Vector2(672, -125)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem4" parent="ItemsParent" unique_id=71587999 instance=ExtResource("4_ad07v")]
-position = Vector2(608, -164)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem5" parent="ItemsParent" unique_id=1121873308 instance=ExtResource("4_ad07v")]
-position = Vector2(579, -205)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem6" parent="ItemsParent" unique_id=338873670 instance=ExtResource("4_ad07v")]
-position = Vector2(527, -167)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem7" parent="ItemsParent" unique_id=463147358 instance=ExtResource("4_ad07v")]
-position = Vector2(563, -109)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem8" parent="ItemsParent" unique_id=1332694244 instance=ExtResource("4_ad07v")]
-position = Vector2(563, -109)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem9" parent="ItemsParent" unique_id=275810390 instance=ExtResource("4_ad07v")]
-position = Vector2(790, -167)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem10" parent="ItemsParent" unique_id=1565506708 instance=ExtResource("4_ad07v")]
-position = Vector2(790, -167)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem11" parent="ItemsParent" unique_id=1222287655 instance=ExtResource("4_ad07v")]
-position = Vector2(790, -167)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem12" parent="ItemsParent" unique_id=536056811 instance=ExtResource("4_ad07v")]
-position = Vector2(790, -167)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem13" parent="ItemsParent" unique_id=82480791 instance=ExtResource("4_ad07v")]
-position = Vector2(739, -194)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem14" parent="ItemsParent" unique_id=732209299 instance=ExtResource("4_ad07v")]
-position = Vector2(640, -189)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem15" parent="ItemsParent" unique_id=500868897 instance=ExtResource("4_ad07v")]
-position = Vector2(672, -232)
-item_resource = ExtResource("5_hfigh")
-
-[node name="SuckableItem16" parent="ItemsParent" unique_id=1634158781 instance=ExtResource("4_ad07v")]
-position = Vector2(608, -115)
-item_resource = ExtResource("5_hfigh")
 
 [node name="ProjectilesParent" parent="." unique_id=564160944 instance=ExtResource("6_hfigh")]
 

@@ -5,9 +5,11 @@
 
 [resource]
 script = ExtResource("1_hetkk")
-item_name = "Coin"
+item_name = "Grapeshot"
 texture = ExtResource("2_f3o0i")
-color = Color(1, 1, 0, 1)
-damage = 20.0
-pierce = 2
+color = Color(1, 0.34821656, 0.9077022, 1)
+damage = 3.0
+speed = 600.0
+spread = 2.0
+projectile_amnt = 4
 metadata/_custom_type_script = "uid://d0c24a4ceihuw"

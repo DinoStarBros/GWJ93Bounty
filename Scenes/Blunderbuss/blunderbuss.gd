@@ -36,13 +36,15 @@ func _input(event: InputEvent) -> void:
 func barrel_shoot(item: SuckableItemResource) -> void:
 	for projectile in item.projectile_amnt:
 		_spawn_projectile_item(item, 1)
+	
 	other_stuff_handler.play_shoot_sfx()
 	Global.camera.screen_shake(5, 0.1)
 
 func barrel_eject(item: SuckableItemResource) -> void:
-	Global.camera.screen_shake(2, 0.1)
 	for projectile in item.projectile_amnt:
 		_spawn_projectile_item(item, -1)
+	
+	Global.camera.screen_shake(2, 0.1)
 
 ## Direction = 1, go forward. Direction = -1, go backward
 func _spawn_projectile_item(item: SuckableItemResource, direction: int) -> void:

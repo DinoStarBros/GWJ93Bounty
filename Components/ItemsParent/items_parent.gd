@@ -13,4 +13,10 @@ func spawn_item(
 	
 	var suckable_item : SuckableItem = suckable_item_scn.instantiate()
 	suckable_item.global_position = pos
+	suckable_item.item_resource = item_resource
 	add_child(suckable_item)
+
+func spawn_coin(pos: Vector2) -> void:
+	spawn_item(preload("res://SuckableItems/SuckableItemResources/coin.tres"), pos)
+func spawn_grapeshot(pos: Vector2) -> void:
+	spawn_item(preload("res://SuckableItems/SuckableItemResources/grapeshot.tres"), pos)

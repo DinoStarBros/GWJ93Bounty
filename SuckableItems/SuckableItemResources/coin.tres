@@ -9,5 +9,6 @@ item_name = "Coin"
 texture = ExtResource("2_03h8d")
 color = Color(1, 1, 0, 1)
 damage = 20.0
+speed = 1000.0
 pierce = 2
 metadata/_custom_type_script = "uid://d0c24a4ceihuw"
