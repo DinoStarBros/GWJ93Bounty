@@ -42,8 +42,9 @@ func _process(delta: float) -> void:
 	
 	if barrel_items_amount > max_item_amount:
 		eject()
+
+func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Shoot"):
-	#if Input.is_action_pressed("Shoot"):
 		shoot()
 	if Input.is_action_just_pressed("Eject"):
 		eject()

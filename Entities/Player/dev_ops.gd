@@ -4,19 +4,24 @@ class_name DevOps
 @export var p : Player
 
 var ip : ItemsParent
+var ep : EntitiesParent
 
 func _ready() -> void:
+	await get_tree().process_frame
 	ip = Global.items_parent
+	ep = Global.entities_parent
 	
-	for n in button_and_level.values(): if n[0] is Button:
+	for n in spawn_buttons.values(): if n[0] is Button:
 		n[0].pressed.connect(n[1])
+	
+	visible = OS.is_debug_build()
 
 func _process(delta: float) -> void:
 	if !OS.is_debug_build(): return
 	if Input.is_action_just_pressed("Devops"):
 		visible = !visible
 
-@onready var button_and_level : Dictionary = {
+@onready var spawn_buttons : Dictionary = {
 	1:[
 		%sCoin,
 		func(): ip.spawn_coin(p.global_position)
@@ -24,5 +29,9 @@ func _process(delta: float) -> void:
 	2:[
 		%sGrapeshot,
 		func(): ip.spawn_grapeshot(p.global_position)
+	],
+	3:[
+		%sDummy,
+		func(): ep.spawn_dummy(p.global_position)
 	],
 }

@@ -5,6 +5,7 @@ class_name SuckableItemResource
 @export var texture : Texture
 @export var color : Color
 @export var item_size : float = 1 ## Scale for the X and Y, applies to the suckable & the projectile
+@export var sfx : AudioStream
 
 @export_category("Projectile Stats")
 @export var damage : float = 10

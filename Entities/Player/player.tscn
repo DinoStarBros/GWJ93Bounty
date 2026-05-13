@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://d314fuml6xowm" path="res://Entities/Player/PlrStates/walk.gd" id="6_4wf4l"]
 [ext_resource type="PackedScene" uid="uid://c6a7j2y4xhkik" path="res://Scenes/Barrel/barrel.tscn" id="8_x1y6q"]
 [ext_resource type="Script" uid="uid://bgy23cx50o0vj" path="res://Entities/Player/PlrStates/dash.gd" id="11_ap3xn"]
-[ext_resource type="Script" uid="uid://bnnpasuaxaxub" path="res://Entities/Player/dev_ops.gd" id="11_vskfa"]
+[ext_resource type="PackedScene" uid="uid://dgsowvw3lvkgo" path="res://Panels/DevOps/dev_ops.tscn" id="11_vskfa"]
 [ext_resource type="AudioStream" uid="uid://nj64nd85rtql" path="res://Audio/splashtownSFX/Airdash.wav" id="12_iplt1"]
 [ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="13_owvpp"]
 [ext_resource type="PackedScene" uid="uid://dxhp1awwxrui5" path="res://Components/HurtboxComponent/hurtbox_component.tscn" id="15_nhbkt"]
@@ -25,6 +25,7 @@ size = Vector2(40, 40)
 size = Vector2(36, 48)
 
 [node name="Player" type="CharacterBody2D" unique_id=950942093]
+collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_mv1ah")
 move_speed = 400.0
@@ -98,28 +99,8 @@ script = ExtResource("5_01a4e")
 [node name="Barrel" parent="GUI" unique_id=536368689 instance=ExtResource("8_x1y6q")]
 position = Vector2(1237, 459)
 
-[node name="DevOps" type="CanvasLayer" parent="." unique_id=248093244 node_paths=PackedStringArray("p")]
-script = ExtResource("11_vskfa")
+[node name="DevOps" parent="." unique_id=1137223944 node_paths=PackedStringArray("p") instance=ExtResource("11_vskfa")]
 p = NodePath("..")
-
-[node name="spawnSSI" type="GridContainer" parent="DevOps" unique_id=962642897]
-offset_right = 226.0
-offset_bottom = 40.0
-columns = 10
-
-[node name="Label" type="Label" parent="DevOps/spawnSSI" unique_id=1170178655]
-layout_mode = 2
-text = "Spawning Shootable Suckable Items"
-
-[node name="sCoin" type="Button" parent="DevOps/spawnSSI" unique_id=1921811801]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Coin"
-
-[node name="sGrapeshot" type="Button" parent="DevOps/spawnSSI" unique_id=1527139265]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Grapeshot"
 
 [node name="Label" type="Label" parent="." unique_id=902025439]
 offset_left = -21.0

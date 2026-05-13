@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dgsowvw3lvkgo"]
+
+[ext_resource type="Script" uid="uid://bnnpasuaxaxub" path="res://Entities/Player/dev_ops.gd" id="1_h5k6c"]
+
+[node name="DevOps" type="CanvasLayer" unique_id=1137223944]
+script = ExtResource("1_h5k6c")
+
+[node name="vbox" type="VBoxContainer" parent="." unique_id=2104019085]
+offset_right = 272.0
+offset_bottom = 109.0
+
+[node name="spawnSSI" type="GridContainer" parent="vbox" unique_id=861327512]
+layout_mode = 2
+columns = 10
+
+[node name="Label" type="Label" parent="vbox/spawnSSI" unique_id=600763609]
+layout_mode = 2
+text = "Spawning Items"
+
+[node name="sCoin" type="Button" parent="vbox/spawnSSI" unique_id=896843908]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Coin"
+
+[node name="sGrapeshot" type="Button" parent="vbox/spawnSSI" unique_id=1421500385]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Grapeshot"
+
+[node name="GridContainer" type="GridContainer" parent="vbox" unique_id=515132337]
+layout_mode = 2
+columns = 10
+
+[node name="Label" type="Label" parent="vbox/GridContainer" unique_id=409398411]
+layout_mode = 2
+text = "Spawning Enemies"
+
+[node name="sDummy" type="Button" parent="vbox/GridContainer" unique_id=394124994]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dummy"
