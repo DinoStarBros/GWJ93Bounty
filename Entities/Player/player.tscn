@@ -59,10 +59,36 @@ scale = Vector2(1.8874998, 1.8874998)
 texture = ExtResource("13_owvpp")
 
 [node name="Pause" type="CanvasLayer" parent="." unique_id=830675524]
-visible = false
+process_mode = 3
 script = ExtResource("3_lu8i8")
 
 [node name="settingsMenu" parent="Pause" unique_id=68845947 instance=ExtResource("4_tekja")]
+unique_name_in_owner = true
+
+[node name="buttons" type="HBoxContainer" parent="Pause/settingsMenu" unique_id=2015124008]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 632.0
+offset_right = 440.0
+offset_bottom = 681.0
+
+[node name="resume" type="Button" parent="Pause/settingsMenu/buttons" unique_id=52279736]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Resume"
+
+[node name="quit" type="Button" parent="Pause/settingsMenu/buttons" unique_id=64924378]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="sure" type="Button" parent="Pause/settingsMenu/buttons" unique_id=899196123]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sure"
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=191320254]
 script = ExtResource("5_01a4e")

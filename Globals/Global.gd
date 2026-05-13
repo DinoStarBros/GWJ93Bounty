@@ -1,5 +1,11 @@
 extends Node
 
+enum game_states {
+	NORMAL,
+	
+}
+
+var current_game_state : game_states
 var projectiles_parent : ProjectilesParent
 var player : Player
 var blunderbuss : Blunderbuss

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SuckableItemResource" format=3 uid="uid://db2sil0t0pets"]
+
+[ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="1_hetkk"]
+[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_f3o0i"]
+
+[resource]
+script = ExtResource("1_hetkk")
+item_name = "Coin"
+texture = ExtResource("2_f3o0i")
+color = Color(1, 1, 0, 1)
+damage = 20.0
+pierce = 2
+metadata/_custom_type_script = "uid://d0c24a4ceihuw"
