@@ -30,9 +30,10 @@ grow_horizontal = 2
 [node name="Tabs" type="TabContainer" parent="PanelContainer" unique_id=917003247]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-current_tab = 0
+current_tab = 1
 
 [node name="Audio" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=1785194851]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -73,7 +74,6 @@ step = 0.15
 tick_count = 11
 
 [node name="Accessiblity" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=1868874210]
-visible = false
 layout_mode = 2
 alignment = 1
 metadata/_tab_index = 1
@@ -84,6 +84,17 @@ text = "Screen Shake:"
 label_settings = SubResource("LabelSettings_pbt7f")
 
 [node name="screen_shake" type="Button" parent="PanelContainer/Tabs/Accessiblity" unique_id=1664901648]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "On"
+
+[node name="txt5" type="Label" parent="PanelContainer/Tabs/Accessiblity" unique_id=77934593]
+layout_mode = 2
+text = "Frame Freeze:"
+label_settings = SubResource("LabelSettings_pbt7f")
+
+[node name="frame_freeze" type="Button" parent="PanelContainer/Tabs/Accessiblity" unique_id=647828194]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -137,3 +148,4 @@ offset_bottom = 594.0
 [connection signal="value_changed" from="PanelContainer/Tabs/Audio/music_volume" to="." method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="PanelContainer/Tabs/Audio/sfx_volume" to="." method="_on_sfx_vol_value_changed"]
 [connection signal="pressed" from="PanelContainer/Tabs/Accessiblity/screen_shake" to="." method="_on_screen_shake_pressed"]
+[connection signal="pressed" from="PanelContainer/Tabs/Accessiblity/frame_freeze" to="." method="_on_frame_freeze_pressed"]
