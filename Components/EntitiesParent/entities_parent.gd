@@ -5,7 +5,6 @@ const dummy_scn : PackedScene = preload("res://Entities/Dummy/dummy.tscn")
 
 func _ready() -> void:
 	Global.entities_parent = self
-	print(Global.entities_parent)
 
 func spawn_enemy(
 	enemy_scn : PackedScene,

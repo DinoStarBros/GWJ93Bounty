@@ -10,9 +10,10 @@ radius = 13.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_0kfd0"]
 radius = 11.045361
 
-[node name="SuckableItem" type="Node2D" unique_id=1053779839]
+[node name="SuckableItem" type="Node2D" unique_id=1053779839 node_paths=PackedStringArray("debug")]
 z_index = 1
 script = ExtResource("1_ayb7p")
+debug = NodePath("debug")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1138692371]
 unique_name_in_owner = true
@@ -43,3 +44,10 @@ collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SuckPickupArea" unique_id=72287564]
 shape = SubResource("CircleShape2D_0kfd0")
+
+[node name="debug" type="Label" parent="." unique_id=100306439]
+offset_left = -11.0
+offset_top = -30.0
+offset_right = 10.0
+offset_bottom = -13.0
+text = "Coin"

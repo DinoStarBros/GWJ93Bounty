@@ -22,16 +22,16 @@ func _process(delta: float) -> void:
 		visible = !visible
 
 @onready var spawn_buttons : Dictionary = {
-	1:[
-		%sCoin,
+	1:[%sCoin,
 		func(): ip.spawn_coin(p.global_position)
 	],
-	2:[
-		%sGrapeshot,
+	2:[%sGrapeshot,
 		func(): ip.spawn_grapeshot(p.global_position)
 	],
-	3:[
-		%sDummy,
+	3:[%sDummy,
 		func(): ep.spawn_dummy(p.global_position)
+	],
+	4:[%sHeavyBall,
+		func(): ip.spawn_heavyball(p.global_position)
 	],
 }

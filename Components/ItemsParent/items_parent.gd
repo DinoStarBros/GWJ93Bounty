@@ -20,3 +20,5 @@ func spawn_coin(pos: Vector2) -> void:
 	spawn_item(preload("res://SuckableItems/SuckableItemResources/coin.tres"), pos)
 func spawn_grapeshot(pos: Vector2) -> void:
 	spawn_item(preload("res://SuckableItems/SuckableItemResources/grapeshot.tres"), pos)
+func spawn_heavyball(pos: Vector2) -> void:
+	spawn_item(preload("res://SuckableItems/SuckableItemResources/heavyBall.tres"), pos)

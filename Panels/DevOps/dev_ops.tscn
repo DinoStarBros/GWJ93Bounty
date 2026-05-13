@@ -27,6 +27,11 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Grapeshot"
 
+[node name="sHeavyBall" type="Button" parent="vbox/spawnSSI" unique_id=1297464906]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Heavyball"
+
 [node name="GridContainer" type="GridContainer" parent="vbox" unique_id=515132337]
 layout_mode = 2
 columns = 10

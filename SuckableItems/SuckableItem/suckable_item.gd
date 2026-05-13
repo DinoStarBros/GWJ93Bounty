@@ -3,6 +3,7 @@ extends Node2D
 class_name SuckableItem
 
 @export var item_resource : SuckableItemResource
+@export var debug : Label
 
 @onready var sprite: Sprite2D = %Sprite
 
@@ -22,6 +23,9 @@ func _ready() -> void:
 	sprite.self_modulate = item_resource.color
 	scale.x = item_resource.item_size
 	scale.y = item_resource.item_size
+	
+	debug.text = str(item_resource.item_name)
+	debug.visible = OS.is_debug_build()
 
 func _suck_area_entered(area:Area2D) -> void:
 	is_go_to_suck = true
