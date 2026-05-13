@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SuckableItemResource" format=3 uid="uid://6ydrijokqwdi"]
+
+[ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="1_u82ix"]
+[ext_resource type="AudioStream" uid="uid://cd0ouhgvmyarl" path="res://Audio/BananTime/floraphonic-spin-whoosh-1-186596.mp3" id="2_4rq84"]
+[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="3_a635w"]
+
+[resource]
+script = ExtResource("1_u82ix")
+item_name = "Food"
+texture = ExtResource("3_a635w")
+color = Color(0.8666667, 0.7607843, 0.32156864, 1)
+item_size = 1.2
+speed = 500.0
+knockback = -300.0
+stun_duration = 2.0
+sfx = ExtResource("2_4rq84")
+sfx_volume = 5.0
+sfx_pitch = 2.0
+sfx_start = 5.0
+metadata/_custom_type_script = "uid://d0c24a4ceihuw"
