@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SuckableItemResource" format=3 uid="uid://6ivn68qpjlq1"]
+
+[ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="1_okvux"]
+[ext_resource type="PackedScene" uid="uid://cx6ems245lrsp" path="res://Projectiles/Explosion/explosion.tscn" id="1_sqli2"]
+[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_sqli2"]
+[ext_resource type="AudioStream" uid="uid://cbtaxgcraoi8a" path="res://Audio/BussSFX/freesound_community-grenade-launcher-106342.mp3" id="3_g2ha4"]
+
+[resource]
+script = ExtResource("1_okvux")
+item_name = "Bomb"
+texture = ExtResource("2_sqli2")
+speed = 500.0
+knockback = 400.0
+stun_duration = 0.7
+spread = 0.1
+sfx = ExtResource("3_g2ha4")
+sfx_volume = -5.0
+sfx_start = 0.03
+on_hit_scn = ExtResource("1_sqli2")
+metadata/_custom_type_script = "uid://d0c24a4ceihuw"

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cx6ems245lrsp"]
+
+[ext_resource type="Script" uid="uid://dlipoeegnf5nq" path="res://Projectiles/Explosion/explosion.gd" id="1_hytud"]
+[ext_resource type="Texture2D" uid="uid://cb00doqsxr2ay" path="res://Art/Stuff2/shockwave-Sheet.png" id="2_fpanp"]
+[ext_resource type="AudioStream" uid="uid://hbjph6hq0fu3" path="res://Audio/jetslash sfx/Roblox Explosion Sound Effect.wav" id="3_6to8u"]
+[ext_resource type="PackedScene" uid="uid://rqxyqn8cdxay" path="res://Components/HitboxComponent/hitbox_component.tscn" id="4_88x6f"]
+
+[sub_resource type="Animation" id="Animation_6to8u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShockwaveSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_fpanp"]
+resource_name = "awdw"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShockwaveSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6to8u"]
+_data = {
+&"RESET": SubResource("Animation_6to8u"),
+&"awdw": SubResource("Animation_fpanp")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_88x6f"]
+radius = 134.00374
+
+[node name="Explosion" type="Node2D" unique_id=1000408656]
+script = ExtResource("1_hytud")
+
+[node name="ShockwaveSheet" type="Sprite2D" parent="." unique_id=518035067]
+scale = Vector2(2, 2)
+texture = ExtResource("2_fpanp")
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="start" type="AnimationPlayer" parent="." unique_id=500620309]
+libraries/ = SubResource("AnimationLibrary_6to8u")
+autoplay = &"awdw"
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="." unique_id=743607534]
+unique_name_in_owner = true
+stream = ExtResource("3_6to8u")
+volume_db = -5.0
+autoplay = true
+bus = &"SFX"
+
+[node name="HitboxComponent" parent="." unique_id=2110612510 instance=ExtResource("4_88x6f")]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=2061491190]
+shape = SubResource("CircleShape2D_88x6f")

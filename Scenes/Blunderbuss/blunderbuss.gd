@@ -22,7 +22,7 @@ var sucking : bool = false:
 		if sucking: vacloop_desire_pitch = 4
 		else: vacloop_desire_pitch = 0.01
 
-const projectile_item_scn : PackedScene = preload("res://SuckableItems/ProjectileItem/projectile_item.tscn")
+const projectile_item_scn : PackedScene = preload("res://Projectiles/ProjectileItem/projectile_item.tscn")
 
 func _ready() -> void:
 	barrel.Shoot.connect(barrel_shoot)

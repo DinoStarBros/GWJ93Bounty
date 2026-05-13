@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://b2nifampjo2wn"]
 
-[ext_resource type="Script" uid="uid://dcf3tdj2ibkn3" path="res://SuckableItems/ProjectileItem/projectile_item.gd" id="1_71xem"]
+[ext_resource type="Script" uid="uid://dcf3tdj2ibkn3" path="res://Projectiles/ProjectileItem/projectile_item.gd" id="1_71xem"]
 [ext_resource type="PackedScene" uid="uid://rqxyqn8cdxay" path="res://Components/HitboxComponent/hitbox_component.tscn" id="2_o5hxy"]
 [ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_uqlii"]
 [ext_resource type="PackedScene" uid="uid://dvacsacbt26k6" path="res://Components/ProjectileBounceComponent/projectile_bounce_component.tscn" id="4_y3b5o"]
+[ext_resource type="PackedScene" uid="uid://3d7dwx3vu57" path="res://Components/ProjectileOnHitFXComponent/projectile_on_hit_fx_component.tscn" id="5_lxnbp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uqlii"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y3b5o"]
 radius = 500.0
 
-[node name="ProjectileItem" type="Node2D" unique_id=1577787778 node_paths=PackedStringArray("projectile_bounce_component")]
+[node name="ProjectileItem" type="Node2D" unique_id=1577787778]
 script = ExtResource("1_71xem")
-projectile_bounce_component = NodePath("ProjectileBounceComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1827822540]
 unique_name_in_owner = true
@@ -25,10 +25,13 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="HitboxComponent" parent="." unique_id=2110612510 instance=ExtResource("2_o5hxy")]
+[node name="HitboxComponent" parent="." unique_id=2110612510 node_paths=PackedStringArray("parent_projectile", "projectile_bounce_component", "projectile_on_hit_fx_component") instance=ExtResource("2_o5hxy")]
 unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 2
+parent_projectile = NodePath("..")
+projectile_bounce_component = NodePath("../ProjectileBounceComponent")
+projectile_on_hit_fx_component = NodePath("../ProjectileOnHitFXComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=2082587456]
 shape = SubResource("CircleShape2D_uqlii")
@@ -39,3 +42,7 @@ projectile = NodePath("..")
 [node name="radius" type="CollisionShape2D" parent="ProjectileBounceComponent" unique_id=1749305718]
 shape = SubResource("CircleShape2D_y3b5o")
 debug_color = Color(0.9064189, 0.3020713, 0, 0)
+
+[node name="ProjectileOnHitFXComponent" parent="." unique_id=1719943216 node_paths=PackedStringArray("projectile") instance=ExtResource("5_lxnbp")]
+unique_name_in_owner = true
+projectile = NodePath("..")

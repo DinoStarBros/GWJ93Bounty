@@ -47,6 +47,11 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Rubber Ball"
 
+[node name="sBomb" type="Button" parent="vbox/spawnSSI" unique_id=514770923]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Bomb"
+
 [node name="GridContainer" type="GridContainer" parent="vbox" unique_id=515132337]
 layout_mode = 2
 columns = 10

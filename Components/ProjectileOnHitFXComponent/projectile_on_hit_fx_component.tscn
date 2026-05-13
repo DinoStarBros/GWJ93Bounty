@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://3d7dwx3vu57"]
+
+[ext_resource type="Script" uid="uid://43tc4lpmy52b" path="res://Components/ProjectileOnHitFXComponent/projectile_on_hit_fx_component.gd" id="1_t3dxi"]
+
+[node name="ProjectileOnHitFXComponent" type="Node2D" unique_id=1719943216]
+script = ExtResource("1_t3dxi")

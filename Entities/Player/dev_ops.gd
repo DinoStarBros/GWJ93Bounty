@@ -43,4 +43,7 @@ func _process(delta: float) -> void:
 	7:[%sRubberBall,
 		func(): ip.spawn_rubberball(p.global_position)
 	],
+	8:[%sBomb,
+		func(): ip.spawn_bomb(p.global_position)
+	],
 }
