@@ -6,12 +6,13 @@
 [ext_resource type="Script" uid="uid://b230bd85ma31m" path="res://Entities/Player/blunderbuss_pivot.gd" id="2_lub02"]
 [ext_resource type="Script" uid="uid://ckie5yb7vinvr" path="res://Entities/Player/pause.gd" id="3_lu8i8"]
 [ext_resource type="Script" uid="uid://bcchtmkysami4" path="res://Entities/Player/camera.gd" id="4_nhbkt"]
-[ext_resource type="PackedScene" uid="uid://bqrd0srtdaksn" path="res://SettingsMenu/settings_menu.tscn" id="4_tekja"]
+[ext_resource type="PackedScene" uid="uid://bqrd0srtdaksn" path="res://Panels/SettingsMenu/settings_menu.tscn" id="4_tekja"]
 [ext_resource type="Script" uid="uid://bmw1g77w8quh3" path="res://Entities/Player/gui.gd" id="5_01a4e"]
 [ext_resource type="Script" uid="uid://cq31qgpvffhy8" path="res://StateMachineStuff/state_machine.gd" id="5_5c2io"]
 [ext_resource type="Script" uid="uid://d314fuml6xowm" path="res://Entities/Player/PlrStates/walk.gd" id="6_4wf4l"]
 [ext_resource type="PackedScene" uid="uid://c6a7j2y4xhkik" path="res://Scenes/Barrel/barrel.tscn" id="8_x1y6q"]
 [ext_resource type="Script" uid="uid://bgy23cx50o0vj" path="res://Entities/Player/PlrStates/dash.gd" id="11_ap3xn"]
+[ext_resource type="Script" uid="uid://bnnpasuaxaxub" path="res://Entities/Player/dev_ops.gd" id="11_vskfa"]
 [ext_resource type="AudioStream" uid="uid://nj64nd85rtql" path="res://Audio/splashtownSFX/Airdash.wav" id="12_iplt1"]
 [ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="13_owvpp"]
 [ext_resource type="PackedScene" uid="uid://dxhp1awwxrui5" path="res://Components/HurtboxComponent/hurtbox_component.tscn" id="15_nhbkt"]
@@ -60,6 +61,7 @@ texture = ExtResource("13_owvpp")
 
 [node name="Pause" type="CanvasLayer" parent="." unique_id=830675524]
 process_mode = 3
+visible = false
 script = ExtResource("3_lu8i8")
 
 [node name="settingsMenu" parent="Pause" unique_id=68845947 instance=ExtResource("4_tekja")]
@@ -95,6 +97,33 @@ script = ExtResource("5_01a4e")
 
 [node name="Barrel" parent="GUI" unique_id=536368689 instance=ExtResource("8_x1y6q")]
 position = Vector2(1237, 459)
+
+[node name="DevOps" type="CanvasLayer" parent="." unique_id=248093244 node_paths=PackedStringArray("p")]
+script = ExtResource("11_vskfa")
+p = NodePath("..")
+
+[node name="spawnSSI" type="GridContainer" parent="DevOps" unique_id=962642897]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -20.0
+offset_right = 96.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 10
+
+[node name="Label" type="Label" parent="DevOps/spawnSSI" unique_id=1170178655]
+layout_mode = 2
+text = "Spawning Shootable Suckable Items"
+
+[node name="spawnCoin" type="Button" parent="DevOps/spawnSSI" unique_id=1921811801]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Coin"
 
 [node name="Label" type="Label" parent="." unique_id=902025439]
 offset_left = -21.0

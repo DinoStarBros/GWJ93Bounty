@@ -13,6 +13,7 @@ var blunderbuss_gun_tip : Marker2D
 var barrel : Barrel
 var entities_parent : EntitiesParent
 var camera : Camera
+var items_parent : ItemsParent
 
 const txt_scn : PackedScene = preload("res://Juices/DmgNum/dmg_num.tscn")
 

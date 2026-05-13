@@ -45,7 +45,12 @@ func _load()->void: ## Loads the settings stuff
 		screen_shake.text = str("On")
 	else:
 		screen_shake.text = str("Off")
-
+	
+	if SaveLoad.settings.frame_freeze_value:
+		frame_freeze.text = str("On")
+	else:
+		frame_freeze.text = str("Off")
+	
 func _on_reset_pressed()->void:
 	SaveLoad._reset_save_file()
 	SaveLoad._load()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bqrd0srtdaksn"]
 
-[ext_resource type="Script" uid="uid://bwvd8mbe7g6h8" path="res://SettingsMenu/settings_menu.gd" id="1_pbt7f"]
+[ext_resource type="Script" uid="uid://bwvd8mbe7g6h8" path="res://Panels/SettingsMenu/settings_menu.gd" id="1_pbt7f"]
 [ext_resource type="AudioStream" uid="uid://dp3dtsiol0r0u" path="res://Audio/gunshot.wav" id="2_02yg4"]
 [ext_resource type="AudioStream" uid="uid://dlb0mt6s5iyxk" path="res://Audio/amalgun/beam.wav" id="3_276ht"]
 
@@ -30,10 +30,9 @@ grow_horizontal = 2
 [node name="Tabs" type="TabContainer" parent="PanelContainer" unique_id=917003247]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-current_tab = 1
+current_tab = 0
 
 [node name="Audio" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=1785194851]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -74,6 +73,7 @@ step = 0.15
 tick_count = 11
 
 [node name="Accessiblity" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=1868874210]
+visible = false
 layout_mode = 2
 alignment = 1
 metadata/_tab_index = 1
