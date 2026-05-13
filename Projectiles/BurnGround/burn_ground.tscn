@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://8on6ejgl1kv5"]
+
+[ext_resource type="Script" uid="uid://ciy6kgyxl0uch" path="res://Projectiles/BurnGround/burn_ground.gd" id="1_hlrc6"]
+[ext_resource type="Texture2D" uid="uid://cb00doqsxr2ay" path="res://Art/Stuff2/shockwave-Sheet.png" id="2_ilp8d"]
+[ext_resource type="Material" uid="uid://ct0dubdxu4mdp" path="res://Projectiles/BurnGround/burn_ground_particles.tres" id="3_gsbea"]
+[ext_resource type="PackedScene" uid="uid://rqxyqn8cdxay" path="res://Components/HitboxComponent/hitbox_component.tscn" id="4_xbesj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbesj"]
+radius = 129.75746
+
+[sub_resource type="Animation" id="Animation_6h1uc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xbesj"]
+resource_name = "wadfaw'"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6h1uc"]
+_data = {
+&"RESET": SubResource("Animation_6h1uc"),
+&"wadfaw\'": SubResource("Animation_xbesj")
+}
+
+[node name="BurnGround" type="Node2D" unique_id=92414914]
+script = ExtResource("1_hlrc6")
+
+[node name="ShockwaveSheet" type="Sprite2D" parent="." unique_id=59947144]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ilp8d")
+region_enabled = true
+region_rect = Rect2(128, 256, 128, 128)
+
+[node name="burn" type="GPUParticles2D" parent="." unique_id=1606184727]
+amount = 40
+randomness = 0.39
+process_material = ExtResource("3_gsbea")
+
+[node name="HitboxComponent" parent="." unique_id=2110612510 instance=ExtResource("4_xbesj")]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=464247626]
+shape = SubResource("CircleShape2D_xbesj")
+
+[node name="hitboxLoop" type="AnimationPlayer" parent="." unique_id=1132966258]
+libraries/ = SubResource("AnimationLibrary_6h1uc")
+autoplay = &"wadfaw\'"
+
+[node name="Timer" type="Timer" parent="." unique_id=1973817283]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

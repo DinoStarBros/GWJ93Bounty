@@ -30,3 +30,5 @@ func spawn_rubberball(pos: Vector2) -> void:
 	spawn_item(preload("res://SuckableItems/SuckableItemResources/rubberBall.tres"), pos)
 func spawn_bomb(pos: Vector2) -> void:
 	spawn_item(preload("res://SuckableItems/SuckableItemResources/bomb.tres"), pos)
+func spawn_cigar(pos: Vector2) -> void:
+	spawn_item(preload("res://SuckableItems/SuckableItemResources/cigar.tres"), pos)
