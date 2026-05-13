@@ -12,6 +12,7 @@ class_name Blunderbuss
 @onready var gun_tip: Marker2D = %GunTip
 @onready var suck_pickup_collision: CollisionShape2D = %suckPickupCollision
 @onready var other_stuff_handler: VacloopHandler = %OtherStuffHandler
+@onready var item_sound: AudioStreamPlayer = %ItemSound
 
 var vacloop_desire_pitch : float = 0.01
 var sucking : bool = false:
@@ -63,3 +64,9 @@ func _spawn_projectile_item(item: SuckableItemResource, direction: int) -> void:
 	
 	projectile_item.velocity.x += randf_range(-spread,spread) * item.speed
 	projectile_item.velocity.y += randf_range(-spread,spread) * item.speed
+	
+	play_item_sfx(item)
+
+func play_item_sfx(item: SuckableItemResource) -> void:
+	item_sound.stream = item.sfx
+	item_sound.play()

@@ -98,3 +98,7 @@ libraries/ = SubResource("AnimationLibrary_l0cpo")
 unique_name_in_owner = true
 script = ExtResource("6_l0cpo")
 blunderbuss = NodePath("..")
+
+[node name="ItemSound" type="AudioStreamPlayer" parent="." unique_id=1564658908]
+unique_name_in_owner = true
+bus = &"SFX"
