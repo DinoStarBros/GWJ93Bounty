@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="1_hetkk"]
 [ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_f3o0i"]
+[ext_resource type="AudioStream" uid="uid://bpcs6cp7wpt3v" path="res://Audio/BussSFX/dragon-studio-bubble-pop-406640.mp3" id="2_v868m"]
 
 [resource]
 script = ExtResource("1_hetkk")
@@ -12,4 +13,8 @@ damage = 3.0
 speed = 600.0
 spread = 2.0
 projectile_amnt = 4
+sfx = ExtResource("2_v868m")
+sfx_volume = -5.0
+sfx_pitch = 1.2
+sfx_start = 0.07
 metadata/_custom_type_script = "uid://d0c24a4ceihuw"

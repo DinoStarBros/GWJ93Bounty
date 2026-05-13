@@ -69,4 +69,7 @@ func _spawn_projectile_item(item: SuckableItemResource, direction: int) -> void:
 
 func play_item_sfx(item: SuckableItemResource) -> void:
 	item_sound.stream = item.sfx
-	item_sound.play()
+	item_sound.volume_db = item.sfx_volume
+	item_sound.pitch_scale = item.sfx_pitch + randf_range(-.2,.2)
+	
+	item_sound.play(item.sfx_start)

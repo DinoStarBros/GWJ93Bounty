@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="1_3ilfj"]
 [ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_03h8d"]
+[ext_resource type="AudioStream" uid="uid://cd6in7rkpc03p" path="res://Audio/BussSFX/freesound_crunchpixstudio-drop-coin-384921.mp3" id="2_whuch"]
 
 [resource]
 script = ExtResource("1_3ilfj")
@@ -11,4 +12,7 @@ color = Color(1, 1, 0, 1)
 damage = 20.0
 speed = 1000.0
 pierce = 2
+sfx = ExtResource("2_whuch")
+sfx_volume = -5.0
+sfx_start = 0.04
 metadata/_custom_type_script = "uid://d0c24a4ceihuw"

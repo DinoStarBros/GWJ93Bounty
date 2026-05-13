@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="SuckableItemResource" format=3 uid="uid://d2f7k1giapvj7"]
 
 [ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="1_rxlq8"]
+[ext_resource type="AudioStream" uid="uid://cvbv6cd7xmnjx" path="res://Audio/41randsfx/16.wav" id="2_jgpcg"]
 [ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_pkbcd"]
 
 [resource]
@@ -13,4 +14,5 @@ damage = 20.0
 speed = 500.0
 knockback = 1000.0
 stun_duration = 0.7
+sfx = ExtResource("2_jgpcg")
 metadata/_custom_type_script = "uid://d0c24a4ceihuw"
