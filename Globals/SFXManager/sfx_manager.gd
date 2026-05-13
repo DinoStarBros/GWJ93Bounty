@@ -2,13 +2,19 @@ extends Node
 class_name SFXManagerClass
 
 enum sfx_types {
-	EnemyHit1, EnemyHit2
+	EnemyHit1, EnemyHit2, EnemyHit3, EnemyDead1,
+	
 }
 
 const sfxs : Dictionary = {
-	sfx_types.EnemyHit1 : preload("res://Globals/SFXManager/SFXResources/enemy_hit1.tres"),
-	sfx_types.EnemyHit2 : preload("res://Globals/SFXManager/SFXResources/enemy_hit2.tres"),
-	
+	sfx_types.EnemyHit1 : 
+		preload("res://Globals/SFXManager/SFXResources/enemy_hit1.tres"),
+	sfx_types.EnemyHit2 : 
+		preload("res://Globals/SFXManager/SFXResources/enemy_hit2.tres"),
+	sfx_types.EnemyHit3 : 
+		preload("res://Globals/SFXManager/SFXResources/enemy_hit3.tres"),
+	sfx_types.EnemyDead1 :
+		preload("res://Globals/SFXManager/SFXResources/enemy_dead1.tres")
 }
 
 const sfx_scn : PackedScene = preload("res://Scenes/SFX/sfx.tscn")

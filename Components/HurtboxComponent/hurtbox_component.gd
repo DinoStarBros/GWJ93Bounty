@@ -20,6 +20,8 @@ func hurt(attack : Attack) -> void:
 	
 	if get_parent() is Enemy:
 		sfx_players.play_enemy_hurt_sfx()
+		if health_component.hp <= 0:
+			sfx_players.play_enemy_dead_sfx()
 	elif get_parent() is Player:
 		pass
 

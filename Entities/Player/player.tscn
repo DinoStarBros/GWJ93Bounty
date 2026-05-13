@@ -68,7 +68,7 @@ script = ExtResource("3_lu8i8")
 script = ExtResource("5_01a4e")
 
 [node name="Barrel" parent="GUI" unique_id=536368689 instance=ExtResource("8_x1y6q")]
-position = Vector2(1237, 573)
+position = Vector2(1237, 459)
 
 [node name="Label" type="Label" parent="." unique_id=902025439]
 offset_left = -21.0

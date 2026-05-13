@@ -7,6 +7,6 @@
 script = ExtResource("2_0weil")
 audio_stream = ExtResource("1_tejtw")
 volume = 5.0
-pitch = 0.6
-random_pitch_range = 0.2
+pitch = 0.5
+random_pitch_range = 0.1
 metadata/_custom_type_script = "uid://c7djayq8a2f2o"
