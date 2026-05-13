@@ -6,7 +6,6 @@
 [ext_resource type="TileSet" uid="uid://hh56oj5oxojy" path="res://topdown_tiles.tres" id="3_mcb6p"]
 [ext_resource type="PackedScene" uid="uid://5lwpl4poglip" path="res://Components/ProjectilesParent/projectiles_parent.tscn" id="6_hfigh"]
 [ext_resource type="PackedScene" uid="uid://b2e6kor6gembg" path="res://Components/EntitiesParent/entities_parent.tscn" id="6_oo3t5"]
-[ext_resource type="PackedScene" uid="uid://bgdkros4vb8bd" path="res://Entities/Dummy/dummy.tscn" id="8_42n3h"]
 
 [node name="PrototypeScene" type="Node2D" unique_id=1085877338]
 script = ExtResource("1_r410d")
@@ -25,12 +24,3 @@ tile_set = ExtResource("3_mcb6p")
 
 [node name="Player" parent="EntitiesParent" unique_id=950942093 instance=ExtResource("2_ch4ly")]
 z_index = 1
-
-[node name="Dummy" parent="EntitiesParent" unique_id=868512995 instance=ExtResource("8_42n3h")]
-position = Vector2(182, -205)
-
-[node name="Dummy2" parent="EntitiesParent" unique_id=125191084 instance=ExtResource("8_42n3h")]
-position = Vector2(297, -219)
-
-[node name="Dummy3" parent="EntitiesParent" unique_id=1642857835 instance=ExtResource("8_42n3h")]
-position = Vector2(219, -250)

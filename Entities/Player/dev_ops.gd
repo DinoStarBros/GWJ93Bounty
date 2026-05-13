@@ -34,4 +34,10 @@ func _process(delta: float) -> void:
 	4:[%sHeavyBall,
 		func(): ip.spawn_heavyball(p.global_position)
 	],
+	5:[%sNail,
+		func(): ip.spawn_nail(p.global_position)
+	],
+	6:[%sBuckshot,
+		func(): ip.spawn_buckshot(p.global_position)
+	],
 }

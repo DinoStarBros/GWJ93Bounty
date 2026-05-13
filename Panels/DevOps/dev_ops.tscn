@@ -32,6 +32,16 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Heavyball"
 
+[node name="sNail" type="Button" parent="vbox/spawnSSI" unique_id=95678038]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Nail"
+
+[node name="sBuckshot" type="Button" parent="vbox/spawnSSI" unique_id=1131780654]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Buckshot"
+
 [node name="GridContainer" type="GridContainer" parent="vbox" unique_id=515132337]
 layout_mode = 2
 columns = 10
