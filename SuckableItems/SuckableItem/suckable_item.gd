@@ -20,7 +20,8 @@ func _ready() -> void:
 	%SuckDetectArea.area_exited.connect(_suck_area_exited)
 	%SuckPickupArea.area_entered.connect(_suck_pickup_area_entered)
 	sprite.self_modulate = item_resource.color
-	scale = item_resource.item_scale
+	scale.x = item_resource.item_size
+	scale.y = item_resource.item_size
 
 func _suck_area_entered(area:Area2D) -> void:
 	is_go_to_suck = true
