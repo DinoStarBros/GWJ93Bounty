@@ -49,4 +49,7 @@ func _process(delta: float) -> void:
 	9:[%sCigar,
 		func(): ip.spawn_cigar(p.global_position)
 	],
+	10:[%sBolas,
+		func(): ip.spawn_bolas(p.global_position)
+	],
 }
