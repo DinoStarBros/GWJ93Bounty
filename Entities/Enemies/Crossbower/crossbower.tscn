@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://cq31qgpvffhy8" path="res://StateMachineStuff/state_machine.gd" id="8_0uk7h"]
 [ext_resource type="Script" uid="uid://5javf7vee0fa" path="res://Entities/Enemies/Crossbower/cr_follow.gd" id="9_0kp4i"]
 [ext_resource type="Script" uid="uid://tniawjy2npxl" path="res://Entities/Enemies/hurtState.gd" id="10_dfuhn"]
+[ext_resource type="Script" uid="uid://ydthihn2paje" path="res://Entities/Enemies/Crossbower/shoot_windup.gd" id="11_qxrrt"]
+[ext_resource type="Script" uid="uid://3vx2l5um7ctv" path="res://Entities/Enemies/Crossbower/shoot.gd" id="12_ykl6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8i1k"]
 size = Vector2(22, 19)
@@ -76,6 +78,12 @@ initial_state = NodePath("CrFollow")
 
 [node name="CrFollow" type="Node" parent="StateMachine" unique_id=1574189189]
 script = ExtResource("9_0kp4i")
+
+[node name="ShootWindup" type="Node" parent="StateMachine" unique_id=1474232146]
+script = ExtResource("11_qxrrt")
+
+[node name="Shoot" type="Node" parent="StateMachine" unique_id=1502717271]
+script = ExtResource("12_ykl6n")
 
 [node name="Hurt" type="Node" parent="StateMachine" unique_id=1668136241]
 script = ExtResource("10_dfuhn")

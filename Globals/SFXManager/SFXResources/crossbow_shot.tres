@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SFXResource" format=3 uid="uid://kvc5lescje0g"]
+
+[ext_resource type="AudioStream" uid="uid://c8nxaq0dc0mwt" path="res://Audio/BussSFX/alexis_gaming_cam-camera-appareil-photo-prise-shot-346097.mp3" id="1_8o1rk"]
+[ext_resource type="Script" uid="uid://c7djayq8a2f2o" path="res://Globals/SFXManager/SFXRes.gd" id="2_2vx4l"]
+
+[resource]
+script = ExtResource("2_2vx4l")
+audio_stream = ExtResource("1_8o1rk")
+volume = 5.0
+pitch = 1.0
+random_pitch_range = 0.1
+start_point = 0.3
+metadata/_custom_type_script = "uid://c7djayq8a2f2o"
