@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://cq31qgpvffhy8" path="res://StateMachineStuff/state_machine.gd" id="8_tvchf"]
 [ext_resource type="Script" uid="uid://davmp0p2o0cti" path="res://Entities/Enemies/Buccaneer/buc_follow.gd" id="9_7017h"]
 [ext_resource type="Script" uid="uid://tniawjy2npxl" path="res://Entities/Enemies/hurtState.gd" id="10_1u5wk"]
+[ext_resource type="Script" uid="uid://drj4ukxl8o60c" path="res://Entities/Enemies/Buccaneer/dash_windup.gd" id="10_anfrd"]
+[ext_resource type="Script" uid="uid://b0i3bj0hiqfdg" path="res://Entities/Enemies/Buccaneer/dash_strike.gd" id="10_wgw7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8i1k"]
 size = Vector2(22, 19)
@@ -76,6 +78,12 @@ initial_state = NodePath("BucFollow")
 
 [node name="BucFollow" type="Node" parent="StateMachine" unique_id=1117056075]
 script = ExtResource("9_7017h")
+
+[node name="DashWindup" type="Node" parent="StateMachine" unique_id=177823920]
+script = ExtResource("10_anfrd")
+
+[node name="DashStrike" type="Node" parent="StateMachine" unique_id=438402955]
+script = ExtResource("10_wgw7y")
 
 [node name="Hurt" type="Node" parent="StateMachine" unique_id=783160435]
 script = ExtResource("10_1u5wk")
