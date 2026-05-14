@@ -1,11 +1,12 @@
 extends Node2D
 class_name HealthComponent
 
-@export var max_hp : float = 50
 @export var hp_bar : ProgressBar
 @export var hp_text : Label
 @export var allow_multihit : bool = false
+@export var p : Entity
 
+var max_hp : float = 50
 var hp : float = max_hp:
 	set(value):
 		hp = value
@@ -18,6 +19,7 @@ var hp : float = max_hp:
 			)
 
 func _ready() -> void:
+	max_hp = p.max_hp
 	hp = max_hp
 
 func hurt(attack:Attack) -> void:

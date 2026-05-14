@@ -173,10 +173,10 @@ position = Vector2(0, -26)
 shape = SubResource("RectangleShape2D_r8fok")
 debug_color = Color(0, 0.64486116, 0.27864194, 0.41960785)
 
-[node name="HealthComponent" parent="." unique_id=508275931 node_paths=PackedStringArray("hp_bar", "hp_text") instance=ExtResource("15_r8fok")]
-max_hp = 10.0
+[node name="HealthComponent" parent="." unique_id=508275931 node_paths=PackedStringArray("hp_bar", "hp_text", "p") instance=ExtResource("15_r8fok")]
 hp_bar = NodePath("../GUI/HpBar")
 hp_text = NodePath("../GUI/HpBar/HpText")
+p = NodePath("..")
 
 [node name="KnockbackStunComponent" parent="." unique_id=783500033 node_paths=PackedStringArray("parent", "state_machine") instance=ExtResource("19_0poeq")]
 parent = NodePath("..")
