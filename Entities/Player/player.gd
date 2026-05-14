@@ -1,6 +1,10 @@
 extends Entity
 class_name Player
 
+@export_category("Dash Stuff")
+@export var dash_speed : float = 700.0
+@export var dash_duration : float = 0.3
+
 @onready var hurtbox: CollisionShape2D = %hurtbox
 @onready var hurtbox_component: HurtboxComponent = %HurtboxComponent
 

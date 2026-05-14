@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="PlayerStatsResource" format=3 uid="uid://cayv0iiwpmnv7"]
-
-[ext_resource type="Script" uid="uid://c7xx6iwf10rn7" path="res://Stats/PlayerStatsResource.gd" id="1_ph31v"]
-
-[resource]
-script = ExtResource("1_ph31v")
-max_hp = 5.0
-metadata/_custom_type_script = "uid://c7xx6iwf10rn7"

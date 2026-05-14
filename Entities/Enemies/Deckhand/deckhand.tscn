@@ -20,10 +20,12 @@ radius = 29.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mucn"]
 radius = 28.01785
 
-[node name="Deckhand" type="CharacterBody2D" unique_id=1570016088]
+[node name="Deckhand" type="CharacterBody2D" unique_id=1570016088 node_paths=PackedStringArray("hitbox_component")]
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_v8rv2")
+hitbox_component = NodePath("HitboxComponent")
+move_speed = 250.0
 
 [node name="Enemies" type="Sprite2D" parent="." unique_id=1330226294]
 position = Vector2(0, -24)
