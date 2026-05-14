@@ -6,6 +6,8 @@ class_name DevOps
 var ip : ItemsParent
 var ep : EntitiesParent
 
+const espawn_offset : Vector2 = Vector2(100, -100)
+
 func _ready() -> void:
 	await get_tree().process_frame
 	ip = Global.items_parent
@@ -50,19 +52,20 @@ func _process(delta: float) -> void:
 		func(): ip.spawn_bolas(p.global_position)
 	],
 	
+	# Enemy spawns
 	10:[%sDummy,
-		func(): ep.spawn_dummy(p.global_position)
+		func(): ep.spawn_dummy(p.global_position + espawn_offset)
 	],
 	11:[%sDeckhand,
-		func(): ep.spawn_deckhand(p.global_position)
+		func(): ep.spawn_deckhand(p.global_position + espawn_offset)
 	],
 	12:[%sBuccaneer,
-		func(): ep.spawn_buccaneer(p.global_position)
+		func(): ep.spawn_buccaneer(p.global_position + espawn_offset)
 	],
 	13:[%sParrot,
-		func(): ep.spawn_parrot(p.global_position)
+		func(): ep.spawn_parrot(p.global_position + espawn_offset)
 	],
 	14:[%sCrossbower,
-		func(): ep.spawn_crossbower(p.global_position)
+		func(): ep.spawn_crossbower(p.global_position + espawn_offset)
 	],
 }

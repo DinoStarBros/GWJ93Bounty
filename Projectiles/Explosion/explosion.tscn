@@ -84,6 +84,7 @@ bus = &"SFX"
 unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 2
+allow_multihit = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=2061491190]
 shape = SubResource("CircleShape2D_88x6f")

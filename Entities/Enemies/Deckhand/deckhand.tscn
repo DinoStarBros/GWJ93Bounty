@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://chw72dt8gef78"]
+
+[ext_resource type="Script" uid="uid://7msak02k2mpg" path="res://Entities/Enemies/Deckhand/deckhand.gd" id="1_v8rv2"]
+[ext_resource type="Texture2D" uid="uid://caxh1qlqdsmvc" path="res://Art/Stuff/enemies.png" id="2_14q1e"]
+[ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="3_m7a1a"]
+[ext_resource type="Script" uid="uid://cq31qgpvffhy8" path="res://StateMachineStuff/state_machine.gd" id="4_ttyxp"]
+[ext_resource type="Script" uid="uid://bf8lij6bj0gpg" path="res://Entities/Enemies/Deckhand/chase.gd" id="5_jxynh"]
+[ext_resource type="Script" uid="uid://tniawjy2npxl" path="res://Entities/Enemies/hurtState.gd" id="6_63mm6"]
+[ext_resource type="PackedScene" uid="uid://dxhp1awwxrui5" path="res://Components/HurtboxComponent/hurtbox_component.tscn" id="6_sxqf7"]
+[ext_resource type="PackedScene" uid="uid://dt6w5v2fariq0" path="res://Components/HealthComponent/health_component.tscn" id="7_8gwj5"]
+[ext_resource type="PackedScene" uid="uid://ck6l1ibwso1mm" path="res://Components/KnockbackStunComponent/knockback_stun_component.tscn" id="8_2sq8o"]
+[ext_resource type="PackedScene" uid="uid://rqxyqn8cdxay" path="res://Components/HitboxComponent/hitbox_component.tscn" id="10_fw750"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuabs"]
+size = Vector2(22, 19)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2sq8o"]
+radius = 29.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mucn"]
+radius = 28.01785
+
+[node name="Deckhand" type="CharacterBody2D" unique_id=1570016088]
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("1_v8rv2")
+
+[node name="Enemies" type="Sprite2D" parent="." unique_id=1330226294]
+position = Vector2(0, -24)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_14q1e")
+hframes = 4
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 32)
+
+[node name="ShadowCircle" type="Sprite2D" parent="Enemies" unique_id=47008626]
+self_modulate = Color(1, 1, 1, 0.62352943)
+show_behind_parent = true
+position = Vector2(0, 16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_m7a1a")
+
+[node name="anims" type="AnimationPlayer" parent="." unique_id=331793760]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2085687998]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_iuabs")
+
+[node name="StateMachine" type="Node" parent="." unique_id=206689879 node_paths=PackedStringArray("initial_state", "debug")]
+script = ExtResource("4_ttyxp")
+initial_state = NodePath("Chase")
+debug = NodePath("../Label")
+
+[node name="Chase" type="Node" parent="StateMachine" unique_id=961605834]
+script = ExtResource("5_jxynh")
+
+[node name="Hurt" type="Node" parent="StateMachine" unique_id=1056867353]
+script = ExtResource("6_63mm6")
+
+[node name="HurtboxComponent" parent="." unique_id=1051487275 node_paths=PackedStringArray("health_component", "knockback_stun_component") instance=ExtResource("6_sxqf7")]
+collision_layer = 2
+collision_mask = 2
+health_component = NodePath("../HealthComponent")
+knockback_stun_component = NodePath("../KnockbackStunComponent")
+
+[node name="hurb" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1401353686]
+position = Vector2(0, -19)
+shape = SubResource("CircleShape2D_2sq8o")
+
+[node name="HealthComponent" parent="." unique_id=508275931 instance=ExtResource("7_8gwj5")]
+
+[node name="KnockbackStunComponent" parent="." unique_id=783500033 node_paths=PackedStringArray("parent", "state_machine") instance=ExtResource("8_2sq8o")]
+parent = NodePath("..")
+state_machine = NodePath("../StateMachine")
+
+[node name="Label" type="Label" parent="." unique_id=1847140510]
+offset_left = -18.0
+offset_top = -65.0
+offset_right = 22.0
+offset_bottom = -48.0
+text = "chase"
+
+[node name="HitboxComponent" parent="." unique_id=2110612510 instance=ExtResource("10_fw750")]
+unique_name_in_owner = true
+position = Vector2(0, -19)
+collision_layer = 4
+collision_mask = 4
+
+[node name="hitb" type="CollisionShape2D" parent="HitboxComponent" unique_id=672447493]
+shape = SubResource("CircleShape2D_7mucn")

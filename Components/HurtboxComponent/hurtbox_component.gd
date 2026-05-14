@@ -1,15 +1,24 @@
 extends Area2D
 class_name HurtboxComponent
 
+signal Hurt(attack: Attack)
+
 @export var health_component : HealthComponent
 @export var knockback_stun_component : KnockbackStunComponent
 
 @onready var sfx_players: SFXPlayers = %SFXPlayers
 
+var allow_hurt : bool = true
+
 func _ready() -> void:
 	pass
 
 func hurt(attack : Attack) -> void:
+	if !allow_hurt: return
+	allow_hurt = false
+	
+	Hurt.emit(attack)
+	
 	health_component.hurt(attack)
 	
 	Global.spawn_txt(roundi(attack.attack_damage), global_position)
@@ -24,6 +33,9 @@ func hurt(attack : Attack) -> void:
 			sfx_players.play_enemy_dead_sfx()
 	elif get_parent() is Player:
 		pass
+	
+	await get_tree().physics_frame
+	allow_hurt = true
 
 func _spawn_hitspark(attack: Attack) -> void:
 	var hitspark : Hitspark = References.hitspark_scn.instantiate()

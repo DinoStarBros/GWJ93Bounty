@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bgdkros4vb8bd"]
 
-[ext_resource type="Script" uid="uid://cxwj7cvqux3g2" path="res://Entities/Dummy/dummy.gd" id="1_eyjbo"]
+[ext_resource type="Script" uid="uid://cxwj7cvqux3g2" path="res://Entities/Enemies/Dummy/dummy.gd" id="1_eyjbo"]
 [ext_resource type="Texture2D" uid="uid://b4qycvmecdv0m" path="res://Art/planestuff/Dumby Plane1.png" id="2_jbpj8"]
 [ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="3_d80lx"]
 [ext_resource type="PackedScene" uid="uid://dxhp1awwxrui5" path="res://Components/HurtboxComponent/hurtbox_component.tscn" id="4_0rwem"]
 [ext_resource type="PackedScene" uid="uid://dt6w5v2fariq0" path="res://Components/HealthComponent/health_component.tscn" id="5_q1shn"]
 [ext_resource type="Script" uid="uid://cq31qgpvffhy8" path="res://StateMachineStuff/state_machine.gd" id="6_kruyw"]
-[ext_resource type="Script" uid="uid://uep5t5nll5u0" path="res://Entities/Dummy/idle.gd" id="7_kdv6e"]
-[ext_resource type="Script" uid="uid://tniawjy2npxl" path="res://Entities/Dummy/hurt.gd" id="8_wiym8"]
+[ext_resource type="Script" uid="uid://uep5t5nll5u0" path="res://Entities/Enemies/Dummy/idle.gd" id="7_kdv6e"]
+[ext_resource type="Script" uid="uid://tniawjy2npxl" path="res://Entities/Enemies/hurtState.gd" id="8_wiym8"]
 [ext_resource type="PackedScene" uid="uid://ck6l1ibwso1mm" path="res://Components/KnockbackStunComponent/knockback_stun_component.tscn" id="9_kdv6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d80lx"]

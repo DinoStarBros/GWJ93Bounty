@@ -7,6 +7,8 @@ class_name KnockbackStunComponent
 @export var parent : Entity
 @export var state_machine : StateMachine
 
+var dir_to_atk : Vector2
+
 func hurt(attack : Attack) -> void:
 	if !state_machine:
 		return
@@ -17,7 +19,11 @@ func hurt(attack : Attack) -> void:
 		# EXCUSE ME BUT WHY THE FUCK IS THIS CODE HERE
 		# YOU FUCKING DUMBASS
 		# Says the singular programmer on this project
+		# IM FUCKING TWEAKING MAANNN
 	
 	if allow_knockback:
-		var dir_to_atk : Vector2 = global_position.direction_to(Global.player.global_position)
+		if parent is Enemy:
+			dir_to_atk = global_position.direction_to(Global.player.global_position)
+		else:
+			dir_to_atk = global_position.direction_to(attack.attack_pos)
 		parent.velocity = -dir_to_atk * attack.knockback

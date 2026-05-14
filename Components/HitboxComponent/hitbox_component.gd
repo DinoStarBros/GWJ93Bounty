@@ -4,20 +4,25 @@ class_name HitboxComponent
 @export var parent_projectile : Projectile
 @export var projectile_bounce_component: ProjectileBounceComponent
 @export var projectile_on_hit_fx_component: ProjectileOnHitFX
+@export var allow_multihit : bool = false
 
 signal Hit(attack: Attack)
 
 ## If the parent is a projectile
 ## How many times it can pierce before queue_freeing the projectile
 var hits : int = 1
-
 var attack : Attack = Attack.new()
+var allow_hit : bool = true
 
 func _ready() -> void:
 	area_entered.connect(_area_entered)
 
 func _area_entered(area: Area2D) -> void:
 	if area is HurtboxComponent:
+		if !allow_hit: return
+		if !allow_multihit:
+			allow_hit = false
+		
 		attack.attack_pos = global_position
 		area.hurt(attack)
 		Hit.emit(attack)
@@ -25,6 +30,9 @@ func _area_entered(area: Area2D) -> void:
 		if parent_projectile:
 			if parent_projectile is ProjectileItem:
 				projectile_item_handling()
+		
+		await get_tree().physics_frame
+		allow_hit = true
 
 func projectile_hits_handling() -> void:
 	hits -= 1

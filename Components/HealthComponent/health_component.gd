@@ -2,7 +2,20 @@ extends Node2D
 class_name HealthComponent
 
 @export var max_hp : float = 50
-var hp : float = max_hp
+@export var hp_bar : ProgressBar
+@export var hp_text : Label
+@export var allow_multihit : bool = false
+
+var hp : float = max_hp:
+	set(value):
+		hp = value
+		if hp_bar:
+			hp_bar.max_value = max_hp
+			hp_bar.value = hp
+		if hp_text:
+			hp_text.text = str(
+				roundi(hp), " / ", roundi(max_hp)
+			)
 
 func _ready() -> void:
 	hp = max_hp

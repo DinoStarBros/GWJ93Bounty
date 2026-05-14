@@ -64,6 +64,7 @@ process_material = ExtResource("3_gsbea")
 unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 2
+allow_multihit = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=464247626]
 shape = SubResource("CircleShape2D_xbesj")
