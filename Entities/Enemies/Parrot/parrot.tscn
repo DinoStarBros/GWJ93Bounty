@@ -3,14 +3,28 @@
 [ext_resource type="Script" uid="uid://d24ivml5w3cl6" path="res://Entities/Enemies/Parrot/parrot.gd" id="1_q2yf3"]
 [ext_resource type="Texture2D" uid="uid://caxh1qlqdsmvc" path="res://Art/Stuff/enemies.png" id="2_fmglb"]
 [ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="3_80rry"]
+[ext_resource type="PackedScene" uid="uid://dxhp1awwxrui5" path="res://Components/HurtboxComponent/hurtbox_component.tscn" id="4_xqmv8"]
+[ext_resource type="PackedScene" uid="uid://dt6w5v2fariq0" path="res://Components/HealthComponent/health_component.tscn" id="5_v25ar"]
+[ext_resource type="PackedScene" uid="uid://ck6l1ibwso1mm" path="res://Components/KnockbackStunComponent/knockback_stun_component.tscn" id="6_vubyl"]
+[ext_resource type="PackedScene" uid="uid://rqxyqn8cdxay" path="res://Components/HitboxComponent/hitbox_component.tscn" id="7_6v18t"]
+[ext_resource type="Script" uid="uid://cq31qgpvffhy8" path="res://StateMachineStuff/state_machine.gd" id="8_qiile"]
+[ext_resource type="Script" uid="uid://3kd3acjtkav3" path="res://Entities/Enemies/Parrot/par_follow.gd" id="9_xqmv8"]
+[ext_resource type="Script" uid="uid://tniawjy2npxl" path="res://Entities/Enemies/hurtState.gd" id="10_l07y8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8i1k"]
 size = Vector2(22, 19)
 
-[node name="parrot" type="CharacterBody2D" unique_id=1794169077]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nlhx5"]
+radius = 29.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o2yot"]
+radius = 27.0
+
+[node name="parrot" type="CharacterBody2D" unique_id=1794169077 node_paths=PackedStringArray("hitbox_component")]
 collision_layer = 0
 script = ExtResource("1_q2yf3")
-move_speed = 200.0
+hitbox_component = NodePath("HitboxComponent")
+move_speed = 400.0
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1250451182]
 position = Vector2(0, -16)
@@ -28,3 +42,41 @@ texture = ExtResource("3_80rry")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1264159755]
 position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_m8i1k")
+
+[node name="HurtboxComponent" parent="." unique_id=1051487275 node_paths=PackedStringArray("health_component", "knockback_stun_component") instance=ExtResource("4_xqmv8")]
+collision_layer = 2
+collision_mask = 2
+health_component = NodePath("../HealthComponent")
+knockback_stun_component = NodePath("../KnockbackStunComponent")
+
+[node name="hurb" type="CollisionShape2D" parent="HurtboxComponent" unique_id=98431906]
+position = Vector2(0, -19)
+shape = SubResource("CircleShape2D_nlhx5")
+
+[node name="HealthComponent" parent="." unique_id=508275931 node_paths=PackedStringArray("p") instance=ExtResource("5_v25ar")]
+p = NodePath("..")
+
+[node name="KnockbackStunComponent" parent="." unique_id=783500033 node_paths=PackedStringArray("parent", "state_machine") instance=ExtResource("6_vubyl")]
+parent = NodePath("..")
+state_machine = NodePath("../StateMachine")
+
+[node name="HitboxComponent" parent="." unique_id=2110612510 instance=ExtResource("7_6v18t")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="hitb" type="CollisionShape2D" parent="HitboxComponent" unique_id=549043473]
+position = Vector2(0, -19)
+shape = SubResource("CircleShape2D_o2yot")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1104542798 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("8_qiile")
+initial_state = NodePath("ParFollow")
+
+[node name="ParFollow" type="Node" parent="StateMachine" unique_id=365511757]
+script = ExtResource("9_xqmv8")
+
+[node name="Hurt" type="Node" parent="StateMachine" unique_id=1157229237]
+script = ExtResource("10_l07y8")
+
+[node name="anims" type="AnimationPlayer" parent="." unique_id=960199798]
+unique_name_in_owner = true

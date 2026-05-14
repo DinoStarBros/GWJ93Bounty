@@ -20,6 +20,7 @@ size = Vector2(24, 33)
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_eyjbo")
+max_hp = 50.0
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=117739472]
 position = Vector2(0, -16)
@@ -52,7 +53,8 @@ debug_color = Color(0.972549, 0, 0, 0.41960785)
 parent = NodePath("..")
 state_machine = NodePath("../StateMachine")
 
-[node name="HealthComponent" parent="." unique_id=508275931 instance=ExtResource("5_q1shn")]
+[node name="HealthComponent" parent="." unique_id=508275931 node_paths=PackedStringArray("p") instance=ExtResource("5_q1shn")]
+p = NodePath("..")
 
 [node name="Label" type="Label" parent="." unique_id=1564672984]
 offset_left = 9.0

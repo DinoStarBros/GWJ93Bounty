@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dt6w5v2fariq0" path="res://Components/HealthComponent/health_component.tscn" id="5_xl8pl"]
 [ext_resource type="PackedScene" uid="uid://ck6l1ibwso1mm" path="res://Components/KnockbackStunComponent/knockback_stun_component.tscn" id="6_px7rj"]
 [ext_resource type="PackedScene" uid="uid://rqxyqn8cdxay" path="res://Components/HitboxComponent/hitbox_component.tscn" id="7_px7rj"]
+[ext_resource type="Script" uid="uid://cq31qgpvffhy8" path="res://StateMachineStuff/state_machine.gd" id="8_tvchf"]
+[ext_resource type="Script" uid="uid://davmp0p2o0cti" path="res://Entities/Enemies/Buccaneer/buc_follow.gd" id="9_7017h"]
+[ext_resource type="Script" uid="uid://tniawjy2npxl" path="res://Entities/Enemies/hurtState.gd" id="10_1u5wk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8i1k"]
 size = Vector2(22, 19)
@@ -22,6 +25,7 @@ collision_layer = 0
 script = ExtResource("1_m8i1k")
 hitbox_component = NodePath("HitboxComponent")
 move_speed = 200.0
+max_hp = 50.0
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1250451182]
 position = Vector2(0, -24)
@@ -54,7 +58,9 @@ shape = SubResource("CircleShape2D_78w8y")
 [node name="HealthComponent" parent="." unique_id=508275931 node_paths=PackedStringArray("p") instance=ExtResource("5_xl8pl")]
 p = NodePath("..")
 
-[node name="KnockbackStunComponent" parent="." unique_id=783500033 instance=ExtResource("6_px7rj")]
+[node name="KnockbackStunComponent" parent="." unique_id=783500033 node_paths=PackedStringArray("parent", "state_machine") instance=ExtResource("6_px7rj")]
+parent = NodePath("..")
+state_machine = NodePath("../StateMachine")
 
 [node name="HitboxComponent" parent="." unique_id=2110612510 instance=ExtResource("7_px7rj")]
 collision_layer = 4
@@ -63,3 +69,16 @@ collision_mask = 4
 [node name="hitb" type="CollisionShape2D" parent="HitboxComponent" unique_id=488912694]
 position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_px7rj")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1703228649 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("8_tvchf")
+initial_state = NodePath("BucFollow")
+
+[node name="BucFollow" type="Node" parent="StateMachine" unique_id=1117056075]
+script = ExtResource("9_7017h")
+
+[node name="Hurt" type="Node" parent="StateMachine" unique_id=783160435]
+script = ExtResource("10_1u5wk")
+
+[node name="anims" type="AnimationPlayer" parent="." unique_id=1602334399]
+unique_name_in_owner = true
