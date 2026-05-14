@@ -68,4 +68,7 @@ func _process(delta: float) -> void:
 	14:[%sCrossbower,
 		func(): ep.spawn_crossbower(p.global_position + espawn_offset)
 	],
+	15:[%sFlamer,
+		func(): ep.spawn_flamer(p.global_position + espawn_offset)
+	],
 }

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cljmrhb3vburi"]
+
+[ext_resource type="Script" uid="uid://d2o2umle6uwlt" path="res://Entities/Enemies/Flamer/flamer.gd" id="1_6kcll"]
+[ext_resource type="Texture2D" uid="uid://drfyuy8w6p057" path="res://Art/Arks/DinoSprites - doux.png" id="2_mll4l"]
+[ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="3_dmfy3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8i1k"]
+size = Vector2(22, 19)
+
+[node name="flamer" type="CharacterBody2D" unique_id=1794169077]
+collision_layer = 0
+script = ExtResource("1_6kcll")
+move_speed = 200.0
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1250451182]
+position = Vector2(0, -18)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_mll4l")
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 24)
+
+[node name="ShadowCircle" type="Sprite2D" parent="sprite" unique_id=793443689]
+self_modulate = Color(1, 1, 1, 0.62352943)
+show_behind_parent = true
+position = Vector2(0, 12)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_dmfy3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1264159755]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_m8i1k")

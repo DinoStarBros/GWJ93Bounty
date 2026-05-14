@@ -10,9 +10,10 @@ class_name Enemy
 const tdev_range : float = 200
 
 func setup_hitbox() -> void:
-	hitbox_component.attack.attack_damage = attack_damage
-	hitbox_component.attack.knockback = knockback
-	hitbox_component.attack.stun_duration = stun_duration
+	if hitbox_component:
+		hitbox_component.attack.attack_damage = attack_damage
+		hitbox_component.attack.knockback = knockback
+		hitbox_component.attack.stun_duration = stun_duration
 
 func get_dir_to_plr() -> Vector2:
 	return global_position.direction_to(Global.player.global_position)

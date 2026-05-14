@@ -108,3 +108,9 @@ unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
 text = "Crossbower"
+
+[node name="sFlamer" type="Button" parent="vbox/GridContainer" unique_id=478237985]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Flamer"

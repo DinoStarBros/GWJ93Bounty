@@ -27,7 +27,7 @@ script = ExtResource("1_v8rv2")
 hitbox_component = NodePath("HitboxComponent")
 move_speed = 250.0
 
-[node name="Enemies" type="Sprite2D" parent="." unique_id=1330226294]
+[node name="sprite" type="Sprite2D" parent="." unique_id=1330226294]
 position = Vector2(0, -24)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_14q1e")
@@ -35,7 +35,7 @@ hframes = 4
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 32)
 
-[node name="ShadowCircle" type="Sprite2D" parent="Enemies" unique_id=47008626]
+[node name="ShadowCircle" type="Sprite2D" parent="sprite" unique_id=47008626]
 self_modulate = Color(1, 1, 1, 0.62352943)
 show_behind_parent = true
 position = Vector2(0, 16)
