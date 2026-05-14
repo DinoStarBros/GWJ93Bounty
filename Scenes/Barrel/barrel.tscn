@@ -10,8 +10,8 @@
 script = ExtResource("1_opngn")
 
 [node name="Barellproto" type="Sprite2D" parent="." unique_id=837294187]
-position = Vector2(0, -125.5)
-scale = Vector2(1, 4.101563)
+position = Vector2(0, -344.5)
+scale = Vector2(1, 7.5234385)
 texture = ExtResource("1_hpg1d")
 
 [node name="SFX" type="Node" parent="." unique_id=2053164541]

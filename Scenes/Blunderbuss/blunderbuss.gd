@@ -3,7 +3,6 @@ class_name Blunderbuss
 
 @export var suck_range : float = 250.0
 @export var suck_spread : float = 120.0
-@export var projectile_speed : float = 500.0
 @export var barrel : Barrel
 
 @onready var sprite: Sprite2D = %PeaGun

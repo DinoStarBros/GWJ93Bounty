@@ -97,7 +97,8 @@ text = "Sure"
 script = ExtResource("5_01a4e")
 
 [node name="Barrel" parent="GUI" unique_id=536368689 instance=ExtResource("8_x1y6q")]
-position = Vector2(1237, 459)
+position = Vector2(1237, 528)
+scale = Vector2(0.5, 0.5)
 
 [node name="DevOps" parent="." unique_id=1137223944 node_paths=PackedStringArray("p") instance=ExtResource("11_vskfa")]
 p = NodePath("..")
@@ -138,3 +139,4 @@ shape = SubResource("RectangleShape2D_r8fok")
 debug_color = Color(0, 0.64486116, 0.27864194, 0.41960785)
 
 [node name="HealthComponent" parent="." unique_id=508275931 instance=ExtResource("15_r8fok")]
+max_hp = 5.0

@@ -38,7 +38,6 @@ _data = {
 
 [node name="Blunderbuss" type="Node2D" unique_id=1936563938]
 script = ExtResource("1_1n76p")
-projectile_speed = 700.0
 
 [node name="PeaGun" type="Sprite2D" parent="." unique_id=670557191]
 unique_name_in_owner = true

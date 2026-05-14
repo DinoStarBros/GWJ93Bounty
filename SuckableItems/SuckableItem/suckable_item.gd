@@ -12,7 +12,7 @@ var velocity : Vector2
 var dir_to_blunderbuss_gun_tip : Vector2
 var trig_time : float = 0
 
-const move_speed : float = 700
+const move_speed : float = 1000
 const trig_speed : float = 3
 
 func _ready() -> void:

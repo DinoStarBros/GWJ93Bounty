@@ -9,7 +9,7 @@ signal Eject(item: SuckableItemResource)
 var items : Array[SuckableItemResource]
 var barrel_items : Array[BarrelItem]
 var barrel_item_names : Array
-var max_item_amount : int = 8
+var max_item_amount : int = 15
 var barrel_items_amount : int:
 	set(value):
 		if barrel_items_amount == value: return

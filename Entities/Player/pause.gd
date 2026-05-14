@@ -9,7 +9,8 @@ func _ready() -> void:
 	%resume.pressed.connect(on_resume)
 	%quit.pressed.connect(func():%sure.visible=!%sure.visible)
 	%sure.pressed.connect(func():
-		SceneManager.change_scene("res://Screens/level_select/level_select.tscn")
+		#SceneManager.change_scene("res://Screens/level_select/level_select.tscn")
+		get_tree().quit()
 		%settingsMenu._save()
 		)
 
