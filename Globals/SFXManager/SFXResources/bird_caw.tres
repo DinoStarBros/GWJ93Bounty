@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SFXResource" format=3 uid="uid://b7xwqrrlk52y2"]
+
+[ext_resource type="AudioStream" uid="uid://b5pxgnv3xakda" path="res://Audio/BussSFX/dragon-studio-crow-caw-with-echoing-reverb-472375.mp3" id="1_jhsuk"]
+[ext_resource type="Script" uid="uid://c7djayq8a2f2o" path="res://Globals/SFXManager/SFXRes.gd" id="2_d3elu"]
+
+[resource]
+script = ExtResource("2_d3elu")
+audio_stream = ExtResource("1_jhsuk")
+volume = 5.0
+pitch = 1.5
+random_pitch_range = 0.3
+start_point = 0.92
+metadata/_custom_type_script = "uid://c7djayq8a2f2o"

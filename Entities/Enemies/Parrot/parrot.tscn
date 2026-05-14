@@ -47,6 +47,7 @@ position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_m8i1k")
 
 [node name="HurtboxComponent" parent="." unique_id=1051487275 node_paths=PackedStringArray("health_component", "knockback_stun_component") instance=ExtResource("4_xqmv8")]
+unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 2
 health_component = NodePath("../HealthComponent")
