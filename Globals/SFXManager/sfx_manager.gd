@@ -3,7 +3,7 @@ class_name SFXManagerClass
 
 enum sfx_types {
 	EnemyHit1, EnemyHit2, EnemyHit3, EnemyDead1,
-	
+	PlayerHit1, PlayerHit2, PlayerHit3, PlayerDead1, PlayerDead2
 }
 
 const sfxs : Dictionary = {
@@ -14,7 +14,17 @@ const sfxs : Dictionary = {
 	sfx_types.EnemyHit3 : 
 		preload("res://Globals/SFXManager/SFXResources/enemy_hit3.tres"),
 	sfx_types.EnemyDead1 :
-		preload("res://Globals/SFXManager/SFXResources/enemy_dead1.tres")
+		preload("res://Globals/SFXManager/SFXResources/enemy_dead1.tres"),
+	sfx_types.PlayerHit1:
+		preload("res://Globals/SFXManager/SFXResources/player_hit1.tres"),
+	sfx_types.PlayerHit2:
+		preload("res://Globals/SFXManager/SFXResources/player_hit2.tres"),
+	sfx_types.PlayerHit3:
+		preload("res://Globals/SFXManager/SFXResources/player_hit3.tres"),
+	sfx_types.PlayerDead1:
+		preload("res://Globals/SFXManager/SFXResources/player_dead1.tres"),
+	sfx_types.PlayerDead2:
+		preload("res://Globals/SFXManager/SFXResources/player_dead2.tres"),
 }
 
 const sfx_scn : PackedScene = preload("res://Scenes/SFX/sfx.tscn")
