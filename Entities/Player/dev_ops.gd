@@ -28,28 +28,41 @@ func _process(delta: float) -> void:
 	2:[%sGrapeshot,
 		func(): ip.spawn_grapeshot(p.global_position)
 	],
-	3:[%sDummy,
-		func(): ep.spawn_dummy(p.global_position)
-	],
-	4:[%sHeavyBall,
+	3:[%sHeavyBall,
 		func(): ip.spawn_heavyball(p.global_position)
 	],
-	5:[%sNail,
+	4:[%sNail,
 		func(): ip.spawn_nail(p.global_position)
 	],
-	6:[%sBuckshot,
+	5:[%sBuckshot,
 		func(): ip.spawn_buckshot(p.global_position)
 	],
-	7:[%sRubberBall,
+	6:[%sRubberBall,
 		func(): ip.spawn_rubberball(p.global_position)
 	],
-	8:[%sBomb,
+	7:[%sBomb,
 		func(): ip.spawn_bomb(p.global_position)
 	],
-	9:[%sCigar,
+	8:[%sCigar,
 		func(): ip.spawn_cigar(p.global_position)
 	],
-	10:[%sBolas,
+	9:[%sBolas,
 		func(): ip.spawn_bolas(p.global_position)
+	],
+	
+	10:[%sDummy,
+		func(): ep.spawn_dummy(p.global_position)
+	],
+	11:[%sDeckhand,
+		func(): ep.spawn_deckhand(p.global_position)
+	],
+	12:[%sBuccaneer,
+		func(): ep.spawn_buccaneer(p.global_position)
+	],
+	13:[%sParrot,
+		func(): ep.spawn_parrot(p.global_position)
+	],
+	14:[%sCrossbower,
+		func(): ep.spawn_crossbower(p.global_position)
 	],
 }

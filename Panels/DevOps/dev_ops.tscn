@@ -84,3 +84,27 @@ unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
 text = "Dummy"
+
+[node name="sDeckhand" type="Button" parent="vbox/GridContainer" unique_id=1833036832]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Deckhand"
+
+[node name="sBuccaneer" type="Button" parent="vbox/GridContainer" unique_id=860067066]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Buccaneer"
+
+[node name="sParrot" type="Button" parent="vbox/GridContainer" unique_id=1358695305]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Parrot"
+
+[node name="sCrossbower" type="Button" parent="vbox/GridContainer" unique_id=79996195]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Crossbower"

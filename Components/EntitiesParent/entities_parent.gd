@@ -16,3 +16,11 @@ func spawn_enemy(
 
 func spawn_dummy(pos: Vector2) -> void:
 	spawn_enemy(dummy_scn, pos)
+func spawn_deckhand(pos: Vector2) -> void:
+	spawn_enemy(dummy_scn, pos)
+func spawn_buccaneer(pos: Vector2) -> void:
+	spawn_enemy(dummy_scn, pos)
+func spawn_parrot(pos: Vector2) -> void:
+	spawn_enemy(dummy_scn, pos)
+func spawn_crossbower(pos: Vector2) -> void:
+	spawn_enemy(dummy_scn, pos)
