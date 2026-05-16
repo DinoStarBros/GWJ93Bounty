@@ -8,4 +8,5 @@ upgrade_name = "+Suck Range"
 upgrade_desc = "Your Blunderbuss' range of 
 sucking up items is increased by 30%"
 stat_increase = 0.3
+stat_to_upgrade = 4
 metadata/_custom_type_script = "uid://dqnb56td4sr1c"

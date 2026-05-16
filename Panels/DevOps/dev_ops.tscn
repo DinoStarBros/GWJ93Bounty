@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dgsowvw3lvkgo"]
 
 [ext_resource type="Script" uid="uid://bnnpasuaxaxub" path="res://Entities/Player/dev_ops.gd" id="1_h5k6c"]
+[ext_resource type="Script" uid="uid://ddr31b1r3fb0x" path="res://Panels/DevOps/devops_stats.gd" id="2_6q0sv"]
 
 [node name="DevOps" type="CanvasLayer" unique_id=1137223944]
+process_mode = 3
 script = ExtResource("1_h5k6c")
 
 [node name="vbox" type="VBoxContainer" parent="." unique_id=2104019085]
@@ -119,3 +121,18 @@ text = "Flamer"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Start Shop"
+
+[node name="DevopsStats" type="VBoxContainer" parent="." unique_id=2097568944]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -141.0
+offset_right = 137.0
+grow_vertical = 0
+alignment = 2
+script = ExtResource("2_6q0sv")
+
+[node name="stats_label" type="Label" parent="DevopsStats" unique_id=2131198594]
+unique_name_in_owner = true
+layout_mode = 2

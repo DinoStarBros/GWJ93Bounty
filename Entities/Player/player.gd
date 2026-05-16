@@ -8,6 +8,7 @@ class_name Player
 @onready var hurtbox: CollisionShape2D = %hurtbox
 @onready var hurtbox_component: HurtboxComponent = %HurtboxComponent
 @onready var state_machine: StateMachine = %StateMachine
+@onready var health_component: HealthComponent = %HealthComponent
 
 var last_wasd_input : Vector2
 var iframes : float
@@ -16,6 +17,7 @@ var dead : bool = false:
 		dead = value
 		if dead:
 			state_machine.change_state("Dead")
+var damage_mult : float = 1.0
 
 const coin_res : SuckableItemResource = preload("res://SuckableItems/SuckableItemResources/coin.tres")
 

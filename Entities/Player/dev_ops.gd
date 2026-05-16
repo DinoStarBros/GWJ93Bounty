@@ -3,6 +3,8 @@ class_name DevOps
 
 @export var p : Player
 
+@onready var devops_stats: DevopsStats = %DevopsStats
+
 var ip : ItemsParent
 var ep : EntitiesParent
 var sp : ShopParent
@@ -14,6 +16,7 @@ func _ready() -> void:
 	ip = Global.items_parent
 	ep = Global.entities_parent
 	sp = Global.shop_parent
+	devops_stats.p = p
 	
 	for n in spawn_buttons.values(): if n[0] is Button:
 		n[0].pressed.connect(n[1])

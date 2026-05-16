@@ -5,9 +5,9 @@ class_name UpgradeBuyButton
 @onready var name_txt: Label = %name_txt
 
 var upgrade_resource : UpgradeResource
-var bought : bool = false:
-	set(value):
-		bought = value
+var bought : bool = false
+
+func _process(delta: float) -> void:
 		if !bought:
 			name_txt.text = upgrade_resource.upgrade_name
 			desc_txt.text = upgrade_resource.upgrade_desc
@@ -32,4 +32,4 @@ func buy() -> void:
 	name_txt.text = bought_name
 	desc_txt.text = bought_desc
 	
-	
+	upgrade_resource.apply_upgrade_to_player(upgrade_resource.stat_increase)

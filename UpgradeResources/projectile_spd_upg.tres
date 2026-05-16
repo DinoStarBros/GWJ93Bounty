@@ -7,4 +7,5 @@ script = ExtResource("1_qbkkh")
 upgrade_name = "+Projectile Speed"
 upgrade_desc = "Your projectiles travel 300 u/s faster."
 stat_increase = 300.0
+stat_to_upgrade = 2
 metadata/_custom_type_script = "uid://dqnb56td4sr1c"
