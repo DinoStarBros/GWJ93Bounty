@@ -16,7 +16,7 @@ func _ready() -> void:
 			queue_free()
 	)
 	
-	hitbox_component.attack.attack_damage = item_resource.damage
+	hitbox_component.attack.attack_damage = item_resource.damage * Global.player.damage_mult
 	hitbox_component.attack.knockback = item_resource.knockback
 	hitbox_component.hits = item_resource.hits
 	hitbox_component.attack.stun_duration = item_resource.stun_duration

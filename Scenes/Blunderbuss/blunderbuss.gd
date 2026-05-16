@@ -24,6 +24,7 @@ var sucking : bool = false:
 		if sucking: vacloop_desire_pitch = 4
 		else: vacloop_desire_pitch = 0.01
 var projectile_spd_mult : float = 1
+var projectile_size_mult : float = 1
 
 const projectile_item_scn : PackedScene = preload("res://Projectiles/ProjectileItem/projectile_item.tscn")
 
@@ -67,7 +68,7 @@ func _spawn_projectile_item(item: SuckableItemResource, direction: int) -> void:
 	
 	projectile_item.velocity.x += randf_range(-spread,spread) * item.speed
 	projectile_item.velocity.y += randf_range(-spread,spread) * item.speed
-	
+	projectile_item.scale *= projectile_size_mult
 	play_item_sfx(item)
 
 func play_item_sfx(item: SuckableItemResource) -> void:

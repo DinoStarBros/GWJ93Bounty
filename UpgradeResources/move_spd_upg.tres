@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_mbad6")
 upgrade_name = "+Move Speed"
-upgrade_desc = "You move 20% faster."
-stat_increase = 0.2
+upgrade_desc = "You move 10% faster."
+stat_increase = 0.1
 stat_to_upgrade = 5
 metadata/_custom_type_script = "uid://dqnb56td4sr1c"

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_5scnd")
 upgrade_name = "+Projectile Size"
-upgrade_desc = "Your projectiles are 25% bigger."
-stat_increase = 0.25
+upgrade_desc = "Your projectiles are 10% bigger."
+stat_increase = 0.1
 stat_to_upgrade = 3
 metadata/_custom_type_script = "uid://dqnb56td4sr1c"

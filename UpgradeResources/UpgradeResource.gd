@@ -30,17 +30,17 @@ func apply_upgrade_to_player(increase: float) -> void:
 			Global.blunderbuss.projectile_spd_mult += increase
 			
 		stats.PROJECTILE_SIZE:
-			Global.player
+			Global.blunderbuss.projectile_size_mult += increase
 			
 		stats.SUCK_RANGE:
 			Global.blunderbuss.suck_range *= 1 + increase
 			Global.blunderbuss.suck_spread *= 1 + increase
 			
 		stats.MOVE_SPEED:
-			Global.player
+			Global.player.move_speed *= 1 + increase
 			
 		stats.DASH_SPEED:
-			Global.player
+			Global.player.dash_speed *= 1 + increase
 			
 		stats.BARREL_CAPACITY:
 			Global.barrel.max_item_amount += 1
