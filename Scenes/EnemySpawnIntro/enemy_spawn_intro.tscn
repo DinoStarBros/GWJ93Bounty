@@ -47,6 +47,7 @@ script = ExtResource("1_qeyn6")
 
 [node name="Cross" type="Sprite2D" parent="." unique_id=2119386224]
 self_modulate = Color(1, 1, 1, 0.28235295)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_30lko")
 
 [node name="woudhawd" type="AnimationPlayer" parent="." unique_id=783772301]

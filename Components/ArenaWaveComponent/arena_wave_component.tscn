@@ -2,5 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cl6jbxeh3pcl3" path="res://Components/ArenaWaveComponent/arena_wave_component.gd" id="1_dq7y8"]
 
-[node name="ArenaWaveComponent" type="Node2D" unique_id=157935638]
+[node name="ArenaWaveComponent" type="Node2D" unique_id=1115334429]
 script = ExtResource("1_dq7y8")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1806951462]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

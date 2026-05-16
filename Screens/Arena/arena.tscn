@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bp01nbu8grdw" path="res://Components/ArenaWaveComponent/arena_wave_component.tscn" id="7_f8dps"]
 [ext_resource type="PackedScene" uid="uid://dbcb4oiuu5rbc" path="res://Entities/Player/player.tscn" id="7_wk5ni"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h07ax"]
+size = Vector2(1359, 788)
+
 [node name="Arena" type="Node2D" unique_id=775134962]
 script = ExtResource("1_w8ma2")
 
@@ -21,9 +24,15 @@ tile_set = ExtResource("2_bft7o")
 
 [node name="ItemsParent" parent="." unique_id=2025158366 instance=ExtResource("4_f8dps")]
 
-[node name="ArenaWaveComponent" parent="." unique_id=157935638 node_paths=PackedStringArray("entities_parent") instance=ExtResource("7_f8dps")]
+[node name="ArenaWaveComponent" parent="." unique_id=157935638 node_paths=PackedStringArray("arena_spawn_domain", "entities_parent") instance=ExtResource("7_f8dps")]
+arena_spawn_domain = NodePath("arenaSpawnDomain")
 entities_parent = NodePath("../EntitiesParent")
 waves = Array[ExtResource("5_h07ax")]([ExtResource("6_wk5ni")])
+
+[node name="arenaSpawnDomain" type="CollisionShape2D" parent="ArenaWaveComponent" unique_id=541101675]
+position = Vector2(-9.5, -36)
+shape = SubResource("RectangleShape2D_h07ax")
+debug_color = Color(0, 0.6, 0.69803923, 0)
 
 [node name="ProjectilesParent" parent="." unique_id=564160944 instance=ExtResource("5_vhfm8")]
 
