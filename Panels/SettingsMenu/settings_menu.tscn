@@ -35,12 +35,14 @@ current_tab = 0
 
 [node name="Audio" type="VBoxContainer" parent="PanelContainer/Tabs" unique_id=1785194851]
 layout_mode = 2
+alignment = 1
 metadata/_tab_index = 0
 
 [node name="txt" type="Label" parent="PanelContainer/Tabs/Audio" unique_id=282337801]
 layout_mode = 2
 text = "Master"
 label_settings = SubResource("LabelSettings_pbt7f")
+horizontal_alignment = 1
 
 [node name="master_volume" type="HSlider" parent="PanelContainer/Tabs/Audio" unique_id=1842057598]
 unique_name_in_owner = true
@@ -53,6 +55,7 @@ tick_count = 11
 layout_mode = 2
 text = "Music"
 label_settings = SubResource("LabelSettings_pbt7f")
+horizontal_alignment = 1
 
 [node name="music_volume" type="HSlider" parent="PanelContainer/Tabs/Audio" unique_id=1261757886]
 unique_name_in_owner = true
@@ -65,6 +68,7 @@ tick_count = 11
 layout_mode = 2
 text = "SFX"
 label_settings = SubResource("LabelSettings_pbt7f")
+horizontal_alignment = 1
 
 [node name="sfx_volume" type="HSlider" parent="PanelContainer/Tabs/Audio" unique_id=300678899]
 unique_name_in_owner = true

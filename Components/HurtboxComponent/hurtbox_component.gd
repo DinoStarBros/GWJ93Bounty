@@ -24,13 +24,13 @@ func hurt(attack : Attack) -> void:
 	
 	health_component.hurt(attack)
 	
-	Global.spawn_txt(roundi(attack.attack_damage), global_position)
 	_spawn_hitspark(attack)
 	
 	if knockback_stun_component:
 		knockback_stun_component.hurt(attack)
 	
 	if get_parent() is Enemy:
+		Global.spawn_txt(roundi(attack.attack_damage), global_position)
 		sfx_players.play_enemy_hurt_sfx()
 		if health_component.hp <= 0:
 			sfx_players.play_enemy_dead_sfx()

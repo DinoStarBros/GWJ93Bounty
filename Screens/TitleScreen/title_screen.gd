@@ -2,6 +2,7 @@ extends Control
 class_name TitleScreen
 
 @onready var settings_menu: Settings = %settingsMenu
+@onready var how_to_play: HowToPlay = %how_to_play
 
 func _ready() -> void:
 	%play.pressed.connect(_play_pressed)
@@ -17,7 +18,7 @@ func _play_pressed() -> void:
 	pass
 
 func _tutorial_pressed() -> void:
-	pass
+	how_to_play.show()
 
 func _settings_pressed() -> void:
 	settings_menu.show()

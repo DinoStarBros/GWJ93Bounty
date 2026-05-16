@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4vdays24rgjo" path="res://Screens/TitleScreen/title_screen.gd" id="1_des2l"]
 [ext_resource type="PackedScene" uid="uid://bqrd0srtdaksn" path="res://Panels/SettingsMenu/settings_menu.tscn" id="2_vnbe3"]
+[ext_resource type="PackedScene" uid="uid://bgkxogtg651y3" path="res://Panels/HowToPlay/how_to_play.tscn" id="3_ilw8c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_des2l"]
 font_size = 100
@@ -82,3 +83,8 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 47
 text = "Close"
+
+[node name="how_to_play" parent="." unique_id=1121814177 instance=ExtResource("3_ilw8c")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
