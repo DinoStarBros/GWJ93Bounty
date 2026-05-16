@@ -22,7 +22,8 @@ var time_left : float
 
 var restock_price : int = 1
 var upgrade_price : int = 5
-var crate_price : int = 1
+var crate_price : int = 2
+var crates_for_next_wave : int = 0
 
 const txt_scn : PackedScene = preload("res://Juices/DmgNum/dmg_num.tscn")
 

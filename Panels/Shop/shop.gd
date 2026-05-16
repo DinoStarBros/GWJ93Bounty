@@ -21,14 +21,11 @@ var possible_upgrade_resources : Array[UpgradeResource] = [
 ]
 
 func _ready() -> void:
+	Global.crates_for_next_wave = 0
 	
 	next_wave_button.pressed.connect(_next_wave_pressed)
 	GlobalSignals.NextWaveStart.connect(_next_wave_start)
-	%buy_barrel.pressed.connect(
-		func():
-		%chaChing.pitch_scale = 1.4 + randf_range(-.1,.1)
-		%chaChing.play()
-	)
+	%buy_barrel.pressed.connect(_buy_crate_pressed)
 	restock.pressed.connect(_restock_pressed)
 	
 	for node in upgrades.get_children():
@@ -51,6 +48,7 @@ func _next_wave_pressed() -> void:
 
 func _next_wave_start() -> void:
 	Global.current_wave += 1
+	Global.crate_price += 1
 	get_tree().paused = false
 	Global.current_game_state = Global.game_states.COMBAT
 	queue_free()
@@ -67,7 +65,16 @@ func _restock_pressed() -> void:
 		
 		Global.restock_price += 1
 
+func _buy_crate_pressed() -> void:
+	if Global.coins >= Global.crate_price:
+		%chaChing.pitch_scale = 1.4 + randf_range(-.1,.1)
+		%chaChing.play()
+		
+		Global.coins -= Global.crate_price
+		Global.crates_for_next_wave += 1
+
 func _process(delta: float) -> void:
+	
 	coin_count.text = str(
 		"Coins: ", Global.coins
 	)
@@ -78,4 +85,12 @@ func _process(delta: float) -> void:
 	
 	restock.text = str(
 		"Restock (", Global.restock_price, ")"
+	)
+	
+	%crate_price.text = str(
+		"Cost: ", Global.crate_price,
+		"\n",
+		"Crates Bought for Next Wave: ",
+		Global.crates_for_next_wave
+		
 	)

@@ -18,6 +18,11 @@ font_size = 40
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_1mqa2"]
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Shop" type="PanelContainer" unique_id=837301942]
 process_mode = 3
 anchors_preset = 15
@@ -64,10 +69,24 @@ offset_top = 422.0
 offset_right = 1175.0
 offset_bottom = 550.0
 theme_override_font_sizes/font_size = 30
-text = "Buy Barrel/Crate of Ammo
-(It will show up on your ship
-in the next wave, gives ammo
-when you break it)"
+text = "Buy Barrel/Crate of Ammo"
+
+[node name="crate_price" type="Label" parent="buyStuff/buy_barrel" unique_id=487567424]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.0
+offset_top = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Cost: 2"
+label_settings = SubResource("LabelSettings_1mqa2")
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="upgrades" type="GridContainer" parent="buyStuff" unique_id=671511644]
 unique_name_in_owner = true
