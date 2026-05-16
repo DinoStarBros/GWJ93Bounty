@@ -25,12 +25,15 @@ var sucking : bool = false:
 		else: vacloop_desire_pitch = 0.01
 var projectile_spd_mult : float = 1
 var projectile_size_mult : float = 1
+var current_slash_cooldown : float = 0
 
 const projectile_item_scn : PackedScene = preload("res://Projectiles/ProjectileItem/projectile_item.tscn")
+const slash_cooldown : float = 0.7
 
 func _ready() -> void:
 	barrel.Shoot.connect(barrel_shoot)
 	barrel.Eject.connect(barrel_eject)
+	barrel.Empty.connect(empty)
 	
 	Global.blunderbuss = self
 	Global.blunderbuss_gun_tip = gun_tip
@@ -77,3 +80,13 @@ func play_item_sfx(item: SuckableItemResource) -> void:
 	item_sound.pitch_scale = item.sfx_pitch + randf_range(-.2,.2)
 	
 	item_sound.play(item.sfx_start)
+
+func empty() -> void:
+	if current_slash_cooldown <= 0:
+		%slashNim.play("slash")
+		%slash.pitch_scale = 0.7 + randf_range(-.1,.1)
+		%slash.play()
+		current_slash_cooldown = slash_cooldown
+
+func _physics_process(delta: float) -> void:
+	current_slash_cooldown = max(0, current_slash_cooldown - delta)

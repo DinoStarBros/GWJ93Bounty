@@ -3,6 +3,7 @@ class_name Barrel
 
 signal Shoot(item: SuckableItemResource)
 signal Eject(item: SuckableItemResource)
+signal Empty
 
 @onready var debug: Label = %debug
 @onready var barrel_bottom_pos: Node2D = %barrel_bottom_pos
@@ -106,6 +107,7 @@ func shoot() -> void:
 func empty() -> void:
 	%Empty.pitch_scale = 1 + randf_range(-.1,.1)
 	%Empty.play(.06)
+	Empty.emit()
 
 var tween : Tween
 func tween_vec2(object: Node2D, property: NodePath, vec2: Vector2, duration: float = 0.25) -> void:

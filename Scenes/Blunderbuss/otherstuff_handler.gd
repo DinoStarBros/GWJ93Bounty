@@ -7,9 +7,17 @@ class_name VacloopHandler
 @onready var suck_effect: SuckEffect = %SuckEffect
 @onready var suck_collision: CollisionPolygon2D = %suckCollision
 @onready var suck_pickup_collision: CollisionShape2D = %suckPickupCollision
+@onready var hitbox_component: HitboxComponent = %HitboxComponent
+
+var melee_damage : float = 7
 
 func _ready() -> void:
 	suck_range_handle()
+	
+	await get_tree().process_frame
+	hitbox_component.attack.attack_damage = melee_damage * Global.player.damage_mult
+	hitbox_component.attack.knockback = 500
+	hitbox_component.attack.stun_duration = .4
 
 func suck_range_handle() -> void:
 	suck_collision.polygon[1].x = blunderbuss.suck_range

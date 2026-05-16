@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bsoye2yyku5pv"]
+[gd_scene format=4 uid="uid://bsoye2yyku5pv"]
 
 [ext_resource type="Script" uid="uid://ce7nwccdvxrp3" path="res://Scenes/Blunderbuss/blunderbuss.gd" id="1_1n76p"]
 [ext_resource type="Texture2D" uid="uid://dpjad0so3ay4a" path="res://Art/Placeholder/PeaGun.png" id="2_ue752"]
@@ -7,34 +7,80 @@
 [ext_resource type="AudioStream" uid="uid://cjrha4kbrqcpl" path="res://Audio/planesfx/gunshot-352466.mp3" id="5_rc6mt"]
 [ext_resource type="Script" uid="uid://yjt6pds7lav5" path="res://Scenes/Blunderbuss/otherstuff_handler.gd" id="6_l0cpo"]
 [ext_resource type="AudioStream" uid="uid://e7fgtf2ti3ki" path="res://Audio/41randsfx/15.wav" id="6_pyi6s"]
+[ext_resource type="AudioStream" uid="uid://daiixog5jq884" path="res://Audio/cardtowersfx/sword_slash.wav" id="8_j02ho"]
+[ext_resource type="PackedScene" uid="uid://rqxyqn8cdxay" path="res://Components/HitboxComponent/hitbox_component.tscn" id="9_jviyl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ceqtj"]
 radius = 2.0
 
 [sub_resource type="Animation" id="Animation_l0cpo"]
 length = 0.001
-
-[sub_resource type="Animation" id="Animation_rc6mt"]
-resource_name = "a"
-length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SFX/vacLoop:playing")
+tracks/0/path = NodePath("slash_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.53333336),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitboxComponent/slashHitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_j02ho"]
+resource_name = "slash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("slash_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitboxComponent/slashHitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.20000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l0cpo"]
 _data = {
 &"RESET": SubResource("Animation_l0cpo"),
-&"a": SubResource("Animation_rc6mt")
+&"slash": SubResource("Animation_j02ho")
 }
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_47bxt"]
+_data = PackedByteArray("AAADAAUAAAABAAAAwAAAAIAAAAAWAQAAUklGRg4BAABXRUJQVlA4TAIBAAAvv8AfEA8w//M///Mf8IAb23bc5mO0IEQJKOWXRpTGUlACQ+0vwcN/krw7ieg/I7dtHHFOWzXlF/aDGw0uB5C1gN2wiIEOcGA3DxhVDChB4OSjEzwI9DrqWIJAy7xTSPOAJeMHu0lgPm7IHAicOIkS2FA5EOhchQdWsgoWDgQab6QAk0AwgDHwCS0ciDzUfbObE4+c1HOxrZIa6YXOt0TWPP4WOdJ2YwO7iKWxiESEbdU0eIy/FJ2we+2TjkyEQ/t/Gi2LTiiiDVXU4aL1CYv65RNg4vi8Xr9vrz+XJ863iDZk0Qk70Q3p1dvpY0D+sif1zdNOfYISXmcORH/1SeAHOAw=")
+size_override = Vector2(192, 128)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jviyl"]
+radius = 37.0
+height = 114.0
 
 [node name="Blunderbuss" type="Node2D" unique_id=1936563938]
 script = ExtResource("1_1n76p")
@@ -90,7 +136,8 @@ stream = ExtResource("6_pyi6s")
 volume_db = -5.0
 bus = &"SFX"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=386155903]
+[node name="slashNim" type="AnimationPlayer" parent="." unique_id=386155903]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_l0cpo")
 
 [node name="OtherStuffHandler" type="Node" parent="." unique_id=1217987144 node_paths=PackedStringArray("blunderbuss")]
@@ -101,3 +148,52 @@ blunderbuss = NodePath("..")
 [node name="ItemSound" type="AudioStreamPlayer" parent="." unique_id=1564658908]
 unique_name_in_owner = true
 bus = &"SFX"
+
+[node name="slash" type="AudioStreamPlayer" parent="." unique_id=81610624]
+unique_name_in_owner = true
+stream = ExtResource("8_j02ho")
+pitch_scale = 0.7
+bus = &"SFX"
+
+[node name="slash_sprite" type="Sprite2D" parent="." unique_id=2008725130]
+texture_filter = 1
+position = Vector2(35, 0)
+scale = Vector2(2, 2)
+texture = SubResource("PortableCompressedTexture2D_47bxt")
+hframes = 3
+vframes = 2
+frame = 5
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/BananTime/slash_trail.aseprite",
+"source_uid": 4155579216957074571
+}
+metadata/_aseprite_wizard_source_file_hash_ = "dc4c455025a9242491018d823ca28a0f"
+
+[node name="HitboxComponent" parent="." unique_id=2110612510 instance=ExtResource("9_jviyl")]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+allow_multihit = true
+
+[node name="slashHitbox" type="CollisionShape2D" parent="HitboxComponent" unique_id=1206536449]
+position = Vector2(44, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_jviyl")
+disabled = true
