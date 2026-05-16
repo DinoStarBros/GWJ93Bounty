@@ -17,5 +17,7 @@ func _physics_process(delta: float) -> void:
 		"\n",
 		"suck spread", Global.blunderbuss.suck_spread,
 		"\n",
+		"projectile speed", Global.blunderbuss.projectile_spd_mult,
+		"\n",
 		
 	)

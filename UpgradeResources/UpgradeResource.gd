@@ -27,7 +27,7 @@ func apply_upgrade_to_player(increase: float) -> void:
 			Global.player.damage_mult += increase
 			
 		stats.PROJECTILE_SPEED:
-			Global.player
+			Global.blunderbuss.projectile_spd_mult += increase
 			
 		stats.PROJECTILE_SIZE:
 			Global.player

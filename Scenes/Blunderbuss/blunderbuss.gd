@@ -1,7 +1,10 @@
 extends Node2D
 class_name Blunderbuss
 
-@export var suck_range : float = 250.0
+@export var suck_range : float = 250.0:
+	set(value):
+		suck_range = value
+		other_stuff_handler.suck_range_handle()
 @export var suck_spread : float = 120.0
 @export var barrel : Barrel
 
@@ -20,6 +23,7 @@ var sucking : bool = false:
 		sucking = value
 		if sucking: vacloop_desire_pitch = 4
 		else: vacloop_desire_pitch = 0.01
+var projectile_spd_mult : float = 1
 
 const projectile_item_scn : PackedScene = preload("res://Projectiles/ProjectileItem/projectile_item.tscn")
 
@@ -56,7 +60,7 @@ func _spawn_projectile_item(item: SuckableItemResource, direction: int) -> void:
 		global_position.direction_to(get_global_mouse_position()) *
 		item.speed *
 		direction
-	)
+	) * projectile_spd_mult
 	Global.projectiles_parent.add_child(projectile_item)
 	
 	projectile_item.global_position = gun_tip.global_position

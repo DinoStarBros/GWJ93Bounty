@@ -9,6 +9,9 @@ class_name VacloopHandler
 @onready var suck_pickup_collision: CollisionShape2D = %suckPickupCollision
 
 func _ready() -> void:
+	suck_range_handle()
+
+func suck_range_handle() -> void:
 	suck_collision.polygon[1].x = blunderbuss.suck_range
 	suck_collision.polygon[2].x = blunderbuss.suck_range
 
