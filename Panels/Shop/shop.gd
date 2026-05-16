@@ -22,6 +22,7 @@ var possible_upgrade_resources : Array[UpgradeResource] = [
 
 func _ready() -> void:
 	Global.crates_for_next_wave = 0
+	Global.restock_price = 1
 	
 	next_wave_button.pressed.connect(_next_wave_pressed)
 	GlobalSignals.NextWaveStart.connect(_next_wave_start)
@@ -49,6 +50,7 @@ func _next_wave_pressed() -> void:
 func _next_wave_start() -> void:
 	Global.current_wave += 1
 	Global.crate_price += 1
+	Global.upgrade_price += 3
 	get_tree().paused = false
 	Global.current_game_state = Global.game_states.COMBAT
 	queue_free()

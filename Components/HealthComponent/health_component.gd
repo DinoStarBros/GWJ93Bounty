@@ -21,6 +21,8 @@ var hp : float = max_hp:
 func _ready() -> void:
 	max_hp = p.max_hp
 	hp = max_hp
+	
+	GlobalSignals.WaveDone.connect(wave_done)
 
 func hurt(attack:Attack) -> void:
 	hp -= attack.attack_damage
@@ -30,3 +32,9 @@ func hurt(attack:Attack) -> void:
 	elif get_parent() is Player:
 		if hp <= 0:
 			pass
+
+func wave_done() -> void:
+	if get_parent() is Enemy:
+		get_parent().queue_free()
+	elif get_parent() is Player:
+		get_parent().global_position = Vector2.ZERO

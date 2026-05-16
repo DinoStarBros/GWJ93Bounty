@@ -37,4 +37,3 @@ func buy() -> void:
 		%chaChing.pitch_scale = 1.4 + randf_range(-.1,.1)
 		%chaChing.play()
 		Global.coins -= Global.upgrade_price
-		Global.upgrade_price += 1
