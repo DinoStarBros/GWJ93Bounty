@@ -7,9 +7,15 @@ class_name Player
 
 @onready var hurtbox: CollisionShape2D = %hurtbox
 @onready var hurtbox_component: HurtboxComponent = %HurtboxComponent
+@onready var state_machine: StateMachine = %StateMachine
 
 var last_wasd_input : Vector2
 var iframes : float
+var dead : bool = false:
+	set(value):
+		dead = value
+		if dead:
+			state_machine.change_state("Dead")
 
 func _ready() -> void:
 	Global.player = self
@@ -17,9 +23,14 @@ func _ready() -> void:
 		func(attack: Attack):
 			iframes = 1
 	)
+	
+	Global.current_game_state = Global.game_states.COMBAT
 
 func _physics_process(delta: float) -> void:
-	iframes = max(iframes - delta, 0)
+	if dead:
+		iframes = 1
+	else:
+		iframes = max(iframes - delta, 0)
 	hurtbox.disabled = iframes > 0
 	
 	move_and_slide()

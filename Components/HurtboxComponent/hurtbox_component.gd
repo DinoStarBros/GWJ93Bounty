@@ -9,9 +9,12 @@ signal Hurt(attack: Attack)
 @onready var sfx_players: SFXPlayers = %SFXPlayers
 
 var allow_hurt : bool = true
+var colliders : Array
 
 func _ready() -> void:
-	pass
+	for n in get_children():
+		if is_collider(n):
+			colliders.append(n)
 
 func hurt(attack : Attack) -> void:
 	if !allow_hurt: return
@@ -35,6 +38,7 @@ func hurt(attack : Attack) -> void:
 		sfx_players.play_player_hurt_sfx()
 		if health_component.hp <= 0:
 			sfx_players.play_player_dead_sfx()
+			get_parent().dead = true
 	
 	await get_tree().physics_frame
 	allow_hurt = true
@@ -45,3 +49,6 @@ func _spawn_hitspark(attack: Attack) -> void:
 	hitspark.look_at(Global.player.global_position)
 	hitspark.rotation += PI
 	Global.projectiles_parent.add_child(hitspark)
+
+func is_collider(node: Node) -> bool:
+	return node is CollisionShape2D or node is CollisionPolygon2D

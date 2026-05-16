@@ -9,14 +9,14 @@ func _ready() -> void:
 	%resume.pressed.connect(on_resume)
 	%quit.pressed.connect(func():%sure.visible=!%sure.visible)
 	%sure.pressed.connect(func():
-		#SceneManager.change_scene("res://Screens/level_select/level_select.tscn")
-		get_tree().quit()
+		SceneManager.change_scene("res://Screens/TitleScreen/title_screen.tscn")
+		#get_tree().quit()
 		%settingsMenu._save()
 		)
 
 func _input(event: InputEvent) -> void:
 	if (Input.is_action_just_pressed("esc") and 
-		Global.current_game_state == Global.game_states.NORMAL
+		Global.current_game_state == Global.game_states.COMBAT
 		):
 			pause_or_resume()
 
@@ -32,7 +32,7 @@ func pause_or_resume() -> void:
 
 func _process(delta: float) -> void:
 	visible = (get_tree().paused and
-		Global.current_game_state == Global.game_states.NORMAL
+		Global.current_game_state == Global.game_states.COMBAT
 		)
 
 func on_resume() -> void:

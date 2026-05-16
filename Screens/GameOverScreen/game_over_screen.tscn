@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://bksa8r7qap5he"]
+
+[ext_resource type="Script" uid="uid://cqsgckmh3ysdj" path="res://Screens/GameOverScreen/game_over_screen.gd" id="1_ebtim"]
+[ext_resource type="Texture2D" uid="uid://b7x3qxooitt0l" path="res://addons/scene_manager/icon.png" id="2_2mngo"]
+[ext_resource type="AudioStream" uid="uid://bg6gb6r0g5bif" path="res://Audio/BananTime/floraphonic-movement-swipe-whoosh-1-186575.mp3" id="3_t6uxo"]
+[ext_resource type="AudioStream" uid="uid://bslxb6o6fq2up" path="res://Audio/BussSFX/fire-in-furnace-318347.mp3" id="4_n6mq1"]
+[ext_resource type="Script" uid="uid://r8tyxhelqw6b" path="res://Screens/GameOverScreen/gos_handler.gd" id="5_2mngo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_klp5p"]
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_0xuf7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("txt:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(316, -200)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("buttons:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(562, 800)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 328)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("whoosh:pitch_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+
+[sub_resource type="Animation" id="Animation_xkc4j"]
+resource_name = "intro"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("txt:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.18301077, 1),
+"update": 0,
+"values": [Vector2(316, -200), Vector2(316, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("buttons:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(0.25000006, 1),
+"update": 0,
+"values": [Vector2(562, 800), Vector2(562, 558)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(0.22531264, 1),
+"update": 0,
+"values": [Vector2(-300, 328), Vector2(623.99994, 328)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("whoosh:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("whoosh:pitch_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.7, 0.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0xuf7"]
+_data = {
+&"RESET": SubResource("Animation_0xuf7"),
+&"intro": SubResource("Animation_xkc4j")
+}
+
+[node name="GameOverScreen" type="Control" unique_id=2128831205]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ebtim")
+
+[node name="txt" type="Label" parent="." unique_id=1656606922]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -324.0
+offset_top = -200.0
+offset_right = 324.0
+offset_bottom = -68.0
+grow_horizontal = 2
+text = "Pirate Menace Still
+On the Loose!"
+label_settings = SubResource("LabelSettings_klp5p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buttons" type="VBoxContainer" parent="." unique_id=1793029127]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = 80.0
+offset_right = 79.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="retry" type="Button" parent="buttons" unique_id=1696481122]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Retry"
+
+[node name="exit" type="Button" parent="buttons" unique_id=1098349394]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=571806905]
+position = Vector2(-300, 328)
+scale = Vector2(22.8, 22.8)
+texture = ExtResource("2_2mngo")
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1166738567]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_0xuf7")
+
+[node name="whoosh" type="AudioStreamPlayer" parent="." unique_id=1841779471]
+stream = ExtResource("3_t6uxo")
+pitch_scale = 0.5
+bus = &"SFX"
+
+[node name="burn" type="AudioStreamPlayer" parent="." unique_id=1285854867]
+stream = ExtResource("4_n6mq1")
+volume_db = -15.0
+autoplay = true
+bus = &"SFX"
+
+[node name="GOSHandler" type="Node" parent="." unique_id=810611529]
+script = ExtResource("5_2mngo")

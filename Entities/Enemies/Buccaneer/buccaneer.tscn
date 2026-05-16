@@ -27,7 +27,7 @@ collision_layer = 0
 script = ExtResource("1_m8i1k")
 hitbox_component = NodePath("HitboxComponent")
 move_speed = 200.0
-max_hp = 50.0
+max_hp = 40.0
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1250451182]
 position = Vector2(0, -24)

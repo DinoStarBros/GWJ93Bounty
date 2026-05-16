@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dn447bpxbgahm"]
+
+[ext_resource type="Script" uid="uid://c0chnam5xnglb" path="res://Projectiles/EnemyBurnGround/enemy_burn_ground.gd" id="1_3q8pp"]
+[ext_resource type="Texture2D" uid="uid://cb00doqsxr2ay" path="res://Art/Stuff2/shockwave-Sheet.png" id="2_0cn8m"]
+[ext_resource type="Material" uid="uid://5nru1rfaaqlw" path="res://Projectiles/EnemyBurnGround/enemy_burn_ground_particles.tres" id="2_vixua"]
+[ext_resource type="PackedScene" uid="uid://rqxyqn8cdxay" path="res://Components/HitboxComponent/hitbox_component.tscn" id="3_5e3n7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5e3n7"]
+radius = 97.00516
+
+[sub_resource type="Animation" id="Animation_lituv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0cn8m"]
+resource_name = "awdsa"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lituv"]
+_data = {
+&"RESET": SubResource("Animation_lituv"),
+&"awdsa": SubResource("Animation_0cn8m")
+}
+
+[node name="EnemyBurnGround" type="Node2D" unique_id=1126034509]
+script = ExtResource("1_3q8pp")
+
+[node name="ShockwaveSheet" type="Sprite2D" parent="." unique_id=203416910]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_0cn8m")
+region_enabled = true
+region_rect = Rect2(128, 256, 128, 128)
+
+[node name="burn" type="GPUParticles2D" parent="." unique_id=1490246486]
+amount = 40
+randomness = 0.39
+process_material = ExtResource("2_vixua")
+
+[node name="HitboxComponent" parent="." unique_id=2110612510 instance=ExtResource("3_5e3n7")]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 4
+allow_multihit = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1492007658]
+shape = SubResource("CircleShape2D_5e3n7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2144167406]
+libraries/ = SubResource("AnimationLibrary_lituv")
+autoplay = &"awdsa"
+
+[node name="Timer" type="Timer" parent="." unique_id=1809189396]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

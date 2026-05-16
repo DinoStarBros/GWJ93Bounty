@@ -1,7 +1,7 @@
 extends Node
 
 enum game_states {
-	NORMAL,
+	COMBAT, LOSE, WIN, TITLE, SHOP
 	
 }
 
