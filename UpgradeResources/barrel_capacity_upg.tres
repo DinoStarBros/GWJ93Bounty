@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://dfmfawd8p1fir"]
+
+[ext_resource type="Script" uid="uid://dqnb56td4sr1c" path="res://UpgradeResources/UpgradeResource.gd" id="1_p5x1d"]
+
+[resource]
+script = ExtResource("1_p5x1d")
+upgrade_name = "+Barrel Capacity"
+upgrade_desc = "Your Blunderbuss' Barrel can store 1 extra item."
+stat_increase = 1.0
+stat_to_upgrade = 7
+metadata/_custom_type_script = "uid://dqnb56td4sr1c"

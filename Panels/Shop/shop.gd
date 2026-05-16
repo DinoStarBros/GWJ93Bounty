@@ -16,6 +16,7 @@ var possible_upgrade_resources : Array[UpgradeResource] = [
 	preload("res://UpgradeResources/suck_range_upg.tres"),
 	preload("res://UpgradeResources/move_spd_upg.tres"),
 	preload("res://UpgradeResources/dash_spd_upg.tres"),
+	preload("res://UpgradeResources/barrel_capacity_upg.tres"),
 	
 ]
 

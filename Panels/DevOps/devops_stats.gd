@@ -13,5 +13,9 @@ func _physics_process(delta: float) -> void:
 		"\n",
 		"damage mult:", p.damage_mult,
 		"\n",
+		"suck range", Global.blunderbuss.suck_range,
+		"\n",
+		"suck spread", Global.blunderbuss.suck_spread,
+		"\n",
 		
 	)

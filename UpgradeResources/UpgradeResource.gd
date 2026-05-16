@@ -14,6 +14,7 @@ enum stats {
 	SUCK_RANGE,
 	MOVE_SPEED,
 	DASH_SPEED,
+	BARREL_CAPACITY,
 }
 
 func apply_upgrade_to_player(increase: float) -> void:
@@ -32,7 +33,8 @@ func apply_upgrade_to_player(increase: float) -> void:
 			Global.player
 			
 		stats.SUCK_RANGE:
-			Global.player
+			Global.blunderbuss.suck_range *= 1 + increase
+			Global.blunderbuss.suck_spread *= 1 + increase
 			
 		stats.MOVE_SPEED:
 			Global.player
@@ -40,3 +42,5 @@ func apply_upgrade_to_player(increase: float) -> void:
 		stats.DASH_SPEED:
 			Global.player
 			
+		stats.BARREL_CAPACITY:
+			Global.barrel.max_item_amount += 1
