@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_oij3o")
 upgrade_name = "+Damage"
-upgrade_desc = "Increases the damage of your Blunderbuss by 5%."
-stat_increase = 0.05
+upgrade_desc = "Increases the damage of your Blunderbuss by 10%."
+stat_increase = 0.1
 stat_to_upgrade = 1
 metadata/_custom_type_script = "uid://dqnb56td4sr1c"

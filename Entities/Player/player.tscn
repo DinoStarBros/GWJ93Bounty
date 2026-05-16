@@ -115,7 +115,7 @@ text = "Sure"
 script = ExtResource("5_01a4e")
 
 [node name="Barrel" parent="GUI" unique_id=536368689 instance=ExtResource("8_x1y6q")]
-position = Vector2(1255, 607)
+position = Vector2(1256, 495)
 scale = Vector2(0.4, 0.4)
 
 [node name="HpBar" type="ProgressBar" parent="GUI" unique_id=1005040977]

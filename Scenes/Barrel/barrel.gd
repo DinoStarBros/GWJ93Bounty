@@ -6,11 +6,15 @@ signal Eject(item: SuckableItemResource)
 
 @onready var debug: Label = %debug
 @onready var barrel_bottom_pos: Node2D = %barrel_bottom_pos
+@onready var barrel_sprite: Sprite2D = %barrel_sprite
 
 var items : Array[SuckableItemResource]
 var barrel_items : Array[BarrelItem]
 var barrel_item_names : Array
-var max_item_amount : int = 15
+var max_item_amount : int = 15:
+	set(value):
+		max_item_amount = value
+		
 var barrel_items_amount : int:
 	set(value):
 		if barrel_items_amount == value: return

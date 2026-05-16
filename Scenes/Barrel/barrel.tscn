@@ -11,12 +11,12 @@ script = ExtResource("1_opngn")
 
 [node name="barrel_bottom_pos" type="Node2D" parent="." unique_id=1226874300]
 unique_name_in_owner = true
-position = Vector2(0, 104)
-scale = Vector2(0.997, 7.5)
+position = Vector2(0, 440)
+scale = Vector2(1, 7.5)
 
-[node name="Barellproto" type="Sprite2D" parent="." unique_id=837294187]
-position = Vector2(0, -344.5)
-scale = Vector2(0.997, 7.5)
+[node name="barrel_sprite" type="Sprite2D" parent="." unique_id=837294187]
+unique_name_in_owner = true
+scale = Vector2(1, 7.5)
 texture = ExtResource("1_hpg1d")
 
 [node name="SFX" type="Node" parent="." unique_id=2053164541]

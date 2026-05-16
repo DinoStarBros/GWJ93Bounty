@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_5nejg")
 upgrade_name = "+Dash Speed"
-upgrade_desc = "You dash 20% faster."
-stat_increase = 0.2
+upgrade_desc = "You dash 10% faster."
+stat_increase = 0.1
 stat_to_upgrade = 6
 metadata/_custom_type_script = "uid://dqnb56td4sr1c"
