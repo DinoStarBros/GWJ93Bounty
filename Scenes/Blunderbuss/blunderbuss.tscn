@@ -93,7 +93,7 @@ texture = ExtResource("2_ue752")
 
 [node name="GunTip" type="Marker2D" parent="." unique_id=1469827339]
 unique_name_in_owner = true
-position = Vector2(65, 0)
+position = Vector2(57, 0)
 
 [node name="SuckEffect" parent="GunTip" unique_id=52156417 instance=ExtResource("3_iba4p")]
 unique_name_in_owner = true

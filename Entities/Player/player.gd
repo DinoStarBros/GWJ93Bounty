@@ -27,6 +27,10 @@ func _ready() -> void:
 		func(attack: Attack):
 			iframes = 1
 	)
+	GlobalSignals.NextWaveStart.connect(
+		func():
+		health_component.hp = health_component.max_hp
+	)
 	
 	Global.current_game_state = Global.game_states.COMBAT
 	Global.coins = 0
