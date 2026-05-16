@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6mia0w4qpmlu"]
 
 [ext_resource type="Script" uid="uid://dws2o3qmxlr3y" path="res://Panels/Shop/shop.gd" id="1_0p52e"]
+[ext_resource type="PackedScene" uid="uid://dkk18vgp4bowj" path="res://Panels/UpgradeBuyButton/upgrade_buy_button.tscn" id="2_7mhtn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p52e"]
 bg_color = Color(0, 0, 0, 0.81960785)
@@ -65,3 +66,23 @@ text = "Buy Barrel/Crate of Ammo
 (It will show up on your ship
 in the next wave, gives ammo
 when you break it)"
+
+[node name="upgrades" type="GridContainer" parent="buyStuff" unique_id=671511644]
+unique_name_in_owner = true
+offset_left = 76.0
+offset_top = 242.0
+offset_right = 202.0
+offset_bottom = 284.0
+columns = 2
+
+[node name="UpgradeBuyButton" parent="buyStuff/upgrades" unique_id=1564239214 instance=ExtResource("2_7mhtn")]
+layout_mode = 2
+
+[node name="UpgradeBuyButton2" parent="buyStuff/upgrades" unique_id=1213820391 instance=ExtResource("2_7mhtn")]
+layout_mode = 2
+
+[node name="UpgradeBuyButton3" parent="buyStuff/upgrades" unique_id=1470435291 instance=ExtResource("2_7mhtn")]
+layout_mode = 2
+
+[node name="UpgradeBuyButton4" parent="buyStuff/upgrades" unique_id=1001215126 instance=ExtResource("2_7mhtn")]
+layout_mode = 2

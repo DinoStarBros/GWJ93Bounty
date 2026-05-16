@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dkk18vgp4bowj"]
+
+[ext_resource type="Script" uid="uid://bedhvfte2qv0p" path="res://Panels/UpgradeBuyButton/upgrade_buy_button.gd" id="1_ahyjv"]
+
+[node name="UpgradeBuyButton" type="Button" unique_id=1564239214]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 50
+text = "Max HP +5"
+script = ExtResource("1_ahyjv")

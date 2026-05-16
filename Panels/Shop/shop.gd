@@ -3,6 +3,9 @@ class_name Shop
 
 @onready var next_wave_button: Button = %next_wave_button
 @onready var coin_count: Label = %coin_count
+@onready var upgrades: GridContainer = %upgrades
+
+var upgrade_buy_buttons : Array[UpgradeBuyButton]
 
 func _ready() -> void:
 	next_wave_button.pressed.connect(_next_wave_pressed)
@@ -11,6 +14,10 @@ func _ready() -> void:
 		func():
 		pass
 	)
+	
+	for node in upgrades.get_children():
+		if node is UpgradeBuyButton:
+			upgrade_buy_buttons.append(node)
 
 func _next_wave_pressed() -> void:
 	GlobalSignals.NextWaveStart.emit()
