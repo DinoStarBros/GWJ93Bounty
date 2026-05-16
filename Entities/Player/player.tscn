@@ -176,6 +176,11 @@ grow_horizontal = 0
 scale = Vector2(0.7, 0.7)
 icon = ExtResource("11_v7p16")
 
+[node name="time_left_text" type="Label" parent="GUI" unique_id=808340691]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 17.0
+
 [node name="DevOps" parent="." unique_id=1137223944 node_paths=PackedStringArray("p") instance=ExtResource("11_vskfa")]
 p = NodePath("..")
 

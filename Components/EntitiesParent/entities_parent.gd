@@ -1,6 +1,11 @@
 extends Node2D
 class_name EntitiesParent
 
+enum EnemyTypes {
+	DUMMY, DECKHAND, BUCCANEER,
+	PARROT, CROSSBOWER, FLAMER
+}
+
 const dummy_scn : PackedScene = preload("res://Entities/Enemies/Dummy/dummy.tscn")
 const deckhand_scn : PackedScene = preload("res://Entities/Enemies/Deckhand/deckhand.tscn")
 const buccaneer_scn : PackedScene = preload("res://Entities/Enemies/Buccaneer/buccaneer.tscn")
@@ -31,3 +36,21 @@ func spawn_crossbower(pos: Vector2) -> void:
 	spawn_enemy(crossbower_scn, pos)
 func spawn_flamer(pos: Vector2) -> void:
 	spawn_enemy(flamer_scn, pos)
+
+func spawn_enemy_enum(
+	enemy_type : EnemyTypes,
+	pos : Vector2
+) -> void:
+	match enemy_type:
+		EnemyTypes.DUMMY:
+			spawn_dummy(pos)
+		EnemyTypes.DECKHAND:
+			spawn_deckhand(pos)
+		EnemyTypes.BUCCANEER:
+			spawn_buccaneer(pos)
+		EnemyTypes.PARROT:
+			spawn_parrot(pos)
+		EnemyTypes.CROSSBOWER:
+			spawn_crossbower(pos)
+		EnemyTypes.FLAMER:
+			spawn_flamer(pos)

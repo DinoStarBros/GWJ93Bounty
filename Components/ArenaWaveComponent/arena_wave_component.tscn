@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bp01nbu8grdw"]
+
+[ext_resource type="Script" uid="uid://cl6jbxeh3pcl3" path="res://Components/ArenaWaveComponent/arena_wave_component.gd" id="1_dq7y8"]
+
+[node name="ArenaWaveComponent" type="Node2D" unique_id=157935638]
+script = ExtResource("1_dq7y8")

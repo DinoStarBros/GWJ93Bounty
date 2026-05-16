@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://chckcirsmhsik"]
+
+[ext_resource type="Script" uid="uid://bconvn64b7hxq" path="res://Scenes/EnemySpawnIntro/enemy_spawn_intro.gd" id="1_qeyn6"]
+[ext_resource type="Texture2D" uid="uid://cr0ga7dloyq4e" path="res://Art/Buss/cross.png" id="2_30lko"]
+
+[sub_resource type="Animation" id="Animation_j55v3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cross:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.28235295)]
+}
+
+[sub_resource type="Animation" id="Animation_30lko"]
+resource_name = "wadwaiyg"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cross:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.12156863), Color(1, 1, 1, 0.5019608)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j55v3"]
+_data = {
+&"RESET": SubResource("Animation_j55v3"),
+&"wadwaiyg": SubResource("Animation_30lko")
+}
+
+[node name="EnemySpawnIntro" type="Node2D" unique_id=718676084]
+script = ExtResource("1_qeyn6")
+
+[node name="Cross" type="Sprite2D" parent="." unique_id=2119386224]
+self_modulate = Color(1, 1, 1, 0.28235295)
+texture = ExtResource("2_30lko")
+
+[node name="woudhawd" type="AnimationPlayer" parent="." unique_id=783772301]
+libraries/ = SubResource("AnimationLibrary_j55v3")
+autoplay = &"wadwaiyg"

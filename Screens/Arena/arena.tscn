@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://civ8xblkoay1u" path="res://Screens/Arena/arena.gd" id="1_w8ma2"]
 [ext_resource type="TileSet" uid="uid://hh56oj5oxojy" path="res://topdown_tiles.tres" id="2_bft7o"]
 [ext_resource type="PackedScene" uid="uid://c3b7jy130b6q6" path="res://Components/ItemsParent/items_parent.tscn" id="4_f8dps"]
+[ext_resource type="Script" uid="uid://blgq6341hj6wc" path="res://Waves/WaveResource.gd" id="5_h07ax"]
 [ext_resource type="PackedScene" uid="uid://5lwpl4poglip" path="res://Components/ProjectilesParent/projectiles_parent.tscn" id="5_vhfm8"]
 [ext_resource type="PackedScene" uid="uid://b2e6kor6gembg" path="res://Components/EntitiesParent/entities_parent.tscn" id="6_h07ax"]
+[ext_resource type="Resource" uid="uid://d1ruollpyb6wt" path="res://Waves/1.tres" id="6_wk5ni"]
+[ext_resource type="PackedScene" uid="uid://bp01nbu8grdw" path="res://Components/ArenaWaveComponent/arena_wave_component.tscn" id="7_f8dps"]
 [ext_resource type="PackedScene" uid="uid://dbcb4oiuu5rbc" path="res://Entities/Player/player.tscn" id="7_wk5ni"]
 
 [node name="Arena" type="Node2D" unique_id=775134962]
@@ -17,6 +20,10 @@ tile_map_data = PackedByteArray("AADz//j/AAABAAEAAADz//n/AAABAAMAAADz//r/AAABAAI
 tile_set = ExtResource("2_bft7o")
 
 [node name="ItemsParent" parent="." unique_id=2025158366 instance=ExtResource("4_f8dps")]
+
+[node name="ArenaWaveComponent" parent="." unique_id=157935638 node_paths=PackedStringArray("entities_parent") instance=ExtResource("7_f8dps")]
+entities_parent = NodePath("../EntitiesParent")
+waves = Array[ExtResource("5_h07ax")]([ExtResource("6_wk5ni")])
 
 [node name="ProjectilesParent" parent="." unique_id=564160944 instance=ExtResource("5_vhfm8")]
 
