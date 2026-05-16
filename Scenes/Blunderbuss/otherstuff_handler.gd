@@ -9,7 +9,7 @@ class_name VacloopHandler
 @onready var suck_pickup_collision: CollisionShape2D = %suckPickupCollision
 @onready var hitbox_component: HitboxComponent = %HitboxComponent
 
-var melee_damage : float = 7
+var melee_damage : float = 5
 
 func _ready() -> void:
 	suck_range_handle()
