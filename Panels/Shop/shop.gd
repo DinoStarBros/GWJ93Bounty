@@ -21,6 +21,7 @@ var possible_upgrade_resources : Array[UpgradeResource] = [
 ]
 
 func _ready() -> void:
+	
 	next_wave_button.pressed.connect(_next_wave_pressed)
 	GlobalSignals.NextWaveStart.connect(_next_wave_start)
 	%buy_barrel.pressed.connect(
@@ -55,12 +56,16 @@ func _next_wave_start() -> void:
 	queue_free()
 
 func _restock_pressed() -> void:
-	for ubb in upgrade_buy_buttons: if ubb is UpgradeBuyButton:
-		ubb.bought = false
-	setup_upgrade_buy_buttons()
-	
-	%restock.pitch_scale = 1 + randf_range(-.1, .1)
-	%restock.play()
+	if Global.coins >= Global.restock_price:
+		for ubb in upgrade_buy_buttons: if ubb is UpgradeBuyButton:
+			ubb.bought = false
+		setup_upgrade_buy_buttons()
+		Global.coins -= Global.restock_price
+		
+		%restock.pitch_scale = 1 + randf_range(-.1, .1)
+		%restock.play()
+		
+		Global.restock_price += 1
 
 func _process(delta: float) -> void:
 	coin_count.text = str(
@@ -69,4 +74,8 @@ func _process(delta: float) -> void:
 	
 	next_wave_button.text = str(
 		"Next Wave (Wave ", Global.current_wave+1, ")"
+	)
+	
+	restock.text = str(
+		"Restock (", Global.restock_price, ")"
 	)

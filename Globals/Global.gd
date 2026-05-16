@@ -20,6 +20,10 @@ var coins : int
 var current_wave : int
 var time_left : float
 
+var restock_price : int = 1
+var upgrade_price : int = 5
+var crate_price : int = 1
+
 const txt_scn : PackedScene = preload("res://Juices/DmgNum/dmg_num.tscn")
 
 func _process(_delta:float)->void:

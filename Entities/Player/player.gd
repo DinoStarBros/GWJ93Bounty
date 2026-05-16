@@ -36,6 +36,10 @@ func _ready() -> void:
 	Global.coins = 10
 	Global.current_wave = 0
 	
+	Global.restock_price = 1
+	Global.upgrade_price = 1
+	Global.crate_price = 1
+	
 	GlobalSignals.WaveDone.emit()
 
 func _physics_process(delta: float) -> void:
