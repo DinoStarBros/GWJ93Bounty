@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dws2o3qmxlr3y" path="res://Panels/Shop/shop.gd" id="1_0p52e"]
 [ext_resource type="PackedScene" uid="uid://dkk18vgp4bowj" path="res://Panels/UpgradeBuyButton/upgrade_buy_button.tscn" id="2_7mhtn"]
+[ext_resource type="AudioStream" uid="uid://bg6gb6r0g5bif" path="res://Audio/BananTime/floraphonic-movement-swipe-whoosh-1-186575.mp3" id="3_3jywy"]
+[ext_resource type="AudioStream" uid="uid://bmn0lx7fsaujh" path="res://Audio/BussSFX/cartoon-music-soundtrack-cha-ching-new-purchase-494486.mp3" id="4_1mqa2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p52e"]
 bg_color = Color(0, 0, 0, 0.81960785)
@@ -92,3 +94,14 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Restock"
+
+[node name="restock" type="AudioStreamPlayer" parent="." unique_id=1735048181]
+unique_name_in_owner = true
+stream = ExtResource("3_3jywy")
+bus = &"SFX"
+
+[node name="chaChing" type="AudioStreamPlayer" parent="." unique_id=1867178078]
+unique_name_in_owner = true
+stream = ExtResource("4_1mqa2")
+pitch_scale = 1.4
+bus = &"SFX"

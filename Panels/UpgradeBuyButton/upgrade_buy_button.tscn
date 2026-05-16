@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dkk18vgp4bowj"]
 
 [ext_resource type="Script" uid="uid://bedhvfte2qv0p" path="res://Panels/UpgradeBuyButton/upgrade_buy_button.gd" id="1_ahyjv"]
+[ext_resource type="AudioStream" uid="uid://bmn0lx7fsaujh" path="res://Audio/BussSFX/cartoon-music-soundtrack-cha-ching-new-purchase-494486.mp3" id="2_2abnn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ahyjv"]
 font_size = 30
@@ -38,3 +39,9 @@ layout_mode = 2
 text = "awdsawdsawdwa"
 label_settings = SubResource("LabelSettings_2abnn")
 autowrap_mode = 1
+
+[node name="chaChing" type="AudioStreamPlayer" parent="." unique_id=245499225]
+unique_name_in_owner = true
+stream = ExtResource("2_2abnn")
+pitch_scale = 1.4
+bus = &"SFX"

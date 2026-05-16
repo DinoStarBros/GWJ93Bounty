@@ -25,7 +25,8 @@ func _ready() -> void:
 	GlobalSignals.NextWaveStart.connect(_next_wave_start)
 	%buy_barrel.pressed.connect(
 		func():
-		pass
+		%chaChing.pitch_scale = 1.4 + randf_range(-.1,.1)
+		%chaChing.play()
 	)
 	restock.pressed.connect(_restock_pressed)
 	
@@ -57,7 +58,9 @@ func _restock_pressed() -> void:
 	for ubb in upgrade_buy_buttons: if ubb is UpgradeBuyButton:
 		ubb.bought = false
 	setup_upgrade_buy_buttons()
-
+	
+	%restock.pitch_scale = 1 + randf_range(-.1, .1)
+	%restock.play()
 
 func _process(delta: float) -> void:
 	coin_count.text = str(

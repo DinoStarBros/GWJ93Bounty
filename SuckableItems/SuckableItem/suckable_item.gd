@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	trig_time = wrapf(trig_time + (delta * trig_speed), 0, 2 * PI)
 	_move(delta)
 	dir_to_blunderbuss_gun_tip = global_position.direction_to(Global.blunderbuss_gun_tip.global_position)
-	dir_to_plr = global_position.direction_to(Global.player.global_position)
+	dir_to_plr = global_position.direction_to(Global.player.global_position + Vector2(0, -32))
 	if is_go_to_suck:
 		if is_coin:
 			velocity = dir_to_plr * move_speed

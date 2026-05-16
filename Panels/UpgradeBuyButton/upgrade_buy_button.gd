@@ -33,3 +33,5 @@ func buy() -> void:
 	desc_txt.text = bought_desc
 	
 	upgrade_resource.apply_upgrade_to_player(upgrade_resource.stat_increase)
+	%chaChing.pitch_scale = 1.4 + randf_range(-.1,.1)
+	%chaChing.play()

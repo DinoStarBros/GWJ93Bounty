@@ -19,7 +19,7 @@ var max_item_amount : int = 15:
 		barrel_sprite.scale.y = (
 			((max_item_amount * barrel_sprite_size_y) / 4) / 64
 			)
-		barrel_sprite.position.y -= 32
+		barrel_sprite.position.y = (max_item_amount-15) * -32
 
 var barrel_items_amount : int:
 	set(value):
