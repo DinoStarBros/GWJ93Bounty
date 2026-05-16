@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://beni3aw8chwmc"]
+
+[ext_resource type="Script" uid="uid://dqnb56td4sr1c" path="res://UpgradeResources/UpgradeResource.gd" id="1_kommq"]
+
+[resource]
+script = ExtResource("1_kommq")
+upgrade_name = "+Max HP"
+upgrade_desc = "Increases max HP by 1."
+stat_increase = 1.0
+metadata/_custom_type_script = "uid://dqnb56td4sr1c"

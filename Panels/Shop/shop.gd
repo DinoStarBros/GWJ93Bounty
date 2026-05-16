@@ -7,6 +7,11 @@ class_name Shop
 
 var upgrade_buy_buttons : Array[UpgradeBuyButton]
 
+const upgrade_resources : Array[UpgradeResource] = [
+	preload("res://UpgradeResources/max_hp_upg.tres"),
+	
+]
+
 func _ready() -> void:
 	next_wave_button.pressed.connect(_next_wave_pressed)
 	GlobalSignals.NextWaveStart.connect(_next_wave_start)
@@ -18,6 +23,11 @@ func _ready() -> void:
 	for node in upgrades.get_children():
 		if node is UpgradeBuyButton:
 			upgrade_buy_buttons.append(node)
+	
+	setup_upgrade_buy_buttons()
+
+func setup_upgrade_buy_buttons() -> void:
+	pass
 
 func _next_wave_pressed() -> void:
 	GlobalSignals.NextWaveStart.emit()
