@@ -69,6 +69,7 @@ texture = ExtResource("13_owvpp")
 
 [node name="Pause" type="CanvasLayer" parent="." unique_id=830675524]
 process_mode = 3
+layer = 2
 visible = false
 script = ExtResource("3_lu8i8")
 

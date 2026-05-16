@@ -16,10 +16,10 @@ func _ready() -> void:
 	for n in spawn_buttons.values(): if n[0] is Button:
 		n[0].pressed.connect(n[1])
 	
-	visible = OS.is_debug_build()
+	visible = Global.enable_devops
 
 func _process(delta: float) -> void:
-	if !OS.is_debug_build(): return
+	if !Global.enable_devops: return
 	if Input.is_action_just_pressed("Devops"):
 		visible = !visible
 

@@ -67,6 +67,7 @@ text = "Quit"
 
 [node name="settingsMenu" parent="." unique_id=68845947 instance=ExtResource("2_vnbe3")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 
 [node name="buttons" type="HBoxContainer" parent="settingsMenu" unique_id=1239577160]
