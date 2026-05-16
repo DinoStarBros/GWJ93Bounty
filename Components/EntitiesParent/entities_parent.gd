@@ -15,6 +15,7 @@ const flamer_scn : PackedScene = preload("res://Entities/Enemies/Flamer/flamer.t
 
 func _ready() -> void:
 	Global.entities_parent = self
+	GlobalSignals.NextWaveStart.connect(clear_all_enemies)
 
 func spawn_enemy(
 	enemy_scn : PackedScene,
@@ -54,3 +55,8 @@ func spawn_enemy_enum(
 			spawn_crossbower(pos)
 		EnemyTypes.FLAMER:
 			spawn_flamer(pos)
+
+func clear_all_enemies() -> void:
+	for entity in get_children():
+		if entity is Enemy:
+			entity.queue_free()

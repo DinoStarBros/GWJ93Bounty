@@ -34,7 +34,5 @@ func hurt(attack:Attack) -> void:
 			pass
 
 func wave_done() -> void:
-	if get_parent() is Enemy:
-		get_parent().queue_free()
-	elif get_parent() is Player:
+	if get_parent() is Player:
 		get_parent().global_position = Vector2.ZERO

@@ -50,7 +50,7 @@ func _next_wave_pressed() -> void:
 func _next_wave_start() -> void:
 	Global.current_wave += 1
 	Global.crate_price += 1
-	Global.upgrade_price += 3
+	Global.upgrade_price += 2
 	get_tree().paused = false
 	Global.current_game_state = Global.game_states.COMBAT
 	queue_free()

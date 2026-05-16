@@ -13,7 +13,6 @@ var up_bound : float
 var down_bound : float
 
 @onready var spawn_timer: Timer = %SpawnTimer
-
 func _ready() -> void:
 	left_bound = (
 		arena_spawn_domain.global_position.x - 
@@ -31,6 +30,8 @@ func _ready() -> void:
 		arena_spawn_domain.global_position.y + 
 		(arena_spawn_domain.shape.size.y / 2)
 	)
+	
+	await get_tree().process_frame
 	
 	spawn_timer.start(get_spawn_time(waves[Global.current_wave-1].spawn_interval_range))
 	
