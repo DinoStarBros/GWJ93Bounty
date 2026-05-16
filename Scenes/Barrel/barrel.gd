@@ -11,10 +11,16 @@ signal Eject(item: SuckableItemResource)
 var items : Array[SuckableItemResource]
 var barrel_items : Array[BarrelItem]
 var barrel_item_names : Array
+var barrel_sprite_size_y : float
 var max_item_amount : int = 15:
 	set(value):
 		max_item_amount = value
-		
+		barrel_sprite_size_y = barrel_sprite.texture.get_size().y
+		barrel_sprite.scale.y = (
+			((max_item_amount * barrel_sprite_size_y) / 4) / 64
+			)
+		barrel_sprite.position.y -= 32
+
 var barrel_items_amount : int:
 	set(value):
 		if barrel_items_amount == value: return
