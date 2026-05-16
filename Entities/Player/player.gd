@@ -33,8 +33,10 @@ func _ready() -> void:
 	)
 	
 	Global.current_game_state = Global.game_states.COMBAT
-	Global.coins = 0
-	Global.current_wave = 1
+	Global.coins = 10
+	Global.current_wave = 0
+	
+	GlobalSignals.WaveDone.emit()
 
 func _physics_process(delta: float) -> void:
 	if dead:

@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_h4b2d")
 enemies = Array[int]([1])
+spawn_interval_range = Vector2(2, 3)
 metadata/_custom_type_script = "uid://blgq6341hj6wc"

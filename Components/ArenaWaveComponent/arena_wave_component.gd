@@ -33,6 +33,11 @@ func _ready() -> void:
 	)
 	
 	spawn_timer.start(get_spawn_time(waves[Global.current_wave-1].spawn_interval_range))
+	
+	GlobalSignals.NextWaveStart.connect(
+		func():
+		Global.time_left = waves[Global.current_wave-1].time
+	)
 
 func _spawn_enemy() -> void:
 	var enemy_spawn_intro : EnemySpawnIntro = enemy_spawn_intro_scn.instantiate()
@@ -58,3 +63,6 @@ func get_spawn_time(si_range: Vector2) -> float:
 
 func get_spawn_amnt(sa_range: Vector2i) -> int:
 	return randi_range(sa_range.x, sa_range.y)
+
+func _physics_process(delta: float) -> void:
+	Global.time_left = max(Global.time_left - delta, 0)

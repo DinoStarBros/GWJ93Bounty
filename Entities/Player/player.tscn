@@ -160,7 +160,7 @@ offset_top = 19.0
 offset_right = 48.0
 offset_bottom = 60.0
 grow_horizontal = 2
-text = "Wave 5"
+text = "Wave 1"
 label_settings = SubResource("LabelSettings_ppdlg")
 
 [node name="PauseButton" type="Button" parent="GUI" unique_id=510254955]
@@ -178,8 +178,17 @@ icon = ExtResource("11_v7p16")
 
 [node name="time_left_text" type="Label" parent="GUI" unique_id=808340691]
 unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 17.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 67.0
+offset_right = 20.0
+offset_bottom = 108.0
+grow_horizontal = 2
+text = "0"
+label_settings = SubResource("LabelSettings_ppdlg")
+horizontal_alignment = 1
 
 [node name="DevOps" parent="." unique_id=1137223944 node_paths=PackedStringArray("p") instance=ExtResource("11_vskfa")]
 p = NodePath("..")
