@@ -6,6 +6,10 @@ class_name PauseUI
 var sure_quit : bool = false
 
 func _ready() -> void:
+	%PauseButton.pressed.connect(
+		func():
+		pause_or_resume()
+	)
 	%resume.pressed.connect(on_resume)
 	%quit.pressed.connect(func():%sure.visible=!%sure.visible)
 	%sure.pressed.connect(func():
@@ -15,12 +19,13 @@ func _ready() -> void:
 		)
 
 func _input(event: InputEvent) -> void:
-	if (Input.is_action_just_pressed("esc") and 
-		Global.current_game_state == Global.game_states.COMBAT
-		):
+	if Input.is_action_just_pressed("esc"):
 			pause_or_resume()
 
 func pause_or_resume() -> void:
+	if Global.current_game_state != Global.game_states.COMBAT:
+		return
+	
 	get_tree().paused = not get_tree().paused
 	if get_tree().paused:
 		# Pause
