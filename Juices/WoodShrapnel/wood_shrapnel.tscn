@@ -1,0 +1,40 @@
+[gd_scene format=4 uid="uid://b3rintxy7im0b"]
+
+[ext_resource type="Script" uid="uid://dgpybf4r01x0g" path="res://Juices/WoodShrapnel/wood_shrapnel.gd" id="1_gf5dw"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_ovvxo"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAACkAAAAUklGRpwAAABXRUJQVlA4TJAAAAAvL8AHEBcgEEhxDhssFkzxFCJNIJBEsj/eCPMfUP3BQWTbanNu4XtI1DwJZXKQr6YkgZ/NvLyCgoj+TwBfFrCKZr23gqPAPHPtWfT2Aiu4iZl7wbrg5lVca3D0Fo4uVsK8RIBVgR0IG8BKNAFQ9K/KWMkcUzflbD0d6DBXZDVzbLFKfEu9CzTfMBdMU8Nrvgw=")
+size_override = Vector2(48, 32)
+
+[node name="WoodShrapnel" type="Node2D" unique_id=1566462128]
+script = ExtResource("1_gf5dw")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1835099490]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = SubResource("PortableCompressedTexture2D_ovvxo")
+hframes = 3
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/Buss/woodShrapnel.aseprite",
+"source_uid": 3655190835179448791
+}
+metadata/_aseprite_wizard_source_file_hash_ = "bfccd8b038c559f8f64c67549823eb22"

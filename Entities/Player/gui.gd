@@ -15,5 +15,5 @@ func _process(delta: float) -> void:
 	)
 	
 	time_left_text.text = str(
-		Global.time_left
+		roundi(Global.time_left)
 	)
