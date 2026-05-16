@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://to6xlfepwhxn"]
+
+[ext_resource type="Script" uid="uid://dqnb56td4sr1c" path="res://UpgradeResources/UpgradeResource.gd" id="1_5scnd"]
+
+[resource]
+script = ExtResource("1_5scnd")
+upgrade_name = "+Projectile Size"
+upgrade_desc = "Your projectiles are 25% bigger."
+stat_increase = 0.25
+metadata/_custom_type_script = "uid://dqnb56td4sr1c"

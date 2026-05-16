@@ -2,9 +2,39 @@
 
 [ext_resource type="Script" uid="uid://bedhvfte2qv0p" path="res://Panels/UpgradeBuyButton/upgrade_buy_button.gd" id="1_ahyjv"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ahyjv"]
+font_size = 30
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2abnn"]
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [node name="UpgradeBuyButton" type="Button" unique_id=1564239214]
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_font_sizes/font_size = 50
-text = "Max HP +5"
+custom_minimum_size = Vector2(300, 100)
+offset_right = 300.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 40
+alignment = 0
 script = ExtResource("1_ahyjv")
+
+[node name="texts" type="VBoxContainer" parent="." unique_id=1343392434]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 38.0
+
+[node name="name_txt" type="Label" parent="texts" unique_id=1945578003]
+unique_name_in_owner = true
+layout_mode = 2
+text = "wdsawdadwsa"
+label_settings = SubResource("LabelSettings_ahyjv")
+
+[node name="desc_txt" type="Label" parent="texts" unique_id=1664235687]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 67)
+layout_mode = 2
+text = "awdsawdsawdwa"
+label_settings = SubResource("LabelSettings_2abnn")
+autowrap_mode = 1

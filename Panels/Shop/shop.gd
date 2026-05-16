@@ -4,11 +4,18 @@ class_name Shop
 @onready var next_wave_button: Button = %next_wave_button
 @onready var coin_count: Label = %coin_count
 @onready var upgrades: GridContainer = %upgrades
+@onready var restock: Button = %Restock
 
 var upgrade_buy_buttons : Array[UpgradeBuyButton]
-
-const upgrade_resources : Array[UpgradeResource] = [
+var shuffled_upgrade_resources : Array[UpgradeResource]
+var possible_upgrade_resources : Array[UpgradeResource] = [
 	preload("res://UpgradeResources/max_hp_upg.tres"),
+	preload("res://UpgradeResources/dmg_upg.tres"),
+	preload("res://UpgradeResources/projectile_spd_upg.tres"),
+	preload("res://UpgradeResources/projectile_size_upg.tres"),
+	preload("res://UpgradeResources/suck_range_upg.tres"),
+	preload("res://UpgradeResources/move_spd_upg.tres"),
+	preload("res://UpgradeResources/dash_spd_upg.tres"),
 	
 ]
 
@@ -19,15 +26,22 @@ func _ready() -> void:
 		func():
 		pass
 	)
+	restock.pressed.connect(_restock_pressed)
 	
 	for node in upgrades.get_children():
 		if node is UpgradeBuyButton:
 			upgrade_buy_buttons.append(node)
 	
+	shuffled_upgrade_resources = possible_upgrade_resources
 	setup_upgrade_buy_buttons()
 
 func setup_upgrade_buy_buttons() -> void:
-	pass
+	shuffled_upgrade_resources.shuffle()
+	
+	var ndex : int = -1
+	for ubb in upgrade_buy_buttons: if ubb is UpgradeBuyButton:
+		ndex += 1
+		ubb.upgrade_resource = shuffled_upgrade_resources[ndex]
 
 func _next_wave_pressed() -> void:
 	GlobalSignals.NextWaveStart.emit()
@@ -37,6 +51,12 @@ func _next_wave_start() -> void:
 	get_tree().paused = false
 	Global.current_game_state = Global.game_states.COMBAT
 	queue_free()
+
+func _restock_pressed() -> void:
+	for ubb in upgrade_buy_buttons: if ubb is UpgradeBuyButton:
+		ubb.bought = false
+	setup_upgrade_buy_buttons()
+
 
 func _process(delta: float) -> void:
 	coin_count.text = str(

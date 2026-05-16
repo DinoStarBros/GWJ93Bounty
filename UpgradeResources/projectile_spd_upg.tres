@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://ds2pi75ksxq06"]
+
+[ext_resource type="Script" uid="uid://dqnb56td4sr1c" path="res://UpgradeResources/UpgradeResource.gd" id="1_qbkkh"]
+
+[resource]
+script = ExtResource("1_qbkkh")
+upgrade_name = "+Projectile Speed"
+upgrade_desc = "Your projectiles travel 300 u/s faster."
+stat_increase = 300.0
+metadata/_custom_type_script = "uid://dqnb56td4sr1c"

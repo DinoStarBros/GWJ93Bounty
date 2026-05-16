@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://8sui68uj28qw"]
+
+[ext_resource type="Script" uid="uid://dqnb56td4sr1c" path="res://UpgradeResources/UpgradeResource.gd" id="1_oij3o"]
+
+[resource]
+script = ExtResource("1_oij3o")
+upgrade_name = "+Damage"
+upgrade_desc = "Increases the damage of your Blunderbuss by 10%."
+stat_increase = 0.1
+metadata/_custom_type_script = "uid://dqnb56td4sr1c"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://crtwxbo58t4ls"]
+
+[ext_resource type="Script" uid="uid://dqnb56td4sr1c" path="res://UpgradeResources/UpgradeResource.gd" id="1_0ptok"]
+
+[resource]
+script = ExtResource("1_0ptok")
+upgrade_name = "+Suck Range"
+upgrade_desc = "Your Blunderbuss' range of 
+sucking up items is increased by 30%"
+stat_increase = 0.3
+metadata/_custom_type_script = "uid://dqnb56td4sr1c"
