@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b8lumjswgrimw"]
+
+[ext_resource type="Script" uid="uid://qimevjnh6nkq" path="res://Scenes/SupplyCrate/supply_crate.gd" id="1_onnqc"]
+[ext_resource type="Texture2D" uid="uid://d1yx87uivcgwh" path="res://icon.svg" id="2_vh2bt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh2bt"]
+size = Vector2(56, 54)
+
+[node name="SupplyCrate" type="Node2D" unique_id=1007198604]
+script = ExtResource("1_onnqc")
+
+[node name="SuckArea" type="Area2D" parent="." unique_id=744812089]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuckArea" unique_id=610420780]
+shape = SubResource("RectangleShape2D_vh2bt")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1837580387]
+self_modulate = Color(1, 1, 0.29411766, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_vh2bt")
+
+[connection signal="area_entered" from="SuckArea" to="." method="_on_suck_area_area_entered"]
+[connection signal="area_exited" from="SuckArea" to="." method="_on_suck_area_area_exited"]
