@@ -2,11 +2,52 @@
 
 [ext_resource type="Script" uid="uid://dws2o3qmxlr3y" path="res://Panels/Shop/shop.gd" id="1_0p52e"]
 
-[node name="Shop" type="Control" unique_id=128833572]
-layout_mode = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p52e"]
+bg_color = Color(0, 0, 0, 0.81960785)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0p52e"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mhtn"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Shop" type="PanelContainer" unique_id=837301942]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0p52e")
 script = ExtResource("1_0p52e")
+
+[node name="text" type="Label" parent="." unique_id=331169906]
+layout_mode = 2
+size_flags_vertical = 0
+text = "You have docked on an island!
+Buy some upgrades & ammo before you continue 
+your pirate voyage!"
+label_settings = SubResource("LabelSettings_0p52e")
+
+[node name="coin_count" type="Label" parent="." unique_id=1619460721]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Coins: "
+label_settings = SubResource("LabelSettings_7mhtn")
+
+[node name="button" type="HBoxContainer" parent="." unique_id=974379062]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="next_wave_button" type="Button" parent="button" unique_id=1887092777]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Next Wave (Wave 3)"

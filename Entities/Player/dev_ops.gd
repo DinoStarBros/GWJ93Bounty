@@ -5,6 +5,7 @@ class_name DevOps
 
 var ip : ItemsParent
 var ep : EntitiesParent
+var sp : ShopParent
 
 const spawn_offset : Vector2 = Vector2(100, -100)
 
@@ -12,6 +13,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	ip = Global.items_parent
 	ep = Global.entities_parent
+	sp = Global.shop_parent
 	
 	for n in spawn_buttons.values(): if n[0] is Button:
 		n[0].pressed.connect(n[1])
@@ -71,4 +73,7 @@ func _process(delta: float) -> void:
 	15:[%sFlamer,
 		func(): ep.spawn_flamer(p.global_position + spawn_offset)
 	],
+	16:[%start_shop,
+		func(): GlobalSignals.WaveDone.emit()
+	]
 }

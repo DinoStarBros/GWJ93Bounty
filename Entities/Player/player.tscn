@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dt6w5v2fariq0" path="res://Components/HealthComponent/health_component.tscn" id="15_r8fok"]
 [ext_resource type="Script" uid="uid://d267i011wh5yw" path="res://Entities/Player/dead.gd" id="16_ppdlg"]
 [ext_resource type="PackedScene" uid="uid://ck6l1ibwso1mm" path="res://Components/KnockbackStunComponent/knockback_stun_component.tscn" id="19_0poeq"]
+[ext_resource type="Script" uid="uid://bw6axktdp6ykm" path="res://Entities/Player/shop_parent.gd" id="22_a8wow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uyv8"]
 size = Vector2(40, 40)
@@ -227,3 +228,7 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoinPickup" unique_id=1793770989]
 shape = SubResource("RectangleShape2D_ppdlg")
 debug_color = Color(0.77932155, 0.43726915, 1.732707e-06, 0)
+
+[node name="ShopParent" type="CanvasLayer" parent="." unique_id=135569531]
+process_mode = 3
+script = ExtResource("22_a8wow")

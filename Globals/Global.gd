@@ -14,6 +14,7 @@ var barrel : Barrel
 var entities_parent : EntitiesParent
 var camera : Camera
 var items_parent : ItemsParent
+var shop_parent : ShopParent
 var enable_devops : bool = false
 var coins : int
 
