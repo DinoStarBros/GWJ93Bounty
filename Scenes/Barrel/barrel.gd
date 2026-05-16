@@ -5,6 +5,7 @@ signal Shoot(item: SuckableItemResource)
 signal Eject(item: SuckableItemResource)
 
 @onready var debug: Label = %debug
+@onready var barrel_bottom_pos: Node2D = %barrel_bottom_pos
 
 var items : Array[SuckableItemResource]
 var barrel_items : Array[BarrelItem]
@@ -54,7 +55,7 @@ func update_barrel_items_positions() -> void:
 	for bi in barrel_items: if bi is BarrelItem:
 		ndex += 1
 		var mindex : int = min(ndex, max_item_amount-1)
-		var pos_y : float = 104 - (64 * mindex)
+		var pos_y : float = barrel_bottom_pos.position.y - (64 * mindex)
 		barrel_items[mindex].position.y = pos_y
 		#tween_vec2(
 			#barrel_items[mindex],
