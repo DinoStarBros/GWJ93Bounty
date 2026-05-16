@@ -7,11 +7,16 @@ class_name Shop
 func _ready() -> void:
 	next_wave_button.pressed.connect(_next_wave_pressed)
 	GlobalSignals.NextWaveStart.connect(_next_wave_start)
+	%buy_barrel.pressed.connect(
+		func():
+		pass
+	)
 
 func _next_wave_pressed() -> void:
 	GlobalSignals.NextWaveStart.emit()
 
 func _next_wave_start() -> void:
+	Global.current_wave += 1
 	get_tree().paused = false
 	Global.current_game_state = Global.game_states.COMBAT
 	queue_free()
@@ -19,4 +24,8 @@ func _next_wave_start() -> void:
 func _process(delta: float) -> void:
 	coin_count.text = str(
 		"Coins: ", Global.coins
+	)
+	
+	next_wave_button.text = str(
+		"Next Wave (Wave ", Global.current_wave+1, ")"
 	)

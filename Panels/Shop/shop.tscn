@@ -51,3 +51,17 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Next Wave (Wave 3)"
+
+[node name="buyStuff" type="Node2D" parent="." unique_id=1890380082]
+
+[node name="buy_barrel" type="Button" parent="buyStuff" unique_id=777147155]
+unique_name_in_owner = true
+offset_left = 865.0
+offset_top = 422.0
+offset_right = 1175.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 30
+text = "Buy Barrel/Crate of Ammo
+(It will show up on your ship
+in the next wave, gives ammo
+when you break it)"

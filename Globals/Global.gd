@@ -17,6 +17,7 @@ var items_parent : ItemsParent
 var shop_parent : ShopParent
 var enable_devops : bool = false
 var coins : int
+var current_wave : int
 
 const txt_scn : PackedScene = preload("res://Juices/DmgNum/dmg_num.tscn")
 

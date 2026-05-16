@@ -150,6 +150,19 @@ offset_bottom = 248.0
 text = "Coins: "
 label_settings = SubResource("LabelSettings_ppdlg")
 
+[node name="wave_count" type="Label" parent="GUI" unique_id=745649671]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_top = 19.0
+offset_right = 48.0
+offset_bottom = 60.0
+grow_horizontal = 2
+text = "Wave 5"
+label_settings = SubResource("LabelSettings_ppdlg")
+
 [node name="PauseButton" type="Button" parent="GUI" unique_id=510254955]
 unique_name_in_owner = true
 anchors_preset = 1
