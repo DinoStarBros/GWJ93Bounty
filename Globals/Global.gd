@@ -15,6 +15,7 @@ var entities_parent : EntitiesParent
 var camera : Camera
 var items_parent : ItemsParent
 var enable_devops : bool = false
+var coins : int
 
 const txt_scn : PackedScene = preload("res://Juices/DmgNum/dmg_num.tscn")
 

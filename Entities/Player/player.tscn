@@ -27,8 +27,16 @@ size = Vector2(40, 40)
 [sub_resource type="LabelSettings" id="LabelSettings_0poeq"]
 font_size = 40
 
+[sub_resource type="LabelSettings" id="LabelSettings_ppdlg"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8fok"]
 size = Vector2(36, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppdlg"]
+size = Vector2(58, 58)
 
 [node name="Player" type="CharacterBody2D" unique_id=950942093]
 collision_layer = 0
@@ -109,10 +117,10 @@ position = Vector2(1237, 528)
 scale = Vector2(0.5, 0.5)
 
 [node name="HpBar" type="ProgressBar" parent="GUI" unique_id=1005040977]
-offset_left = 94.0
-offset_top = 84.0
-offset_right = 493.0
-offset_bottom = 148.0
+offset_left = 71.0
+offset_top = 103.0
+offset_right = 470.0
+offset_bottom = 167.0
 show_percentage = false
 
 [node name="HpText" type="Label" parent="GUI/HpBar" unique_id=1865794067]
@@ -130,6 +138,15 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "10 / 10"
 label_settings = SubResource("LabelSettings_0poeq")
+
+[node name="coin_count" type="Label" parent="GUI" unique_id=1470010474]
+unique_name_in_owner = true
+offset_left = 74.0
+offset_top = 207.0
+offset_right = 161.0
+offset_bottom = 248.0
+text = "Coins: "
+label_settings = SubResource("LabelSettings_ppdlg")
 
 [node name="DevOps" parent="." unique_id=1137223944 node_paths=PackedStringArray("p") instance=ExtResource("11_vskfa")]
 p = NodePath("..")
@@ -187,3 +204,12 @@ p = NodePath("..")
 [node name="KnockbackStunComponent" parent="." unique_id=783500033 node_paths=PackedStringArray("parent", "state_machine") instance=ExtResource("19_0poeq")]
 parent = NodePath("..")
 state_machine = NodePath("../StateMachine")
+
+[node name="CoinPickup" type="Area2D" parent="." unique_id=311062453]
+position = Vector2(0, -26)
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoinPickup" unique_id=1793770989]
+shape = SubResource("RectangleShape2D_ppdlg")
+debug_color = Color(0.77932155, 0.43726915, 1.732707e-06, 0)

@@ -5,6 +5,7 @@ enum sfx_types {
 	EnemyHit1, EnemyHit2, EnemyHit3, EnemyDead1,
 	PlayerHit1, PlayerHit2, PlayerHit3, PlayerDead1, PlayerDead2,
 	CrossbowShot, BirdCaw,
+	CoinPickup,
 }
 
 const sfxs : Dictionary = {
@@ -29,7 +30,9 @@ const sfxs : Dictionary = {
 	sfx_types.CrossbowShot:
 		preload("res://Globals/SFXManager/SFXResources/crossbow_shot.tres"),
 	sfx_types.BirdCaw:
-		preload("res://Globals/SFXManager/SFXResources/bird_caw.tres")
+		preload("res://Globals/SFXManager/SFXResources/bird_caw.tres"),
+	sfx_types.CoinPickup:
+		preload("res://Globals/SFXManager/SFXResources/coin_pickup.tres"),
 }
 
 const sfx_scn : PackedScene = preload("res://Scenes/SFX/sfx.tscn")

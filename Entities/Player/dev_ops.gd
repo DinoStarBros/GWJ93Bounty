@@ -6,7 +6,7 @@ class_name DevOps
 var ip : ItemsParent
 var ep : EntitiesParent
 
-const espawn_offset : Vector2 = Vector2(100, -100)
+const spawn_offset : Vector2 = Vector2(100, -100)
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 
 @onready var spawn_buttons : Dictionary = {
 	1:[%sCoin,
-		func(): ip.spawn_coin(p.global_position)
+		func(): ip.spawn_coin(p.global_position + spawn_offset)
 	],
 	2:[%sGrapeshot,
 		func(): ip.spawn_grapeshot(p.global_position)
@@ -54,21 +54,21 @@ func _process(delta: float) -> void:
 	
 	# Enemy spawns
 	10:[%sDummy,
-		func(): ep.spawn_dummy(p.global_position + espawn_offset)
+		func(): ep.spawn_dummy(p.global_position + spawn_offset)
 	],
 	11:[%sDeckhand,
-		func(): ep.spawn_deckhand(p.global_position + espawn_offset)
+		func(): ep.spawn_deckhand(p.global_position + spawn_offset)
 	],
 	12:[%sBuccaneer,
-		func(): ep.spawn_buccaneer(p.global_position + espawn_offset)
+		func(): ep.spawn_buccaneer(p.global_position + spawn_offset)
 	],
 	13:[%sParrot,
-		func(): ep.spawn_parrot(p.global_position + espawn_offset)
+		func(): ep.spawn_parrot(p.global_position + spawn_offset)
 	],
 	14:[%sCrossbower,
-		func(): ep.spawn_crossbower(p.global_position + espawn_offset)
+		func(): ep.spawn_crossbower(p.global_position + spawn_offset)
 	],
 	15:[%sFlamer,
-		func(): ep.spawn_flamer(p.global_position + espawn_offset)
+		func(): ep.spawn_flamer(p.global_position + spawn_offset)
 	],
 }

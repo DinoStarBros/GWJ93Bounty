@@ -17,6 +17,8 @@ var dead : bool = false:
 		if dead:
 			state_machine.change_state("Dead")
 
+const coin_res : SuckableItemResource = preload("res://SuckableItems/SuckableItemResources/coin.tres")
+
 func _ready() -> void:
 	Global.player = self
 	hurtbox_component.Hurt.connect(
@@ -25,6 +27,7 @@ func _ready() -> void:
 	)
 	
 	Global.current_game_state = Global.game_states.COMBAT
+	Global.coins = 0
 
 func _physics_process(delta: float) -> void:
 	if dead:
@@ -42,3 +45,9 @@ func get_wasd_input() -> Vector2:
 	return (
 		Input.get_vector("Left", "Right", "Up", "Down")
 	)
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("LoadCoin"):
+		if Global.coins >= 1:
+			Global.barrel.add_item(coin_res)
+			Global.coins -= 1

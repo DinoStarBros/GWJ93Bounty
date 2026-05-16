@@ -18,7 +18,6 @@ func _ready() -> void:
 
 func _physics_process(delta:float) -> void:
 	
-	
 	if active_shake_time > 0:
 		shake_time += delta * shake_time_speed
 		active_shake_time -= delta
