@@ -52,3 +52,7 @@ func spawn_multiple_items(minim:int, maxim:int) -> void:
 				randf_range(-item_spawn_range, item_spawn_range)
 			)
 		)
+
+func _on_hb_break_area_entered(area: Area2D) -> void:
+	if area is HitboxComponent:
+		destroy()

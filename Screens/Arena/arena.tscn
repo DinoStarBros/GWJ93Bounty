@@ -11,7 +11,14 @@
 [ext_resource type="Resource" uid="uid://ckumxf8er5a1r" path="res://Waves/2.tres" id="7_vxr84"]
 [ext_resource type="PackedScene" uid="uid://dbcb4oiuu5rbc" path="res://Entities/Player/player.tscn" id="7_wk5ni"]
 [ext_resource type="Resource" uid="uid://bwd4y771su548" path="res://Waves/3.tres" id="8_ojk3h"]
+[ext_resource type="Resource" uid="uid://b5he0nblha5ke" path="res://Waves/4.tres" id="9_y32hk"]
+[ext_resource type="Resource" uid="uid://diyvwhbjiqlcd" path="res://Waves/5.tres" id="10_5i3ud"]
 [ext_resource type="PackedScene" uid="uid://b8lumjswgrimw" path="res://Scenes/SupplyCrate/supply_crate.tscn" id="10_wk5ni"]
+[ext_resource type="Resource" uid="uid://cyoc3ig4dpb32" path="res://Waves/6.tres" id="11_cda45"]
+[ext_resource type="Resource" uid="uid://dtofy3cdjai41" path="res://Waves/7.tres" id="12_1vgea"]
+[ext_resource type="Resource" uid="uid://cksr2e0d86tnr" path="res://Waves/8.tres" id="13_pv8nj"]
+[ext_resource type="Resource" uid="uid://hbr5uasbh0oo" path="res://Waves/9.tres" id="14_lbrig"]
+[ext_resource type="Resource" uid="uid://brlt7ghl7qqhr" path="res://Waves/10.tres" id="15_ubvlm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h07ax"]
 size = Vector2(1397, 1077)
@@ -37,7 +44,7 @@ tile_set = ExtResource("2_bft7o")
 [node name="ArenaWaveComponent" parent="." unique_id=157935638 node_paths=PackedStringArray("arena_spawn_domain", "entities_parent") instance=ExtResource("7_f8dps")]
 arena_spawn_domain = NodePath("arenaSpawnDomain")
 entities_parent = NodePath("../EntitiesParent")
-waves = Array[ExtResource("5_h07ax")]([ExtResource("6_wk5ni"), ExtResource("7_vxr84"), ExtResource("8_ojk3h")])
+waves = Array[ExtResource("5_h07ax")]([ExtResource("6_wk5ni"), ExtResource("7_vxr84"), ExtResource("8_ojk3h"), ExtResource("9_y32hk"), ExtResource("10_5i3ud"), ExtResource("11_cda45"), ExtResource("12_1vgea"), ExtResource("13_pv8nj"), ExtResource("14_lbrig"), ExtResource("15_ubvlm")])
 
 [node name="arenaSpawnDomain" type="CollisionShape2D" parent="ArenaWaveComponent" unique_id=541101675]
 position = Vector2(-9.5, -23.5)

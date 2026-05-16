@@ -26,10 +26,17 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_vh2bt")
 
 [node name="PlayerBreak" type="Area2D" parent="." unique_id=308423625]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 6
+collision_mask = 6
 
 [node name="pb_coll" type="CollisionShape2D" parent="PlayerBreak" unique_id=1868067253]
+shape = SubResource("RectangleShape2D_lbpx4")
+
+[node name="HbBreak" type="Area2D" parent="." unique_id=459787571]
+collision_layer = 2
+collision_mask = 2
+
+[node name="hb_coll" type="CollisionShape2D" parent="HbBreak" unique_id=1052953130]
 shape = SubResource("RectangleShape2D_lbpx4")
 
 [node name="ShadowCircle" type="Sprite2D" parent="." unique_id=820887569]
@@ -41,3 +48,4 @@ texture = ExtResource("3_lbpx4")
 [connection signal="area_entered" from="SuckArea" to="." method="_on_suck_area_area_entered"]
 [connection signal="area_exited" from="SuckArea" to="." method="_on_suck_area_area_exited"]
 [connection signal="area_entered" from="PlayerBreak" to="." method="_on_player_break_area_entered"]
+[connection signal="area_entered" from="HbBreak" to="." method="_on_hb_break_area_entered"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WaveResource" format=3 uid="uid://dtofy3cdjai41"]
+
+[ext_resource type="Script" uid="uid://blgq6341hj6wc" path="res://Waves/WaveResource.gd" id="1_5wnpw"]
+
+[resource]
+script = ExtResource("1_5wnpw")
+enemies = Array[int]([1])
+spawn_interval_range = Vector2(2, 3)
+metadata/_custom_type_script = "uid://blgq6341hj6wc"
