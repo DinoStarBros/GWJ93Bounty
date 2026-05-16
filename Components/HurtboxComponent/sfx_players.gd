@@ -11,8 +11,8 @@ func play_enemy_hurt_sfx() -> void:
 
 func play_enemy_dead_sfx() -> void:
 	SfxManager.play_2d_sfx(SfxManager.sfx_types.EnemyDead1, global_position)
-	spawn_multiple_items(2,3)
-	for n in randi_range(3,6):
+	spawn_multiple_items(1,2)
+	for n in randi_range(1,5):
 		spawn_coin()
 
 func play_player_hurt_sfx() -> void:
