@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b8lumjswgrimw" path="res://Scenes/SupplyCrate/supply_crate.tscn" id="10_wk5ni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h07ax"]
-size = Vector2(1359, 788)
+size = Vector2(1397, 1077)
 
 [node name="Arena" type="Node2D" unique_id=775134962]
 script = ExtResource("1_w8ma2")
@@ -38,25 +38,25 @@ entities_parent = NodePath("../EntitiesParent")
 waves = Array[ExtResource("5_h07ax")]([ExtResource("6_wk5ni")])
 
 [node name="arenaSpawnDomain" type="CollisionShape2D" parent="ArenaWaveComponent" unique_id=541101675]
-position = Vector2(-9.5, -36)
+position = Vector2(-9.5, -23.5)
 shape = SubResource("RectangleShape2D_h07ax")
 debug_color = Color(0, 0.6, 0.69803923, 0)
 
 [node name="ProjectilesParent" parent="." unique_id=564160944 instance=ExtResource("5_vhfm8")]
 
+[node name="SupplyCrate" parent="ProjectilesParent" unique_id=1007198604 instance=ExtResource("10_wk5ni")]
+position = Vector2(-631, -410)
+
+[node name="SupplyCrate2" parent="ProjectilesParent" unique_id=2005960176 instance=ExtResource("10_wk5ni")]
+position = Vector2(548, -315)
+
+[node name="SupplyCrate3" parent="ProjectilesParent" unique_id=295557655 instance=ExtResource("10_wk5ni")]
+position = Vector2(538, 287)
+
+[node name="SupplyCrate4" parent="ProjectilesParent" unique_id=1322874717 instance=ExtResource("10_wk5ni")]
+position = Vector2(-549, 284)
+
 [node name="EntitiesParent" parent="." unique_id=1540111594 instance=ExtResource("6_h07ax")]
 
 [node name="Player" parent="EntitiesParent" unique_id=950942093 instance=ExtResource("7_wk5ni")]
 z_index = 1
-
-[node name="SupplyCrate" parent="EntitiesParent" unique_id=1007198604 instance=ExtResource("10_wk5ni")]
-position = Vector2(-631, -410)
-
-[node name="SupplyCrate2" parent="EntitiesParent" unique_id=2005960176 instance=ExtResource("10_wk5ni")]
-position = Vector2(548, -315)
-
-[node name="SupplyCrate3" parent="EntitiesParent" unique_id=295557655 instance=ExtResource("10_wk5ni")]
-position = Vector2(538, 287)
-
-[node name="SupplyCrate4" parent="EntitiesParent" unique_id=1322874717 instance=ExtResource("10_wk5ni")]
-position = Vector2(-549, 284)

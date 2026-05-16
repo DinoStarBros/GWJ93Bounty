@@ -119,10 +119,10 @@ position = Vector2(1256, 495)
 scale = Vector2(0.4, 0.4)
 
 [node name="HpBar" type="ProgressBar" parent="GUI" unique_id=1005040977]
-offset_left = 71.0
-offset_top = 103.0
-offset_right = 470.0
-offset_bottom = 167.0
+offset_left = 32.0
+offset_top = 27.0
+offset_right = 431.0
+offset_bottom = 91.0
 show_percentage = false
 
 [node name="HpText" type="Label" parent="GUI/HpBar" unique_id=1865794067]
@@ -143,10 +143,10 @@ label_settings = SubResource("LabelSettings_0poeq")
 
 [node name="coin_count" type="Label" parent="GUI" unique_id=1470010474]
 unique_name_in_owner = true
-offset_left = 74.0
-offset_top = 207.0
-offset_right = 161.0
-offset_bottom = 248.0
+offset_left = 47.0
+offset_top = 114.0
+offset_right = 134.0
+offset_bottom = 155.0
 text = "Coins: "
 label_settings = SubResource("LabelSettings_ppdlg")
 
@@ -191,6 +191,7 @@ label_settings = SubResource("LabelSettings_ppdlg")
 horizontal_alignment = 1
 
 [node name="DevOps" parent="." unique_id=1137223944 node_paths=PackedStringArray("p") instance=ExtResource("11_vskfa")]
+visible = false
 p = NodePath("..")
 
 [node name="state_txt" type="Label" parent="." unique_id=902025439]

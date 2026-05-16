@@ -3,6 +3,5 @@ extends Node2D
 ## to store the projectiles
 class_name ProjectilesParent
 
-
 func _ready() -> void:
 	Global.projectiles_parent = self

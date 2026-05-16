@@ -29,6 +29,7 @@ func destroy() -> void:
 		_spawn_wood_shrapnel()
 	
 	spawn_multiple_items(7, 10)
+	Global.camera.screen_shake(10, 0.1)
 	
 	queue_free()
 

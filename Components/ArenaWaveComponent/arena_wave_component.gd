@@ -37,6 +37,8 @@ func _ready() -> void:
 	GlobalSignals.NextWaveStart.connect(
 		func():
 		Global.time_left = waves[Global.current_wave-1].time
+		for n in Global.crates_for_next_wave:
+			spawn_crate_randpos()
 	)
 
 func _spawn_enemy() -> void:
@@ -66,3 +68,14 @@ func get_spawn_amnt(sa_range: Vector2i) -> int:
 
 func _physics_process(delta: float) -> void:
 	Global.time_left = max(Global.time_left - delta, 0)
+
+func spawn_crate_randpos() -> void:
+	var supply_crate : SupplyCrate = References.crate_scn.instantiate()
+	supply_crate.global_position.x = (
+		randf_range(left_bound, right_bound)
+	)
+	supply_crate.global_position.y = (
+		randf_range(up_bound, down_bound)
+	)
+	
+	Global.projectiles_parent.add_child(supply_crate)
