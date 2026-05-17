@@ -2,6 +2,7 @@ extends State
 
 func enter() -> void:
 	state_duration = 0.5
+	%anims.play("flameWindup")
 
 func physics_update(delta: float) -> void:
 	p.velocity *= 0.9

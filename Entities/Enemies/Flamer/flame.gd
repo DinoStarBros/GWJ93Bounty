@@ -5,6 +5,7 @@ const enemy_burn_ground_scn : PackedScene = preload("res://Projectiles/EnemyBurn
 func enter() -> void:
 	state_duration = 0.7
 	_spawn_enemy_burn_ground()
+	%anims.play("flame")
 
 func physics_update(delta: float) -> void:
 	p.velocity *= 0.9

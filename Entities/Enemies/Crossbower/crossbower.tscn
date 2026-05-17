@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://5javf7vee0fa" path="res://Entities/Enemies/Crossbower/cr_follow.gd" id="9_0kp4i"]
 [ext_resource type="Script" uid="uid://tniawjy2npxl" path="res://Entities/Enemies/hurtState.gd" id="10_dfuhn"]
 [ext_resource type="Script" uid="uid://ydthihn2paje" path="res://Entities/Enemies/Crossbower/shoot_windup.gd" id="11_qxrrt"]
+[ext_resource type="AudioStream" uid="uid://d2pdi12h7o1gs" path="res://Audio/41randsfx/8.wav" id="12_qxrrt"]
 [ext_resource type="Script" uid="uid://3vx2l5um7ctv" path="res://Entities/Enemies/Crossbower/shoot.gd" id="12_ykl6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8i1k"]
@@ -124,6 +125,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1.5, 1.5), Vector2(1.3, 1.7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("windup:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_bwna8"]
@@ -248,3 +261,9 @@ texture = ExtResource("3_ioufh")
 [node name="anims" type="AnimationPlayer" parent="." unique_id=547113118]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_ykl6n")
+
+[node name="windup" type="AudioStreamPlayer2D" parent="." unique_id=1359012422]
+unique_name_in_owner = true
+stream = ExtResource("12_qxrrt")
+volume_db = -10.0
+bus = &"SFX"
