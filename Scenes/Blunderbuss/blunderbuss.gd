@@ -15,6 +15,7 @@ class_name Blunderbuss
 @onready var suck_pickup_collision: CollisionShape2D = %suckPickupCollision
 @onready var other_stuff_handler: VacloopHandler = %OtherStuffHandler
 @onready var item_sound: AudioStreamPlayer = %ItemSound
+@onready var recoil_anim: AnimationPlayer = %recoil_anim
 
 var vacloop_desire_pitch : float = 0.01
 var sucking : bool = false:
@@ -47,6 +48,7 @@ func barrel_shoot(item: SuckableItemResource) -> void:
 	
 	other_stuff_handler.play_shoot_sfx()
 	Global.camera.screen_shake(5, 0.1)
+	recoil_anim.play("recoil")
 
 func barrel_eject(item: SuckableItemResource) -> void:
 	for projectile in item.projectile_amnt:

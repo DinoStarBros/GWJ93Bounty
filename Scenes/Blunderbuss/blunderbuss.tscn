@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bsoye2yyku5pv"]
 
 [ext_resource type="Script" uid="uid://ce7nwccdvxrp3" path="res://Scenes/Blunderbuss/blunderbuss.gd" id="1_1n76p"]
+[ext_resource type="Texture2D" uid="uid://bqubavsk5td7m" path="res://Art/newsprites.png" id="2_jviyl"]
 [ext_resource type="PackedScene" uid="uid://cj86w7obfjjrm" path="res://Scenes/SuckEffect/suck_effect.tscn" id="3_iba4p"]
 [ext_resource type="AudioStream" uid="uid://cjl6lj7qlftpv" path="res://Audio/BussSFX/vacLoop.wav" id="5_l0cpo"]
 [ext_resource type="AudioStream" uid="uid://cjrha4kbrqcpl" path="res://Audio/planesfx/gunshot-352466.mp3" id="5_rc6mt"]
@@ -85,6 +86,115 @@ size_override = Vector2(192, 128)
 radius = 37.0
 height = 114.0
 
+[sub_resource type="Animation" id="Animation_47bxt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite/Newsprites:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite/Newsprites:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jviyl"]
+resource_name = "recoil"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite/Newsprites:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(40, 0), Vector2(50, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite/Newsprites:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_47bxt"]
+_data = {
+&"RESET": SubResource("Animation_47bxt"),
+&"recoil": SubResource("Animation_jviyl")
+}
+
 [node name="Blunderbuss" type="Node2D" unique_id=1936563938]
 script = ExtResource("1_1n76p")
 
@@ -92,7 +202,7 @@ script = ExtResource("1_1n76p")
 unique_name_in_owner = true
 z_index = 1
 texture_filter = 1
-position = Vector2(50, 0)
+position = Vector2(40, 0)
 texture = SubResource("PortableCompressedTexture2D_j02ho")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
@@ -116,6 +226,15 @@ metadata/_aseprite_wizard_config_ = {
 "source_uid": 6084374809905851237
 }
 metadata/_aseprite_wizard_source_file_hash_ = "e4058011d329e6233df4fef5119269d5"
+
+[node name="Newsprites" type="Sprite2D" parent="sprite" unique_id=654251312]
+visible = false
+position = Vector2(44, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("2_jviyl")
+hframes = 3
+vframes = 3
+frame = 7
 
 [node name="GunTip" type="Marker2D" parent="." unique_id=1469827339]
 unique_name_in_owner = true
@@ -223,3 +342,7 @@ position = Vector2(44, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_jviyl")
 disabled = true
+
+[node name="recoil_anim" type="AnimationPlayer" parent="." unique_id=149876682]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_47bxt")

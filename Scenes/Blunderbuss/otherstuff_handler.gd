@@ -9,15 +9,12 @@ class_name VacloopHandler
 @onready var suck_pickup_collision: CollisionShape2D = %suckPickupCollision
 @onready var hitbox_component: HitboxComponent = %HitboxComponent
 
-var melee_damage : float = 5
+var melee_damage : float = 10
 
 func _ready() -> void:
 	suck_range_handle()
 	
-	await get_tree().process_frame
-	hitbox_component.attack.attack_damage = melee_damage * Global.player.damage_mult
-	hitbox_component.attack.knockback = 500
-	hitbox_component.attack.stun_duration = .4
+	#await get_tree().process_frame
 
 func suck_range_handle() -> void:
 	suck_collision.polygon[1].x = blunderbuss.suck_range
@@ -32,6 +29,10 @@ func suck_range_handle() -> void:
 func _physics_process(delta: float) -> void:
 	vacloop_sfx_handle(delta)
 	suck_effect_and_colliders_handle()
+	
+	hitbox_component.attack.attack_damage = melee_damage * Global.player.damage_mult
+	hitbox_component.attack.knockback = 500
+	hitbox_component.attack.stun_duration = .4
 
 func vacloop_sfx_handle(delta: float) -> void:
 	vac_loop.pitch_scale = lerp(vac_loop.pitch_scale, blunderbuss.vacloop_desire_pitch, 6.0 * delta)

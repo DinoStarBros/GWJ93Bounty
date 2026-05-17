@@ -21,12 +21,12 @@ var max_item_amount : int = 15:
 			((max_item_amount * barrel_sprite_size_y) / 4) / 64
 			)
 		barrel_sprite.position.y = (max_item_amount-15) * -32
-
 var barrel_items_amount : int:
 	set(value):
 		if barrel_items_amount == value: return
 		barrel_items_amount = value
 		update_barrel_items_positions()
+var can_shoot : bool = true
 
 const barrel_item_scn : PackedScene = preload("res://SuckableItems/BarrelItem/barrel_item.tscn")
 
@@ -57,7 +57,11 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Shoot"):
-		shoot()
+		if can_shoot:
+			shoot()
+			can_shoot = false
+	else:
+		can_shoot = true
 	if Input.is_action_just_pressed("Eject"):
 		eject()
 
