@@ -17,7 +17,6 @@ item_name = "Cigar"
 texture = SubResource("AtlasTexture_dm8ky")
 color = Color(1, 1, 1, 1)
 item_size = 0.8
-damage = 5.0
 speed = 500.0
 knockback = 0.0
 sfx = ExtResource("3_dm8ky")

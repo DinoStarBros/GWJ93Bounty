@@ -21,6 +21,7 @@ script = ExtResource("1_w07mg")
 [node name="dialog_blip" type="AudioStreamPlayer" parent="." unique_id=735594389]
 unique_name_in_owner = true
 stream = ExtResource("2_hrwxy")
+volume_db = -25.0
 pitch_scale = 1.5
 bus = &"SFX"
 

@@ -5,8 +5,11 @@ class_name DialogBox
 @onready var dialog_label: Label = %dialog_label
 
 const eury_dialogs : Array[String] = [
-	"Hi, what can I do for you? ...
+	"Hi, what can I do for ya? ...
 	and no the bird is not for sale.",
+	
+	"I suggest ya buy something!",
+	
 	
 	
 ]
@@ -22,7 +25,7 @@ func _ready() -> void:
 	start_dialog = true
 
 func _play_dialog_blip() -> void:
-	dialog_blip.pitch_scale = 1.5 + randf_range(-.1,.1)
+	dialog_blip.pitch_scale = 1.0 + randf_range(-.05,.2)
 	dialog_blip.play()
 
 func _physics_process(delta: float) -> void:
