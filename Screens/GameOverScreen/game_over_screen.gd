@@ -9,7 +9,7 @@ func _ready() -> void:
 	# Bounty Poster art should be 128 * 3 or 384 pixels tall
 	
 	%bounty_score_count.text = str(
-		"Bounty: ", Global.bounty_score
+		"Bounty: ", roundi(Global.bounty_score)
 		)
 
 func _retry_pressed() -> void:

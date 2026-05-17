@@ -29,20 +29,6 @@ hitbox_component = NodePath("HitboxComponent")
 move_speed = 200.0
 max_hp = 20.0
 
-[node name="sprite" type="Sprite2D" parent="." unique_id=1250451182]
-position = Vector2(0, -18)
-scale = Vector2(2.485, 2.485)
-texture = ExtResource("2_mll4l")
-region_enabled = true
-region_rect = Rect2(0, 0, 24, 24)
-
-[node name="ShadowCircle" type="Sprite2D" parent="sprite" unique_id=793443689]
-self_modulate = Color(1, 1, 1, 0.62352943)
-show_behind_parent = true
-position = Vector2(0, 8.1)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_dmfy3")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1264159755]
 position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_m8i1k")
@@ -87,6 +73,20 @@ script = ExtResource("11_cmrwv")
 
 [node name="Hurt" type="Node" parent="StateMachine" unique_id=1948177109]
 script = ExtResource("10_lsr0v")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1250451182]
+position = Vector2(0, -18)
+scale = Vector2(2.485, 2.485)
+texture = ExtResource("2_mll4l")
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 24)
+
+[node name="ShadowCircle" type="Sprite2D" parent="sprite" unique_id=793443689]
+self_modulate = Color(1, 1, 1, 0.62352943)
+show_behind_parent = true
+position = Vector2(0, 8.1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_dmfy3")
 
 [node name="anims" type="AnimationPlayer" parent="." unique_id=1782342451]
 unique_name_in_owner = true

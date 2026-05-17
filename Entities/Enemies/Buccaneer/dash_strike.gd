@@ -2,6 +2,7 @@ extends State
 
 func enter() -> void:
 	state_duration = 0.7
+	%anims.play("dash")
 	if p is Enemy:
 		p.velocity = p.get_dir_to_plr() * p.move_speed * 6
 
