@@ -16,3 +16,6 @@ func caw_sfx() -> void:
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
+	
+	%sprite.flip_h = velocity.x < 0
+	%sprite.rotation_degrees = velocity.normalized().x * 30
