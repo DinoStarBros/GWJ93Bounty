@@ -25,8 +25,11 @@ const eury_dialogs : Array[String] = [
 	"Hope ya didn't waste too much coin
 	lodging it in someone's cranium.",
 	
-	"Oh hey! Aren't you that guy on that wanted poster? I've been
-	seeing those everywhere.",
+	"Oh hey! Aren't ya that guy on that wanted poster? I've been
+	seeing those everywhere...",
+	
+	"Why don'tcha buy something before ya continue racking
+	up a huge bounty."
 	
 ]
 
