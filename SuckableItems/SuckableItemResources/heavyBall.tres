@@ -2,13 +2,19 @@
 
 [ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="1_rxlq8"]
 [ext_resource type="AudioStream" uid="uid://cvbv6cd7xmnjx" path="res://Audio/41randsfx/16.wav" id="2_jgpcg"]
-[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_pkbcd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rxlq8"]
+load_path = "res://.godot/imported/stuff-Sheet.png-3625d6b47470320f0ec9bdba0bdb4741.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkbcd"]
+atlas = SubResource("CompressedTexture2D_rxlq8")
+region = Rect2(80, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_rxlq8")
 item_name = "Heavy Ball"
-texture = ExtResource("2_pkbcd")
-color = Color(0, 0.27782798, 0.22735208, 1)
+texture = SubResource("AtlasTexture_pkbcd")
+color = Color(1, 1, 1, 1)
 item_size = 1.5
 damage = 20.0
 speed = 500.0

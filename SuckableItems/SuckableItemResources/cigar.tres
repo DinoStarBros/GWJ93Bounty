@@ -3,13 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://8on6ejgl1kv5" path="res://Projectiles/BurnGround/burn_ground.tscn" id="1_dm8ky"]
 [ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="2_042k2"]
 [ext_resource type="AudioStream" uid="uid://vfqlj4bxchhv" path="res://Audio/41randsfx/18.wav" id="3_dm8ky"]
-[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="4_jnox6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8sd5d"]
+load_path = "res://.godot/imported/stuff-Sheet.png-3625d6b47470320f0ec9bdba0bdb4741.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm8ky"]
+atlas = SubResource("CompressedTexture2D_8sd5d")
+region = Rect2(96, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_042k2")
 item_name = "Cigar"
-texture = ExtResource("4_jnox6")
-color = Color(0.76093614, 0.27040616, 0, 1)
+texture = SubResource("AtlasTexture_dm8ky")
+color = Color(1, 1, 1, 1)
 item_size = 0.8
 damage = 5.0
 speed = 500.0

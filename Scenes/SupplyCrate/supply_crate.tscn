@@ -1,14 +1,11 @@
 [gd_scene format=3 uid="uid://b8lumjswgrimw"]
 
 [ext_resource type="Script" uid="uid://qimevjnh6nkq" path="res://Scenes/SupplyCrate/supply_crate.gd" id="1_onnqc"]
-[ext_resource type="Texture2D" uid="uid://d1yx87uivcgwh" path="res://icon.svg" id="2_vh2bt"]
 [ext_resource type="Texture2D" uid="uid://slhurkpdhu5p" path="res://Art/Placeholder/shadow_circle.png" id="3_lbpx4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh2bt"]
-size = Vector2(56, 54)
+[ext_resource type="Texture2D" uid="uid://deja766i7ytm0" path="res://Art/Plunderbuss/breakables-Sheet.png" id="4_6tde7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbpx4"]
-size = Vector2(56, 54)
+size = Vector2(50, 46)
 
 [node name="SupplyCrate" type="Node2D" unique_id=1007198604]
 script = ExtResource("1_onnqc")
@@ -18,18 +15,15 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="suck_collider" type="CollisionShape2D" parent="SuckArea" unique_id=610420780]
-shape = SubResource("RectangleShape2D_vh2bt")
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=1837580387]
-self_modulate = Color(1, 1, 0.29411766, 1)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_vh2bt")
+visible = false
+shape = SubResource("RectangleShape2D_lbpx4")
 
 [node name="PlayerBreak" type="Area2D" parent="." unique_id=308423625]
 collision_layer = 6
 collision_mask = 6
 
 [node name="pb_coll" type="CollisionShape2D" parent="PlayerBreak" unique_id=1868067253]
+visible = false
 shape = SubResource("RectangleShape2D_lbpx4")
 
 [node name="HbBreak" type="Area2D" parent="." unique_id=459787571]
@@ -37,13 +31,21 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="hb_coll" type="CollisionShape2D" parent="HbBreak" unique_id=1052953130]
+visible = false
 shape = SubResource("RectangleShape2D_lbpx4")
 
 [node name="ShadowCircle" type="Sprite2D" parent="." unique_id=820887569]
 self_modulate = Color(1, 1, 1, 0.39215687)
 show_behind_parent = true
-position = Vector2(0, 18)
+position = Vector2(0, 15.32)
+scale = Vector2(0.8888889, 0.98476195)
 texture = ExtResource("3_lbpx4")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=447116514]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_6tde7")
+hframes = 2
 
 [connection signal="area_entered" from="SuckArea" to="." method="_on_suck_area_area_entered"]
 [connection signal="area_exited" from="SuckArea" to="." method="_on_suck_area_area_exited"]

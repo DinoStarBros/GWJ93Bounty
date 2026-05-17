@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bvxnglb530yir"
+path="res://.godot/imported/chaser.aseprite-c00473c214e991659303019d48601a5c.res"
+
+[deps]
+
+source_file="res://Art/Plunderbuss/chaser.aseprite"
+dest_files=["res://.godot/imported/chaser.aseprite-c00473c214e991659303019d48601a5c.res"]
+
+[params]
+

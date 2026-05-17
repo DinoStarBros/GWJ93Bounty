@@ -7,6 +7,9 @@ var dir_to_plr : Vector2
 const move_speed : float = 700
 const item_spawn_range : float = 50
 
+func _ready() -> void:
+	%sprite.frame = randi_range(0,1)
+
 func _physics_process(delta: float) -> void:
 	dir_to_plr = global_position.direction_to(Global.player.global_position + Vector2(0, -32))
 	

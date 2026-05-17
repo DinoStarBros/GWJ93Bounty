@@ -1,14 +1,20 @@
 [gd_resource type="Resource" script_class="SuckableItemResource" format=3 uid="uid://db2sil0t0pets"]
 
 [ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="1_hetkk"]
-[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="2_f3o0i"]
 [ext_resource type="AudioStream" uid="uid://bpcs6cp7wpt3v" path="res://Audio/BussSFX/dragon-studio-bubble-pop-406640.mp3" id="2_v868m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hetkk"]
+load_path = "res://.godot/imported/stuff-Sheet.png-3625d6b47470320f0ec9bdba0bdb4741.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3o0i"]
+atlas = SubResource("CompressedTexture2D_hetkk")
+region = Rect2(128, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_hetkk")
 item_name = "Grapeshot"
-texture = ExtResource("2_f3o0i")
-color = Color(1, 0.34821656, 0.9077022, 1)
+texture = SubResource("AtlasTexture_f3o0i")
+color = Color(1, 1, 1, 1)
 damage = 5.0
 speed = 600.0
 spread = 2.0

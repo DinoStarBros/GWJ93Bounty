@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://beppg4adkvc87"
+path="res://.godot/imported/stuff.aseprite-eb47aba17dd56f36b63b31329fc45fb1.res"
+
+[deps]
+
+source_file="res://Art/Plunderbuss/stuff.aseprite"
+dest_files=["res://.godot/imported/stuff.aseprite-eb47aba17dd56f36b63b31329fc45fb1.res"]
+
+[params]
+

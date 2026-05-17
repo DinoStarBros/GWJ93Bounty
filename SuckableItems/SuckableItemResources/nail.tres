@@ -2,13 +2,19 @@
 
 [ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="1_too58"]
 [ext_resource type="AudioStream" uid="uid://daiixog5jq884" path="res://Audio/cardtowersfx/sword_slash.wav" id="2_too58"]
-[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="3_1b6ju"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_edtv1"]
+load_path = "res://.godot/imported/stuff-Sheet.png-3625d6b47470320f0ec9bdba0bdb4741.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_too58"]
+atlas = SubResource("CompressedTexture2D_edtv1")
+region = Rect2(48, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_too58")
 item_name = "Nail"
-texture = ExtResource("3_1b6ju")
-color = Color(0.4390491, 0.43904912, 0.43904912, 1)
+texture = SubResource("AtlasTexture_too58")
+color = Color(1, 1, 1, 1)
 item_size = 0.8
 damage = 12.0
 speed = 1000.0

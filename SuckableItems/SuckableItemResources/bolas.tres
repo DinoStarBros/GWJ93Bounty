@@ -2,17 +2,21 @@
 
 [ext_resource type="Script" uid="uid://d0c24a4ceihuw" path="res://SuckableItems/suckable_item_resource.gd" id="2_13udo"]
 [ext_resource type="AudioStream" uid="uid://cd0ouhgvmyarl" path="res://Audio/BananTime/floraphonic-spin-whoosh-1-186596.mp3" id="2_a0egx"]
-[ext_resource type="Texture2D" uid="uid://bxi1xb61q71gy" path="res://Art/CrokDag/luhCircle.png" id="4_4x4s6"]
+[ext_resource type="Texture2D" uid="uid://c8a2ngskutm4l" path="res://Art/Plunderbuss/stuff-Sheet.png" id="3_a0egx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgdvl"]
+atlas = ExtResource("3_a0egx")
+region = Rect2(64, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_13udo")
 item_name = "Bolas"
-texture = ExtResource("4_4x4s6")
-color = Color(0, 1, 0, 1)
+texture = SubResource("AtlasTexture_tgdvl")
+color = Color(1, 1, 1, 1)
 item_size = 1.5
 damage = 11.0
 speed = 500.0
-knockback = -1000.0
+knockback = -500.0
 stun_duration = 2.0
 sfx = ExtResource("2_a0egx")
 sfx_volume = 5.0

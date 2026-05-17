@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://csxk08nmnuhp2"
+path="res://.godot/imported/plunderbuss.aseprite-5f88a79dd77883718b2378069433c312.res"
+
+[deps]
+
+source_file="res://Art/Plunderbuss/plunderbuss.aseprite"
+dest_files=["res://.godot/imported/plunderbuss.aseprite-5f88a79dd77883718b2378069433c312.res"]
+
+[params]
+

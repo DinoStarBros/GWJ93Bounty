@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://csdstm6tbleym"
+path="res://.godot/imported/mockup.aseprite-21c0ba78ac7a3d952ee7be97ef0fb5e2.res"
+
+[deps]
+
+source_file="res://Art/Plunderbuss/mockup.aseprite"
+dest_files=["res://.godot/imported/mockup.aseprite-21c0ba78ac7a3d952ee7be97ef0fb5e2.res"]
+
+[params]
+

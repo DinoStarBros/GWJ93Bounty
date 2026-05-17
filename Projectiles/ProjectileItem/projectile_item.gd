@@ -21,8 +21,8 @@ func _ready() -> void:
 	hitbox_component.hits = item_resource.hits
 	hitbox_component.attack.stun_duration = item_resource.stun_duration
 	
-	scale.x = item_resource.item_size
-	scale.y = item_resource.item_size
+	scale.x = item_resource.item_size * 1.5
+	scale.y = item_resource.item_size * 1.5
 
 func _physics_process(delta: float) -> void:
 	_move(delta)

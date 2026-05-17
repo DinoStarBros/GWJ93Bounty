@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dxa180mjrdkug"
+path="res://.godot/imported/crossbow.aseprite-424289f0af9fe9bd90191a791ff7e167.res"
+
+[deps]
+
+source_file="res://Art/Plunderbuss/crossbow.aseprite"
+dest_files=["res://.godot/imported/crossbow.aseprite-424289f0af9fe9bd90191a791ff7e167.res"]
+
+[params]
+

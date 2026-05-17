@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://tyhegjn7qhs5"
+path="res://.godot/imported/breakables.aseprite-da9de65656b01cf5bc67e6cede1f7997.res"
+
+[deps]
+
+source_file="res://Art/Plunderbuss/breakables.aseprite"
+dest_files=["res://.godot/imported/breakables.aseprite-da9de65656b01cf5bc67e6cede1f7997.res"]
+
+[params]
+

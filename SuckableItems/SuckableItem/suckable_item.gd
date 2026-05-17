@@ -25,14 +25,16 @@ func _ready() -> void:
 	%CoinPickup.area_entered.connect(_coin_pickup)
 	
 	sprite.self_modulate = item_resource.color
-	scale.x = item_resource.item_size
-	scale.y = item_resource.item_size
+	scale.x = item_resource.item_size * 1.5
+	scale.y = item_resource.item_size * 1.5
 	
 	debug.text = str(item_resource.item_name)
-	debug.visible = OS.is_debug_build()
+	#debug.visible = OS.is_debug_build()
 	
 	is_coin = item_resource.item_name == "Coin"
 	%suckPickupCol.disabled = is_coin
+	if is_coin:
+		sprite.rotation += PI / 2
 
 func _suck_area_entered(area:Area2D) -> void:
 	is_go_to_suck = true
