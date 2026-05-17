@@ -23,7 +23,7 @@
 [ext_resource type="Script" uid="uid://bw6axktdp6ykm" path="res://Entities/Player/shop_parent.gd" id="22_a8wow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uyv8"]
-size = Vector2(40, 40)
+size = Vector2(16, 14.5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0poeq"]
 font_size = 40
@@ -34,10 +34,10 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8fok"]
-size = Vector2(36, 48)
+size = Vector2(28, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppdlg"]
-size = Vector2(58, 58)
+size = Vector2(46, 48)
 
 [sub_resource type="Animation" id="Animation_v7p16"]
 length = 0.001
@@ -347,7 +347,7 @@ position = Vector2(0, -26)
 script = ExtResource("4_nhbkt")
 
 [node name="envCol" type="CollisionShape2D" parent="." unique_id=587853246]
-position = Vector2(0, -26)
+position = Vector2(1.9999999, -8)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_3uyv8")
 
@@ -522,7 +522,7 @@ knockback_stun_component = NodePath("../KnockbackStunComponent")
 
 [node name="hurtbox" type="CollisionShape2D" parent="HurtboxComponent" unique_id=752952684]
 unique_name_in_owner = true
-position = Vector2(0, -26)
+position = Vector2(0, -19)
 shape = SubResource("RectangleShape2D_r8fok")
 debug_color = Color(0, 0.64486116, 0.27864194, 0.41960785)
 
@@ -537,6 +537,7 @@ parent = NodePath("..")
 state_machine = NodePath("../StateMachine")
 
 [node name="CoinPickup" type="Area2D" parent="." unique_id=311062453]
+visible = false
 position = Vector2(0, -26)
 collision_layer = 128
 collision_mask = 128
