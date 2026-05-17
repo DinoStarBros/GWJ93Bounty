@@ -141,13 +141,25 @@ grow_vertical = 2
 text = "10 / 10"
 label_settings = SubResource("LabelSettings_0poeq")
 
-[node name="coin_count" type="Label" parent="GUI" unique_id=1470010474]
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI" unique_id=488084642]
+offset_left = 59.0
+offset_top = 116.0
+offset_right = 248.0
+offset_bottom = 202.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+alignment = 2
+
+[node name="coin_count" type="Label" parent="GUI/VBoxContainer" unique_id=1470010474]
 unique_name_in_owner = true
-offset_left = 47.0
-offset_top = 114.0
-offset_right = 134.0
-offset_bottom = 155.0
-text = "Coins: "
+layout_mode = 2
+text = "Coins:"
+label_settings = SubResource("LabelSettings_ppdlg")
+
+[node name="bounty_score_count" type="Label" parent="GUI/VBoxContainer" unique_id=1743390095]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Bounty Score:"
 label_settings = SubResource("LabelSettings_ppdlg")
 
 [node name="wave_count" type="Label" parent="GUI" unique_id=745649671]

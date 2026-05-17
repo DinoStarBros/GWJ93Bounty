@@ -18,13 +18,15 @@ func visual_handle() -> void:
 		Global.game_states.LOSE:
 			%txt.text = str(
 				"Your Bounty Has Been
-				Claimed!"
+				Claimed!
+				You lose!"
 			)
 			# Show lost bounty poster
 		Global.game_states.WIN:
 			%txt.text = str(
-				"Pirate Menace Still
-				On the Loose!"
+				"Pirate Menace With a High
+				Bounty Still On the Loose!
+				You Win!"
 			)
 			# Show winning bounty poster
 		_:

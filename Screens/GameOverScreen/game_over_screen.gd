@@ -6,6 +6,7 @@ class_name GameOverScreen
 func _ready() -> void:
 	%retry.pressed.connect(_retry_pressed)
 	%exit.pressed.connect(_exit_pressed)
+	# Bounty Poster art should be 128 * 3 or 384 pixels tall
 
 func _retry_pressed() -> void:
 	SceneManager.change_scene("res://Screens/Arena/arena.tscn")

@@ -4,6 +4,9 @@ class_name GUI
 @onready var coin_count: Label = %coin_count
 @onready var wave_count: Label = %wave_count
 @onready var time_left_text: Label = %time_left_text
+@onready var bounty_score_count: Label = %bounty_score_count
+
+var lerped_bscore : float
 
 func _process(delta: float) -> void:
 	coin_count.text = str(
@@ -17,3 +20,9 @@ func _process(delta: float) -> void:
 	time_left_text.text = str(
 		roundi(Global.time_left)
 	)
+	
+	bounty_score_count.text = str(
+		"Bounty Score: ", roundi(lerped_bscore)
+	)
+	
+	lerped_bscore = lerp(lerped_bscore, Global.bounty_score, 4.0*delta)

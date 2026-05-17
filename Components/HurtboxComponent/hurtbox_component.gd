@@ -34,6 +34,8 @@ func hurt(attack : Attack) -> void:
 		sfx_players.play_enemy_hurt_sfx()
 		if health_component.hp <= 0:
 			sfx_players.play_enemy_dead_sfx()
+			
+			Global.bounty_score += Global.bounty_score_gains["enemy_kill"]
 	elif get_parent() is Player:
 		sfx_players.play_player_hurt_sfx()
 		if health_component.hp <= 0:

@@ -11,6 +11,11 @@ font_size = 50
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_2mngo"]
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_0xuf7"]
 length = 0.001
 tracks/0/type = "value"
@@ -40,7 +45,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Icon:position")
+tracks/2/path = NodePath("bounty_poster:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -93,7 +98,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Icon:position")
+tracks/2/path = NodePath("bounty_poster:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -187,10 +192,17 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Exit"
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=571806905]
+[node name="bounty_poster" type="Sprite2D" parent="." unique_id=571806905]
 position = Vector2(-300, 328)
-scale = Vector2(22.8, 22.8)
 texture = ExtResource("2_2mngo")
+
+[node name="bounty_score_count" type="Label" parent="bounty_poster" unique_id=72874791]
+offset_left = -87.99994
+offset_top = 164.0
+offset_right = 129.00006
+offset_bottom = 215.0
+text = "Bounty: 5000"
+label_settings = SubResource("LabelSettings_2mngo")
 
 [node name="anim" type="AnimationPlayer" parent="." unique_id=1166738567]
 unique_name_in_owner = true

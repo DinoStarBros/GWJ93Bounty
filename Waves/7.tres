@@ -7,5 +7,5 @@ script = ExtResource("1_5wnpw")
 enemies = Array[int]([1, 2, 3, 4, 5])
 time = 60.0
 spawn_amount_range = Vector2i(3, 4)
-spawn_interval_range = Vector2(2, 3)
+spawn_interval_range = Vector2(2, 2.5)
 metadata/_custom_type_script = "uid://blgq6341hj6wc"

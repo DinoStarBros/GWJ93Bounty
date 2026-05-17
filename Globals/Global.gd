@@ -19,6 +19,7 @@ var enable_devops : bool = false
 var coins : int
 var current_wave : int
 var time_left : float
+var bounty_score : float
 
 var restock_price : int = 0
 var upgrade_price : int = 0
@@ -26,6 +27,10 @@ var crate_price : int = 0
 var crates_for_next_wave : int = 0
 
 const txt_scn : PackedScene = preload("res://Juices/DmgNum/dmg_num.tscn")
+const bounty_score_gains : Dictionary = {
+	"enemy_kill": 10,
+	
+}
 
 func _process(_delta:float)->void:
 	volume_handle()
