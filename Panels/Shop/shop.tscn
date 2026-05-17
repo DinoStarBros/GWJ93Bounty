@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dkk18vgp4bowj" path="res://Panels/UpgradeBuyButton/upgrade_buy_button.tscn" id="2_7mhtn"]
 [ext_resource type="AudioStream" uid="uid://bg6gb6r0g5bif" path="res://Audio/BananTime/floraphonic-movement-swipe-whoosh-1-186575.mp3" id="3_3jywy"]
 [ext_resource type="AudioStream" uid="uid://bmn0lx7fsaujh" path="res://Audio/BussSFX/cartoon-music-soundtrack-cha-ching-new-purchase-494486.mp3" id="4_1mqa2"]
+[ext_resource type="Texture2D" uid="uid://dsgtkojn50o7h" path="res://Art/Plunderbuss/monkey_baddie.png" id="5_0nlb5"]
+[ext_resource type="PackedScene" uid="uid://dh2ra1kfh5ucp" path="res://Scenes/dialog_box/dialog_box.tscn" id="6_nxsm8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p52e"]
 bg_color = Color(0, 0, 0, 0.81960785)
@@ -102,10 +104,10 @@ text = "Next Wave (Wave 3)"
 
 [node name="buy_barrel" type="Button" parent="buyStuff" unique_id=777147155]
 unique_name_in_owner = true
-offset_left = 865.0
-offset_top = 422.0
-offset_right = 1175.0
-offset_bottom = 550.0
+offset_left = 40.0
+offset_top = 495.0
+offset_right = 350.0
+offset_bottom = 623.0
 theme_override_font_sizes/font_size = 30
 text = "Buy Supply Crate"
 
@@ -166,3 +168,17 @@ bus = &"SFX"
 [node name="intro" type="AnimationPlayer" parent="." unique_id=429562779]
 libraries/ = SubResource("AnimationLibrary_0nlb5")
 autoplay = &"intro"
+
+[node name="MonkeyBaddie" type="Sprite2D" parent="." unique_id=268161299]
+texture_filter = 1
+position = Vector2(960, 327)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("5_0nlb5")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=525787356]
+
+[node name="DialogBox" parent="Node2D" unique_id=916702182 instance=ExtResource("6_nxsm8")]
+offset_left = 717.0
+offset_top = 485.0
+offset_right = 1218.0
+offset_bottom = 657.0

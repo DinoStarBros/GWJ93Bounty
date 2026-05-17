@@ -5,6 +5,7 @@
 [ext_resource type="VideoStream" uid="uid://7hyw78qicdai" path="res://PBTutsOGV/t2suckShoot (online-video-cutter.com).ogv" id="3_oc3s2"]
 [ext_resource type="VideoStream" uid="uid://tqd2kti4ar3e" path="res://PBTutsOGV/t3eject (online-video-cutter.com).ogv" id="4_2cxk3"]
 [ext_resource type="VideoStream" uid="uid://byo5w36w16wvt" path="res://PBTutsOGV/t4shop (online-video-cutter.com).ogv" id="5_jwm8y"]
+[ext_resource type="Texture2D" uid="uid://dsgtkojn50o7h" path="res://Art/Plunderbuss/monkey_baddie.png" id="6_jwm8y"]
 [ext_resource type="VideoStream" uid="uid://bflmypgev3vqw" path="res://PBTutsOGV/t5shootingCoins (online-video-cutter.com).ogv" id="6_v3h1s"]
 [ext_resource type="VideoStream" uid="uid://yxh5k1l2grv" path="res://PBTutsOGV/t6GP.ogv" id="7_2cxk3"]
 
@@ -186,7 +187,6 @@ label_settings = SubResource("LabelSettings_ypcvb")
 
 [node name="p4" type="MarginContainer" parent="." unique_id=2096877413]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -214,6 +214,12 @@ text = "After fighting a wave of enemies, you dock your ship to visit a shop.
 You can use coins  to buy supply crates & upgrades in the shop.
 "
 label_settings = SubResource("LabelSettings_ypcvb")
+
+[node name="MonkeyBaddie" type="Sprite2D" parent="p4" unique_id=1669827255]
+texture_filter = 1
+position = Vector2(741, 471)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_jwm8y")
 
 [node name="p5" type="MarginContainer" parent="." unique_id=1041117213]
 unique_name_in_owner = true
@@ -248,6 +254,7 @@ label_settings = SubResource("LabelSettings_ypcvb")
 
 [node name="p6" type="MarginContainer" parent="." unique_id=753904000]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

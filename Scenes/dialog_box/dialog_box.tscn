@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dh2ra1kfh5ucp"]
+
+[ext_resource type="Script" uid="uid://cuk8ai8xed38i" path="res://Scenes/dialog_box/dialog_box.gd" id="1_w07mg"]
+[ext_resource type="AudioStream" uid="uid://cehfm2shbgj0b" path="res://Audio/41randsfx/26.wav" id="2_hrwxy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hrwxy"]
+font_size = 30
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w07mg"]
+font_size = 25
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="DialogBox" type="PanelContainer" unique_id=916702182]
+offset_right = 283.0
+offset_bottom = 137.0
+script = ExtResource("1_w07mg")
+
+[node name="dialog_blip" type="AudioStreamPlayer" parent="." unique_id=735594389]
+unique_name_in_owner = true
+stream = ExtResource("2_hrwxy")
+pitch_scale = 1.5
+bus = &"SFX"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=426076272]
+layout_mode = 2
+theme_override_constants/separation = -14
+
+[node name="name_text" type="Label" parent="VBoxContainer" unique_id=151233303]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(283, 45)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Eury:"
+label_settings = SubResource("LabelSettings_hrwxy")
+
+[node name="dialog_label" type="Label" parent="VBoxContainer" unique_id=1029492964]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(283, 45)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Insert Dialogue Here"
+label_settings = SubResource("LabelSettings_w07mg")
+autowrap_mode = 2
+
+[node name="DialogueInterval" type="Timer" parent="." unique_id=874765532]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="DialogueInterval" to="." method="_on_dialogue_interval_timeout"]
