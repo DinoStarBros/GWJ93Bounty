@@ -9,6 +9,7 @@ class_name Player
 @onready var hurtbox_component: HurtboxComponent = %HurtboxComponent
 @onready var state_machine: StateMachine = %StateMachine
 @onready var health_component: HealthComponent = %HealthComponent
+@onready var sprite: Sprite2D = %sprite
 
 var last_wasd_input : Vector2
 var iframes : float
@@ -18,6 +19,7 @@ var dead : bool = false:
 		if dead:
 			state_machine.change_state("Dead")
 var damage_mult : float = 1.0
+var dir_to_mouse : Vector2
 
 const coin_res : SuckableItemResource = preload("res://SuckableItems/SuckableItemResources/coin.tres")
 
@@ -53,6 +55,9 @@ func _physics_process(delta: float) -> void:
 	
 	if get_wasd_input() != Vector2.ZERO:
 		last_wasd_input = get_wasd_input()
+	
+	dir_to_mouse = global_position.direction_to(get_global_mouse_position())
+	sprite.flip_h = dir_to_mouse.x < 0
 
 func get_wasd_input() -> Vector2:
 	return (

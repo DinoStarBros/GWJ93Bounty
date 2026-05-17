@@ -1,5 +1,9 @@
 extends State
 
+func enter() -> void:
+	if p is Player:
+		%anims.play("hurt")
+
 func physics_update(delta: float) -> void:
 	p.velocity *= 0.9
 	
