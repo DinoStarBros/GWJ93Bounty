@@ -15,7 +15,7 @@ const eury_dialogs : Array[String] = [
 	stronger.",
 	
 	"Pretty convenient that we keep
-	meeting each other, huh?",
+	meeting each other, huh.",
 	
 	"Fancy meeting ya here!",
 	
