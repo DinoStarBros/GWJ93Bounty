@@ -8,7 +8,7 @@ class_name Blunderbuss
 @export var suck_spread : float = 120.0
 @export var barrel : Barrel
 
-@onready var sprite: Sprite2D = %PeaGun
+@onready var sprite: Sprite2D = %sprite
 @onready var suck_effect: SuckEffect = %SuckEffect
 @onready var suck_collision: CollisionPolygon2D = %suckCollision
 @onready var gun_tip: Marker2D = %GunTip

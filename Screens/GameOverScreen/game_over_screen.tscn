@@ -197,6 +197,7 @@ position = Vector2(-300, 328)
 texture = ExtResource("2_2mngo")
 
 [node name="bounty_score_count" type="Label" parent="bounty_poster" unique_id=72874791]
+unique_name_in_owner = true
 offset_left = -87.99994
 offset_top = 164.0
 offset_right = 129.00006

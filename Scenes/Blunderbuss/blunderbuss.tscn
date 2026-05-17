@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://bsoye2yyku5pv"]
 
 [ext_resource type="Script" uid="uid://ce7nwccdvxrp3" path="res://Scenes/Blunderbuss/blunderbuss.gd" id="1_1n76p"]
-[ext_resource type="Texture2D" uid="uid://dpjad0so3ay4a" path="res://Art/Placeholder/PeaGun.png" id="2_ue752"]
 [ext_resource type="PackedScene" uid="uid://cj86w7obfjjrm" path="res://Scenes/SuckEffect/suck_effect.tscn" id="3_iba4p"]
 [ext_resource type="AudioStream" uid="uid://cjl6lj7qlftpv" path="res://Audio/BussSFX/vacLoop.wav" id="5_l0cpo"]
 [ext_resource type="AudioStream" uid="uid://cjrha4kbrqcpl" path="res://Audio/planesfx/gunshot-352466.mp3" id="5_rc6mt"]
@@ -9,6 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://e7fgtf2ti3ki" path="res://Audio/41randsfx/15.wav" id="6_pyi6s"]
 [ext_resource type="AudioStream" uid="uid://daiixog5jq884" path="res://Audio/cardtowersfx/sword_slash.wav" id="8_j02ho"]
 [ext_resource type="PackedScene" uid="uid://rqxyqn8cdxay" path="res://Components/HitboxComponent/hitbox_component.tscn" id="9_jviyl"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_j02ho"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAAD8AAAAUklGRvQAAABXRUJQVlA4TOcAAAAvL8AHEDegoI0U5kWwl0Fk4RIlZAIWi+HUTldJVPCRCVisgssppJJamf8A+L8rbkKZtU0LsBvbjts8vA6y6fvpBmIBIdRAFhZA4RWQB+v23wNJ7/Z3RP8nQJ5gA/QsBhLnMHB6ST3TjqE9cOIgVADg+7cl54FR7bctpZCcIo74PnTZzok6SCyF4zlGkcBj5zQQkHFUjCz+q7v7II0q+JVzznsvjvhEbre9g4H5mvPma3Y/obqvm/sC1J3k9JKkNW+DKgIgSPZqs7AREQDQxnxzAJHkVFuzq4jpab4tKmetvsh5DXqmew8A")
+size_override = Vector2(48, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ceqtj"]
 radius = 2.0
@@ -85,11 +88,34 @@ height = 114.0
 [node name="Blunderbuss" type="Node2D" unique_id=1936563938]
 script = ExtResource("1_1n76p")
 
-[node name="PeaGun" type="Sprite2D" parent="." unique_id=670557191]
+[node name="sprite" type="Sprite2D" parent="." unique_id=670557191]
 unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
 position = Vector2(50, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_ue752")
+texture = SubResource("PortableCompressedTexture2D_j02ho")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://Art/Plunderbuss/plunderbuss.aseprite",
+"source_uid": 6084374809905851237
+}
+metadata/_aseprite_wizard_source_file_hash_ = "e4058011d329e6233df4fef5119269d5"
 
 [node name="GunTip" type="Marker2D" parent="." unique_id=1469827339]
 unique_name_in_owner = true
