@@ -89,9 +89,17 @@ text = "Close"
 [node name="how_to_play" parent="." unique_id=1121814177 instance=ExtResource("3_ilw8c")]
 unique_name_in_owner = true
 visible = false
+z_index = 1
 layout_mode = 1
 
 [node name="TitleText" parent="." unique_id=542357180 instance=ExtResource("4_h15x5")]
-z_index = -1
 position = Vector2(164, 116)
 scale = Vector2(1.5, 1.5)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=245965294]
+position = Vector2(-94, -202)
+
+[node name="LilBgSpawnTimer" type="Timer" parent="." unique_id=653416639]
+autostart = true
+
+[connection signal="timeout" from="LilBgSpawnTimer" to="." method="_on_lil_bg_spawn_timer_timeout"]

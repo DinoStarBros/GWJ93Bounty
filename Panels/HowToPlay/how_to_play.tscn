@@ -211,8 +211,8 @@ loop = true
 layout_mode = 2
 size_flags_vertical = 0
 text = "After fighting a wave of enemies, you dock your ship to visit a shop.
-You can use coins  to buy supply crates & upgrades in the shop.
-"
+Meet Eury and her pet parrot! She sells upgrades and ammo supply crates.
+You can use coins to buy supply crates & upgrades in the shop."
 label_settings = SubResource("LabelSettings_ypcvb")
 
 [node name="MonkeyBaddie" type="Sprite2D" parent="p4" unique_id=1669827255]

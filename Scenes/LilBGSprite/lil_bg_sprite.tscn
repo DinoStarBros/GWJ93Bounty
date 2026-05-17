@@ -1,0 +1,83 @@
+[gd_scene format=4 uid="uid://b0nq0tpxhwvu8"]
+
+[ext_resource type="Script" uid="uid://bb6tglk3maco" path="res://Scenes/LilBGSprite/lil_bg_sprite.gd" id="1_68yue"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_68yue"]
+_data = PackedByteArray("AAADAAUAAAABAAAAwAAAAIAAAAAkBQAAUklGRhwFAABXRUJQVlA4TBAFAAAvv8AfEC9AkG0zjdEO5pYnURCADCOGxqrKwA5Bts0URjB/qqN8/gOA53Mys9KAdgO4dStLWTbgdBDIDQgm1EG2Ai37r+VaFGeonAfuX0T/IUqSVLcZrIx4ikOC/EP5EdPz+cU5/uPxtaN93omN9ivxIKP9Sjx3oPq1OAhG/1wTLvtkUJUvpINAtdZrOyoep+xatlq301RV+Kz3R1GXJIyCMcPOkgU6jCfBuZGmSvIkvjQC2dQ+Bq9TvI4UO9qzHA64UfajqgRkJAdDq45kSY5jgloTqO54H/f0MjyAIap9R/v59i4AyMbGky+Doon7lkJDIR6hcSIZUhR5ChNFE428idZLHibrzUEZUV2TShAtF2cVGu1lJyXB6CoczWQ/Ty4/zLpifKA7CcZ1rTFmqqMTJqjzJsfzIHE3nTLuds1yluLwvTl6x97OkYfyhn3H6UFiGqOLm+eKz6U8ZQdqgLNiToqDpa2Eab4njrveUy+GsuQJ2CQB5/q256ZDIG0E/anE+76nwcFm3nnOyxVc4LEXk+GL32+G99ItjiUc/m6Y4MFk8O/vuxeEBoXxO4L5RUwxLPz7zwQRPOwEOxuaVBvmb9b27/c/Y4g/MJ6E/I1L/5bWIbAVjT+yucZKbTqOs2IJdjnIoykDLF0KGYLxyCJq05Hdwh1yQdbxyTYKLwngxvTDcCRO1wEvzAled/Aoga2J3U2s/7Ia1B/4AasDGf17yCSKE3GSoONpM3opSBfERwK0i2QSUBNMYie6DRTI8eUpxxdBCqwJf9uaJOty67RtoHQdyqP0MbjZHR+ErGP9+Azky/hK+ZKrg70/xFK3hfKl0zH9tdPt/8lJ9asz+lZef746ta4IQ6PZ6oB2MZzCstd/VqoQrtxa6ugqn8ifNVBqKkWHjW5dt+VjqmADxJWaTcxcocqOfMgFDWg6x7AV6/dUhuavGq6SFz8RNSnzvs/i+dOiluXljJSYRzMXjsrspmNOYXTJm1inzDoOu3GdXC+zPcYLhZcRaWiw79roebsLCxhxK9zX7bbseARW5jOe221l1YYyRqEhNkwiblvP96HEu9kMROJiM0nXc0q43+Xq8G6W0+s2qcAYmYPIxFnKyOBLWS0m8lKmPG7PzWyuEa3FmO77yY13aTw1QfMQ9u/AaTKPDEenn0VnfFvXlKpZNPr0Emzmymiaw8ud21oyLFdG522ORe7EW0kcGDnd5lquWg5stuHLj5CUFprgwI7YfxWlRtYwTYNENUpmTmpTR8kVg3kQOzqdv2q9UqipAcjjLj9QIjPHghkypfd1osmstx53Y8mfSzRtuGIhqZvsuxIEHv0Wxys/uhsvGE64c2/4c89kPTe2UmQZ2z2lFQpdz+1OUbNE78NXYxZPpghqrTtqZIkQVAQhzBNv4tUs5rXBpfUriHAIbujtcHItN3uYhBsNYuLs8BqALbYefEwyTHDM0x6vAfKbHHELV6hpcSyLcNdsd4koUM366OJZAgUz2+QYQtMrvnpv3sURg6W3AcMUnBk7DMC63UOa6dYaHwUAqo0+FyrsNo/vnTWDowMPM3W4y/qtsCZvE8Ayl/BMkWb3TyYzRJszCGt2GEFoNjDr7v+OuSVsEtZsMATLB3qn0c3MRxzmdxiyCIWvKyoxtdYNDsJZAiR1jznpy44L8xuMiQQLR3elIJPvPSTKxxG2Lswi9PKB1HSuhUo8k2U2LB8qQBPxJSRfJ31TVMsvkwo=")
+size_override = Vector2(192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7jse"]
+atlas = SubResource("PortableCompressedTexture2D_68yue")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wea5n"]
+atlas = SubResource("PortableCompressedTexture2D_68yue")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05hyp"]
+atlas = SubResource("PortableCompressedTexture2D_68yue")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np6o2"]
+atlas = SubResource("PortableCompressedTexture2D_68yue")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xryx"]
+atlas = SubResource("PortableCompressedTexture2D_68yue")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aiuk"]
+atlas = SubResource("PortableCompressedTexture2D_68yue")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewk57"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7jse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wea5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05hyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np6o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xryx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aiuk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="LilBgSprite" type="Node2D" unique_id=40470258]
+z_index = -1
+script = ExtResource("1_68yue")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1384820886]
+unique_name_in_owner = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ewk57")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://Art/Plunderbuss/lil_bg_sprites.aseprite",
+"source_uid": 4010668456559276886
+}
+metadata/_aseprite_wizard_source_file_hash_ = "6f921aae323e148b3ddd5ba64dc6eee7"

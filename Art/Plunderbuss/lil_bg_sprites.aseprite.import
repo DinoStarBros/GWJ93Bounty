@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bxe2eg1tt5q51"
+path="res://.godot/imported/lil_bg_sprites.aseprite-b44030eb744b07ffee39c7a01ba8a6d5.res"
+
+[deps]
+
+source_file="res://Art/Plunderbuss/lil_bg_sprites.aseprite"
+dest_files=["res://.godot/imported/lil_bg_sprites.aseprite-b44030eb744b07ffee39c7a01ba8a6d5.res"]
+
+[params]
+

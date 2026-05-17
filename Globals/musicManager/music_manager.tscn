@@ -17,5 +17,5 @@ bus = &"Music"
 [node name="Combat" type="AudioStreamPlayer" parent="." unique_id=54549669]
 unique_name_in_owner = true
 stream = ExtResource("3_shglj")
-volume_db = -10.0
+volume_db = -7.0
 bus = &"Music"

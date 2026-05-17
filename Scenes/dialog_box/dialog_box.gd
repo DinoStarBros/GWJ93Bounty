@@ -10,6 +10,15 @@ const eury_dialogs : Array[String] = [
 	
 	"I suggest ya buy something!",
 	
+	"Oh! What a strong weapon you have.
+	If only I sold something to make it
+	stronger!",
+	
+	"Pretty convenient that we keep
+	meeting each other huh?",
+	
+	"Fancy meeting ya here!",
+	
 	
 	
 ]
