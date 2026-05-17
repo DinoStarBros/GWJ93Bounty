@@ -1,6 +1,13 @@
 [gd_scene format=4 uid="uid://sd2f8q12vjfw"]
 
 [ext_resource type="Script" uid="uid://43yba5cyaka1" path="res://Scenes/TitleText/title_text.gd" id="1_tuqrr"]
+[ext_resource type="Shader" uid="uid://bi0f4xt5hwyb2" path="res://Shaders/wavy_text.gdshader" id="2_tg0wi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aa3xv"]
+shader = ExtResource("2_tg0wi")
+shader_parameter/height = 3.0
+shader_parameter/frequency = 20.0
+shader_parameter/speed = 3.0
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_tuqrr"]
 _data = PackedByteArray("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")
@@ -9,8 +16,11 @@ size_override = Vector2(512, 384)
 [node name="TitleText" type="Node2D" unique_id=542357180]
 script = ExtResource("1_tuqrr")
 
-[node name="p" type="Sprite2D" parent="." unique_id=1981236826]
+[node name="letter_sprites" type="Node2D" parent="." unique_id=1194861565]
+
+[node name="p" type="Sprite2D" parent="letter_sprites" unique_id=1981236826]
 texture_filter = 1
+material = SubResource("ShaderMaterial_aa3xv")
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
 vframes = 3
@@ -37,8 +47,9 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "ce5e9db308f0bd0ce892fdf1ed21ca1e"
 
-[node name="l" type="Sprite2D" parent="p" unique_id=541945119]
+[node name="l" type="Sprite2D" parent="letter_sprites/p" unique_id=541945119]
 texture_filter = 1
+use_parent_material = true
 position = Vector2(73, 0)
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
@@ -67,8 +78,9 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "ce5e9db308f0bd0ce892fdf1ed21ca1e"
 
-[node name="u" type="Sprite2D" parent="p/l" unique_id=1702460029]
+[node name="u" type="Sprite2D" parent="letter_sprites/p/l" unique_id=1702460029]
 texture_filter = 1
+use_parent_material = true
 position = Vector2(53, 0)
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
@@ -97,8 +109,9 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "ce5e9db308f0bd0ce892fdf1ed21ca1e"
 
-[node name="n" type="Sprite2D" parent="p/l/u" unique_id=2094882514]
+[node name="n" type="Sprite2D" parent="letter_sprites/p/l/u" unique_id=2094882514]
 texture_filter = 1
+use_parent_material = true
 position = Vector2(74, 0)
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
@@ -127,8 +140,9 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "ce5e9db308f0bd0ce892fdf1ed21ca1e"
 
-[node name="d" type="Sprite2D" parent="p/l/u/n" unique_id=638434774]
+[node name="d" type="Sprite2D" parent="letter_sprites/p/l/u/n" unique_id=638434774]
 texture_filter = 1
+use_parent_material = true
 position = Vector2(61, -14)
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
@@ -157,9 +171,10 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "ce5e9db308f0bd0ce892fdf1ed21ca1e"
 
-[node name="e" type="Sprite2D" parent="p/l/u/n/d" unique_id=1630443755]
+[node name="e" type="Sprite2D" parent="letter_sprites/p/l/u/n/d" unique_id=1630443755]
 texture_filter = 1
-position = Vector2(64, 5)
+use_parent_material = true
+position = Vector2(70, 3)
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
 vframes = 3
@@ -187,9 +202,10 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "ce5e9db308f0bd0ce892fdf1ed21ca1e"
 
-[node name="r" type="Sprite2D" parent="p/l/u/n/d/e" unique_id=977551348]
+[node name="r" type="Sprite2D" parent="letter_sprites/p/l/u/n/d/e" unique_id=977551348]
 texture_filter = 1
-position = Vector2(63, 1)
+use_parent_material = true
+position = Vector2(72, 1)
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
 vframes = 3
@@ -217,9 +233,10 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "ce5e9db308f0bd0ce892fdf1ed21ca1e"
 
-[node name="b" type="Sprite2D" parent="p/l/u/n/d/e/r" unique_id=2085117836]
+[node name="b" type="Sprite2D" parent="letter_sprites/p/l/u/n/d/e/r" unique_id=2085117836]
 texture_filter = 1
-position = Vector2(51, -1)
+use_parent_material = true
+position = Vector2(55, -1)
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
 vframes = 3
@@ -247,8 +264,9 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "ce5e9db308f0bd0ce892fdf1ed21ca1e"
 
-[node name="u2" type="Sprite2D" parent="p/l/u/n/d/e/r/b" unique_id=1436088471]
+[node name="u2" type="Sprite2D" parent="letter_sprites/p/l/u/n/d/e/r/b" unique_id=1436088471]
 texture_filter = 1
+use_parent_material = true
 position = Vector2(71, 12)
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
@@ -277,9 +295,10 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "ce5e9db308f0bd0ce892fdf1ed21ca1e"
 
-[node name="s" type="Sprite2D" parent="p/l/u/n/d/e/r/b/u2" unique_id=221361122]
+[node name="s" type="Sprite2D" parent="letter_sprites/p/l/u/n/d/e/r/b/u2" unique_id=221361122]
 texture_filter = 1
-position = Vector2(49, -2)
+use_parent_material = true
+position = Vector2(55, -2)
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
 vframes = 3
@@ -307,8 +326,9 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "ce5e9db308f0bd0ce892fdf1ed21ca1e"
 
-[node name="s2" type="Sprite2D" parent="p/l/u/n/d/e/r/b/u2/s" unique_id=1025879391]
+[node name="s2" type="Sprite2D" parent="letter_sprites/p/l/u/n/d/e/r/b/u2/s" unique_id=1025879391]
 texture_filter = 1
+use_parent_material = true
 position = Vector2(56, 3)
 texture = SubResource("PortableCompressedTexture2D_tuqrr")
 hframes = 4
