@@ -10,6 +10,7 @@ class_name Enemy
 const tdev_range : float = 200
 
 func setup_hitbox() -> void:
+	
 	if hitbox_component:
 		hitbox_component.attack.attack_damage = attack_damage
 		hitbox_component.attack.knockback = knockback

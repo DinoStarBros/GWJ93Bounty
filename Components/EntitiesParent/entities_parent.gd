@@ -15,7 +15,7 @@ const flamer_scn : PackedScene = preload("res://Entities/Enemies/Flamer/flamer.t
 
 func _ready() -> void:
 	Global.entities_parent = self
-	GlobalSignals.NextWaveStart.connect(clear_all_enemies)
+	GlobalSignals.WaveDone.connect(clear_all_enemies)
 
 func spawn_enemy(
 	enemy_scn : PackedScene,

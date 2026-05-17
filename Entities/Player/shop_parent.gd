@@ -8,6 +8,7 @@ func _ready() -> void:
 	GlobalSignals.WaveDone.connect(start_shop)
 
 func start_shop() -> void:
+	
 	if Global.current_game_state != Global.game_states.COMBAT:
 		return
 	

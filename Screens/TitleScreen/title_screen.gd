@@ -15,7 +15,7 @@ func _ready() -> void:
 	settings_menu._load()
 
 func _play_pressed() -> void:
-	pass
+	SceneManager.change_scene("res://Screens/Arena/arena.tscn")
 
 func _tutorial_pressed() -> void:
 	how_to_play.show()

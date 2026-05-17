@@ -4,6 +4,7 @@ class_name ArenaWaveComponent
 @export var arena_spawn_domain : CollisionShape2D
 @export var entities_parent : EntitiesParent
 @export var waves : Array[WaveResource]
+@export var final_wave : int = 10
 
 const enemy_spawn_intro_scn : PackedScene = preload("res://Scenes/EnemySpawnIntro/enemy_spawn_intro.tscn")
 
@@ -40,6 +41,14 @@ func _ready() -> void:
 		Global.time_left = waves[Global.current_wave-1].time
 		for n in Global.crates_for_next_wave + 3:
 			spawn_crate_randpos()
+	)
+	
+	GlobalSignals.WaveDone.connect(
+		func():
+		if Global.current_wave >= final_wave:
+			Global.current_game_state = Global.game_states.WIN
+			get_tree().paused = false
+			SceneManager.change_scene("res://Screens/GameOverScreen/game_over_screen.tscn")
 	)
 
 func _spawn_enemy() -> void:

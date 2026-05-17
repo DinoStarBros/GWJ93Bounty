@@ -8,7 +8,7 @@ func _ready() -> void:
 	%exit.pressed.connect(_exit_pressed)
 
 func _retry_pressed() -> void:
-	pass
+	SceneManager.change_scene("res://Screens/Arena/arena.tscn")
 
 func _exit_pressed() -> void:
 	SceneManager.change_scene("res://Screens/TitleScreen/title_screen.tscn")
