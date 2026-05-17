@@ -92,5 +92,6 @@ visible = false
 layout_mode = 1
 
 [node name="TitleText" parent="." unique_id=542357180 instance=ExtResource("4_h15x5")]
+z_index = -1
 position = Vector2(164, 116)
 scale = Vector2(1.5, 1.5)
