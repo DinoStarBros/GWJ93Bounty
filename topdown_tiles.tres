@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cyr2m6q5pv84" path="res://Art/RGS_Dev/tileset_brown.png" id="1_541kb"]
 [ext_resource type="Texture2D" uid="uid://bd2xtrx8qinbt" path="res://Art/Plunderbuss/mockup.png" id="2_mlae3"]
+[ext_resource type="Texture2D" uid="uid://duqhi38qkhppu" path="res://Art/Buss/waters1.png" id="3_n6411"]
+[ext_resource type="Texture2D" uid="uid://cxgxq1l5ekn4e" path="res://Art/Buss/waters2.png" id="4_e2dsk"]
+[ext_resource type="Texture2D" uid="uid://dc7d2tnbj21kf" path="res://Art/Buss/waters3.png" id="5_v6d2e"]
+[ext_resource type="Texture2D" uid="uid://b3n1feg3scr1t" path="res://Art/Buss/waters4.png" id="6_f63np"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlae3"]
 texture = ExtResource("1_541kb")
@@ -1103,7 +1107,27 @@ texture = ExtResource("2_mlae3")
 38:21/0 = 0
 39:21/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_516x4"]
+texture = ExtResource("3_n6411")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1c6rj"]
+texture = ExtResource("4_e2dsk")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rmlkp"]
+texture = ExtResource("5_v6d2e")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08bgh"]
+texture = ExtResource("6_f63np")
+0:0/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_mlae3")
 sources/1 = SubResource("TileSetAtlasSource_mor8b")
+sources/4 = SubResource("TileSetAtlasSource_516x4")
+sources/5 = SubResource("TileSetAtlasSource_1c6rj")
+sources/6 = SubResource("TileSetAtlasSource_rmlkp")
+sources/7 = SubResource("TileSetAtlasSource_08bgh")
