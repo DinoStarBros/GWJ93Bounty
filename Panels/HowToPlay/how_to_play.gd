@@ -7,7 +7,7 @@ var current_page : int = 0
 	
 ]
 @onready var vids : Array = [
-	%vid1,%vid2,%vid3,%vid4,%vid5
+	%vid1,%vid2,%vid3,%vid4,%vid5,%vid6
 ]
 
 @onready var page_no: Label = %page_no

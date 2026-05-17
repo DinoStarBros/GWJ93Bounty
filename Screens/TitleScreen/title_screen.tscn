@@ -45,25 +45,25 @@ grow_vertical = 2
 [node name="play" type="Button" parent="buttons" unique_id=1198909178]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "Play"
 
 [node name="tutorial" type="Button" parent="buttons" unique_id=249506805]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "Tutorial"
 
 [node name="settings" type="Button" parent="buttons" unique_id=1852796736]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "Settings"
 
 [node name="quit" type="Button" parent="buttons" unique_id=1791005053]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "Quit"
 
 [node name="settingsMenu" parent="." unique_id=68845947 instance=ExtResource("2_vnbe3")]

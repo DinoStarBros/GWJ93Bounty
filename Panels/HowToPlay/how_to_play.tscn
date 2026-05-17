@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://bgkxogtg651y3"]
 
 [ext_resource type="Script" uid="uid://c3qwu1qb10bck" path="res://Panels/HowToPlay/how_to_play.gd" id="1_ypcvb"]
+[ext_resource type="VideoStream" uid="uid://dc2fc40mls0q4" path="res://PBTutsOGV/t1movement (online-video-cutter.com).ogv" id="2_53626"]
+[ext_resource type="VideoStream" uid="uid://7hyw78qicdai" path="res://PBTutsOGV/t2suckShoot (online-video-cutter.com).ogv" id="3_oc3s2"]
+[ext_resource type="VideoStream" uid="uid://tqd2kti4ar3e" path="res://PBTutsOGV/t3eject (online-video-cutter.com).ogv" id="4_2cxk3"]
+[ext_resource type="VideoStream" uid="uid://byo5w36w16wvt" path="res://PBTutsOGV/t4shop (online-video-cutter.com).ogv" id="5_jwm8y"]
+[ext_resource type="VideoStream" uid="uid://bflmypgev3vqw" path="res://PBTutsOGV/t5shootingCoins (online-video-cutter.com).ogv" id="6_v3h1s"]
+[ext_resource type="VideoStream" uid="uid://yxh5k1l2grv" path="res://PBTutsOGV/t6GP.ogv" id="7_2cxk3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ypcvb"]
 font_size = 30
@@ -102,6 +108,7 @@ grow_vertical = 2
 [node name="vid1" type="VideoStreamPlayer" parent="p1" unique_id=1014710522]
 unique_name_in_owner = true
 layout_mode = 2
+stream = ExtResource("2_53626")
 volume_db = -80.0
 autoplay = true
 expand = true
@@ -112,8 +119,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "WASD to Move
-Space to Jump
-Shift to Dash"
+Space to Dash"
 label_settings = SubResource("LabelSettings_ypcvb")
 
 [node name="p2" type="MarginContainer" parent="." unique_id=1755423156]
@@ -133,6 +139,7 @@ grow_vertical = 2
 [node name="vid2" type="VideoStreamPlayer" parent="p2" unique_id=1702769278]
 unique_name_in_owner = true
 layout_mode = 2
+stream = ExtResource("3_oc3s2")
 volume_db = -80.0
 autoplay = true
 expand = true
@@ -141,8 +148,9 @@ loop = true
 [node name="Label" type="Label" parent="p2" unique_id=1235861822]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Press Left Click to do a Slash Attack
-Defeating enemies grants you chronometer, a resource used for certain moves"
+text = "Right Click to suck up floor items & store them as ammo.
+Left Click to shoot the item from your blunderbuss' barrel.
+Left Clicking without ammo doeas a melee attack instead."
 label_settings = SubResource("LabelSettings_ypcvb")
 
 [node name="p3" type="MarginContainer" parent="." unique_id=1639070438]
@@ -162,6 +170,7 @@ grow_vertical = 2
 [node name="vid3" type="VideoStreamPlayer" parent="p3" unique_id=1745145308]
 unique_name_in_owner = true
 layout_mode = 2
+stream = ExtResource("4_2cxk3")
 volume_db = -80.0
 autoplay = true
 expand = true
@@ -170,9 +179,9 @@ loop = true
 [node name="Label" type="Label" parent="p3" unique_id=1394957994]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Hold Right Click to Charge up a Bananarang throw. Release to throw the Bananarang
-It uses 2 chronometer
-While charging up the Bananarang, it also slows down time."
+text = "Sucking up too many items ejects the bottom item, shooting it backwards
+You can also forcefully eject items by pressing E
+"
 label_settings = SubResource("LabelSettings_ypcvb")
 
 [node name="p4" type="MarginContainer" parent="." unique_id=2096877413]
@@ -192,6 +201,7 @@ grow_vertical = 2
 [node name="vid4" type="VideoStreamPlayer" parent="p4" unique_id=1948142618]
 unique_name_in_owner = true
 layout_mode = 2
+stream = ExtResource("5_jwm8y")
 volume_db = -80.0
 autoplay = true
 expand = true
@@ -200,10 +210,9 @@ loop = true
 [node name="Label" type="Label" parent="p4" unique_id=1259718422]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Press R to do a Rewind Chronoblast.
-You go back through time, to your position in the past, become invulnerable, 
-and do a large explosion around you.
-It uses 10 chronometer."
+text = "After fighting a wave of enemies, you dock your ship to visit a shop.
+You can use coins  to buy supply crates & upgrades in the shop.
+"
 label_settings = SubResource("LabelSettings_ypcvb")
 
 [node name="p5" type="MarginContainer" parent="." unique_id=1041117213]
@@ -223,6 +232,7 @@ grow_vertical = 2
 [node name="vid5" type="VideoStreamPlayer" parent="p5" unique_id=2106051700]
 unique_name_in_owner = true
 layout_mode = 2
+stream = ExtResource("6_v3h1s")
 volume_db = -80.0
 autoplay = true
 expand = true
@@ -231,8 +241,9 @@ loop = true
 [node name="Label" type="Label" parent="p5" unique_id=1376780268]
 layout_mode = 2
 size_flags_vertical = 0
-text = "You can parry enemy projectiles with the slash attack
-or bananarang."
+text = "Additionally, by pressing Q, you can load coins into the gun, dealing good 
+damage and piercing enemies.
+"
 label_settings = SubResource("LabelSettings_ypcvb")
 
 [node name="p6" type="MarginContainer" parent="." unique_id=753904000]
@@ -248,13 +259,21 @@ offset_bottom = -144.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="vid6" type="VideoStreamPlayer" parent="p6" unique_id=768310633]
+unique_name_in_owner = true
+layout_mode = 2
+stream = ExtResource("7_2cxk3")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
+
 [node name="Label" type="Label" parent="p6" unique_id=1993077199]
 layout_mode = 2
 size_flags_vertical = 0
-text = "And that's basically it!
-Always stay on your toes, as both you and enemies are one shot.
-Try your best to get a high score and survive for as long as you can.
-More and more enemies will progressively spawn in."
+text = "Survive & fight 10 waves, fending off enemy pirates, plundering, and racking 
+up a huge Bounty!
+"
 label_settings = SubResource("LabelSettings_ypcvb")
 
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
