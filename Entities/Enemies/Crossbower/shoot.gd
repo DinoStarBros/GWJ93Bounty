@@ -8,6 +8,8 @@ func enter() -> void:
 	if p is Enemy:
 		p.velocity = p.get_dir_to_plr() * -p.move_speed * 3
 		shoot_crossbow_bolt()
+	
+	%anims.play("shoot")
 
 func physics_update(delta: float) -> void:
 	p.velocity *= 0.9

@@ -1,7 +1,8 @@
 extends State
 
 func physics_update(delta: float) -> void:
-	if p is Enemy:	
+	if p is Enemy:
+		%anims.play("walk")
 		
 		if p.get_dist_to_plr() <= p.tdev_range * 2:
 			state_machine.change_state("ShootWindup")

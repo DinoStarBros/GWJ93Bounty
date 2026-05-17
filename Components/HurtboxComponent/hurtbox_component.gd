@@ -41,6 +41,8 @@ func hurt(attack : Attack) -> void:
 		if health_component.hp <= 0:
 			sfx_players.play_player_dead_sfx()
 			get_parent().dead = true
+		
+		Global.camera.screen_shake(10, 0.2)
 	
 	await get_tree().physics_frame
 	allow_hurt = true
