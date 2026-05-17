@@ -68,7 +68,8 @@ func _on_spawn_timer_timeout() -> void:
 	spawn_timer.start(get_spawn_time(waves[Global.current_wave-1].spawn_interval_range))
 	
 	for n in get_spawn_amnt(waves[Global.current_wave-1].spawn_amount_range):
-		_spawn_enemy()
+		#if !Global.recording_for_tutorial_mode:
+			_spawn_enemy()
 
 func get_spawn_time(si_range: Vector2) -> float:
 	return randf_range(si_range.x, si_range.y)

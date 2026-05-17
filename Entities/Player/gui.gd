@@ -8,6 +8,9 @@ class_name GUI
 
 var lerped_bscore : float
 
+func _ready() -> void:
+	pass
+
 func _process(delta: float) -> void:
 	coin_count.text = str(
 		"Coins: ", Global.coins

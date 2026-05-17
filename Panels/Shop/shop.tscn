@@ -107,7 +107,7 @@ offset_top = 422.0
 offset_right = 1175.0
 offset_bottom = 550.0
 theme_override_font_sizes/font_size = 30
-text = "Buy Barrel/Crate of Ammo"
+text = "Buy Supply Crate"
 
 [node name="crate_price" type="Label" parent="buyStuff/buy_barrel" unique_id=487567424]
 unique_name_in_owner = true

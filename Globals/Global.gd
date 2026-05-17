@@ -29,7 +29,7 @@ var crates_for_next_wave : int = 0
 const txt_scn : PackedScene = preload("res://Juices/DmgNum/dmg_num.tscn")
 const bounty_score_gains : Dictionary = {
 	"enemy_kill": 10,
-	
+	"taking_damage": -5,
 }
 
 func _process(_delta:float)->void:
