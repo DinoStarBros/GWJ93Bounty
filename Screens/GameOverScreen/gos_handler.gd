@@ -22,6 +22,7 @@ func visual_handle() -> void:
 				You lose!"
 			)
 			# Show lost bounty poster
+			%claimed_stamp.show()
 		Global.game_states.WIN:
 			%txt.text = str(
 				"Pirate Menace With a High
@@ -29,5 +30,6 @@ func visual_handle() -> void:
 				You Win!"
 			)
 			# Show winning bounty poster
+			%claimed_stamp.hide()
 		_:
 			assert(false, "Bruh how tf you here")

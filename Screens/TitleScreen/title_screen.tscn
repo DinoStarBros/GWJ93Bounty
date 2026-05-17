@@ -9,6 +9,7 @@
 font_size = 100
 
 [node name="TitleScreen" type="Control" unique_id=1252217881]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

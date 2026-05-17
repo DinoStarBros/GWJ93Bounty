@@ -1,17 +1,13 @@
 [gd_scene format=3 uid="uid://bksa8r7qap5he"]
 
 [ext_resource type="Script" uid="uid://cqsgckmh3ysdj" path="res://Screens/GameOverScreen/game_over_screen.gd" id="1_ebtim"]
-[ext_resource type="Texture2D" uid="uid://b7x3qxooitt0l" path="res://addons/scene_manager/icon.png" id="2_2mngo"]
 [ext_resource type="AudioStream" uid="uid://bg6gb6r0g5bif" path="res://Audio/BananTime/floraphonic-movement-swipe-whoosh-1-186575.mp3" id="3_t6uxo"]
 [ext_resource type="AudioStream" uid="uid://bslxb6o6fq2up" path="res://Audio/BussSFX/fire-in-furnace-318347.mp3" id="4_n6mq1"]
 [ext_resource type="Script" uid="uid://r8tyxhelqw6b" path="res://Screens/GameOverScreen/gos_handler.gd" id="5_2mngo"]
+[ext_resource type="Texture2D" uid="uid://lvqwcp1f866e" path="res://Art/Plunderbuss/poster.png" id="5_t6uxo"]
+[ext_resource type="Texture2D" uid="uid://ctn0dayhd3lty" path="res://Art/Plunderbuss/claimed_stamp.png" id="6_t6uxo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_klp5p"]
-font_size = 50
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_2mngo"]
 font_size = 50
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
@@ -66,6 +62,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.5]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("bounty_score_count:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-398, 447)]
+}
 
 [sub_resource type="Animation" id="Animation_xkc4j"]
 resource_name = "intro"
@@ -103,7 +111,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(2, 3),
-"transitions": PackedFloat32Array(0.22531264, 1),
+"transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
 "values": [Vector2(-300, 328), Vector2(623.99994, 328)]
 }
@@ -131,12 +139,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.7, 0.5]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("bounty_score_count:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [Vector2(-398, 447), Vector2(-398, 447), Vector2(531.505, 447)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0xuf7"]
 _data = {
 &"RESET": SubResource("Animation_0xuf7"),
 &"intro": SubResource("Animation_xkc4j")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_2mngo"]
+font_size = 50
+font_color = Color(1, 1, 0.40863404, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="GameOverScreen" type="Control" unique_id=2128831205]
 layout_mode = 3
@@ -192,19 +218,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Exit"
 
-[node name="bounty_poster" type="Sprite2D" parent="." unique_id=571806905]
-position = Vector2(-300, 328)
-texture = ExtResource("2_2mngo")
-
-[node name="bounty_score_count" type="Label" parent="bounty_poster" unique_id=72874791]
-unique_name_in_owner = true
-offset_left = -87.99994
-offset_top = 164.0
-offset_right = 129.00006
-offset_bottom = 215.0
-text = "Bounty: 5000"
-label_settings = SubResource("LabelSettings_2mngo")
-
 [node name="anim" type="AnimationPlayer" parent="." unique_id=1166738567]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_0xuf7")
@@ -222,3 +235,23 @@ bus = &"SFX"
 
 [node name="GOSHandler" type="Node" parent="." unique_id=810611529]
 script = ExtResource("5_2mngo")
+
+[node name="bounty_poster" type="Sprite2D" parent="." unique_id=571806905]
+position = Vector2(-300, 328)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_t6uxo")
+
+[node name="claimed_stamp" type="Sprite2D" parent="bounty_poster" unique_id=1295345562]
+unique_name_in_owner = true
+position = Vector2(45.00024, -89.99994)
+texture = ExtResource("6_t6uxo")
+
+[node name="bounty_score_count" type="Label" parent="." unique_id=72874791]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -398.0
+offset_top = 447.0
+offset_right = -181.0
+offset_bottom = 498.0
+text = "5000"
+label_settings = SubResource("LabelSettings_2mngo")

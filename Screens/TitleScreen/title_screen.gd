@@ -8,6 +8,8 @@ class_name TitleScreen
 const lil_bg_sprite_scn : PackedScene = preload("res://Scenes/LilBGSprite/lil_bg_sprite.tscn")
 
 func _ready() -> void:
+	get_tree().paused = false
+	
 	%play.pressed.connect(_play_pressed)
 	%tutorial.pressed.connect(_tutorial_pressed)
 	%settings.pressed.connect(_settings_pressed)

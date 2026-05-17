@@ -6,20 +6,27 @@ class_name DialogBox
 
 const eury_dialogs : Array[String] = [
 	"Hi, what can I do for ya? ...
-	and no the bird is not for sale.",
+	And no the bird is not for sale.",
 	
 	"I suggest ya buy something!",
 	
-	"Oh! What a strong weapon you have.
+	"Oh! Strong weapon you're carrying there.
 	If only I sold something to make it
-	stronger!",
+	stronger.",
 	
 	"Pretty convenient that we keep
-	meeting each other huh?",
+	meeting each other, huh?",
 	
 	"Fancy meeting ya here!",
 	
+	"Y'know, you humans usually don't do
+	business with us simians.",
 	
+	"Hope ya didn't waste too much coin
+	lodging it in someone's cranium.",
+	
+	"Oh hey! Aren't you that guy on that wanted poster? I've been
+	seeing those everywhere.",
 	
 ]
 
