@@ -35,8 +35,8 @@ func _ready() -> void:
 	)
 	
 	Global.current_game_state = Global.game_states.COMBAT
-	Global.coins = 15
-	Global.current_wave = 0
+	Global.coins = 200
+	Global.current_wave = 7
 	Global.bounty_score = 0
 	
 	Global.restock_price = 1
