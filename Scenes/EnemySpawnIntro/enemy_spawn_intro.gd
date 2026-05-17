@@ -5,6 +5,8 @@ var ep : EntitiesParent
 var enemy_type : EntitiesParent.EnemyTypes
 
 func _ready() -> void:
+	rotation = randf_range(-PI, PI)
+	
 	GlobalSignals.WaveDone.connect(
 		queue_free
 	)
