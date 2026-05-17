@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c4vdays24rgjo" path="res://Screens/TitleScreen/title_screen.gd" id="1_des2l"]
 [ext_resource type="PackedScene" uid="uid://bqrd0srtdaksn" path="res://Panels/SettingsMenu/settings_menu.tscn" id="2_vnbe3"]
 [ext_resource type="PackedScene" uid="uid://bgkxogtg651y3" path="res://Panels/HowToPlay/how_to_play.tscn" id="3_ilw8c"]
+[ext_resource type="PackedScene" uid="uid://sd2f8q12vjfw" path="res://Scenes/TitleText/title_text.tscn" id="4_h15x5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_des2l"]
 font_size = 100
@@ -17,6 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_des2l")
 
 [node name="title_txt" type="Label" parent="." unique_id=1648852054]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -88,3 +90,5 @@ text = "Close"
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+
+[node name="TitleText" parent="." unique_id=542357180 instance=ExtResource("4_h15x5")]
