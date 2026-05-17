@@ -25,8 +25,9 @@ func _ready() -> void:
 	%CoinPickup.area_entered.connect(_coin_pickup)
 	
 	sprite.self_modulate = item_resource.color
-	scale.x = item_resource.item_size * 1.5
-	scale.y = item_resource.item_size * 1.5
+	scale.x = item_resource.item_size 
+	scale.y = item_resource.item_size 
+	sprite.scale *= 1.5
 	
 	debug.text = str(item_resource.item_name)
 	#debug.visible = OS.is_debug_build()

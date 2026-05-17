@@ -23,6 +23,9 @@ func _ready() -> void:
 	
 	scale.x = item_resource.item_size * 1.5
 	scale.y = item_resource.item_size * 1.5
+	
+	await get_tree().process_frame
+	sprite.look_at(global_position + velocity)
 
 func _physics_process(delta: float) -> void:
 	_move(delta)

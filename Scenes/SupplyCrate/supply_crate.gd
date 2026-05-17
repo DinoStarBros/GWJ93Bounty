@@ -3,6 +3,7 @@ class_name SupplyCrate
 
 var is_go_to_suck : bool = false
 var dir_to_plr : Vector2
+var dist_to_plr : float
 
 const move_speed : float = 700
 const item_spawn_range : float = 50
@@ -12,13 +13,16 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	dir_to_plr = global_position.direction_to(Global.player.global_position + Vector2(0, -32))
-	
+	dist_to_plr = global_position.distance_to(Global.player.global_position + Vector2(0, -32))
 	if is_go_to_suck:
 		velocity = dir_to_plr * move_speed
 	else:
 		velocity *= 0.8
 	
 	_move(delta)
+	
+	if dist_to_plr <= 60:
+		destroy()
 
 func _on_suck_area_area_entered(area: Area2D) -> void:
 	is_go_to_suck = true
