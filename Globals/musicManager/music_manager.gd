@@ -1,6 +1,7 @@
 extends Node
 
 @onready var musics : Dictionary = {
+	"main": %Main,
 	
 }
 

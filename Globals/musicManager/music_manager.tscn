@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://bcsun61b3ipxw"]
 
 [ext_resource type="Script" uid="uid://b4fcytjt1kh6b" path="res://Globals/musicManager/music_manager.gd" id="1_vsips"]
+[ext_resource type="AudioStream" uid="uid://b5x42pf3x0nxx" path="res://Audio/Music/butika.ogg" id="2_dm0j6"]
 
 [node name="MusicManager" type="Node" unique_id=1224638921]
 process_mode = 3
 script = ExtResource("1_vsips")
+
+[node name="Main" type="AudioStreamPlayer" parent="." unique_id=1158235128]
+unique_name_in_owner = true
+stream = ExtResource("2_dm0j6")
+volume_db = -10.0
+bus = &"Music"

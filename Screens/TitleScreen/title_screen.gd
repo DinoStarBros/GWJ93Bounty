@@ -13,6 +13,8 @@ func _ready() -> void:
 	
 	settings_menu.hide()
 	settings_menu._load()
+	
+	MusicManager.play_song("main")
 
 func _play_pressed() -> void:
 	SceneManager.change_scene("res://Screens/Arena/arena.tscn")
